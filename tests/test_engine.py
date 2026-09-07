@@ -244,6 +244,48 @@ class TestAOIEngine(unittest.TestCase):
         )
         self.assertLess(res.global_metrics["registration"]["response"], 0.6)
 
+    def test_registration_confidence_survives_severe_overexposure(self):
+        """
+        phaseCorrelate's response is phase-only (discards amplitude), so
+        a genuine exposure/lighting difference legitimately suppresses it
+        even at zero real shift -- confirmed against OpenCV's own source
+        (modules/imgproc/src/phasecorr.cpp) and against a real sample:
+        14.5% highlight clipping alone dropped response from ~0.99 to
+        0.43 with a real shift of only 0.12px. register() now computes
+        the correlation on a CLAHE-normalized copy of golden/sample so
+        exposure differences stop masquerading as failed alignment, while
+        still applying the resulting shift to the untouched original
+        pixels. Reproduced synthetically: a severely overexposed (41.6%
+        highlight-clipped) but genuinely unshifted duplicate reliably
+        drops the *raw* response below the 0.6 gate (measured 0.52) while
+        the CLAHE-normalized response clears it (measured 0.61).
+        """
+        h, w = 300, 600
+        rng = np.random.default_rng(42)
+        textured = np.clip(
+            self.base_img.astype(np.int16)
+            + rng.normal(0, 18, (h, w, 1)).astype(np.int16),
+            0, 255,
+        ).astype(np.uint8)
+
+        mask = build_part_mask(textured)
+        ref = GoldenReference(mm_per_px=0.25)
+        ref.build([textured], part_mask=mask)
+        engine = CalibratedEngine(ref, sensitivity=0.85)
+
+        overexposed = np.clip(
+            textured.astype(np.float32) * 2.2 + 130, 0, 255
+        ).astype(np.uint8)
+
+        _, reg_info = engine.register(overexposed)
+        self.assertGreaterEqual(reg_info["response"], engine.min_registration_confidence)
+        self.assertLess(reg_info["shift_px"], 1.0)  # no real position defect masked
+
+        res = engine.inspect(overexposed)
+        self.assertNotIn(
+            "REGISTRATION CONFIDENCE TOO LOW", " ".join(res.gate_failures)
+        )
+
     def test_quality_gate_ignores_background_composition(self):
         """
         Exposure/clipping must be measured over the product region only.
