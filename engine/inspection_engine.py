@@ -51,6 +51,10 @@ class Defect:
     defect_type: str              # classified type
     peak_deviation: float         # strongest signal at this location
     region: str                   # which ROI it falls in
+    measurements: Dict[str, Dict] = field(default_factory=dict)
+    # per-detector quantitative evidence: {detector: {label, value,
+    # threshold, exceeds_by_pct}} -- the actual measured parameter that
+    # crossed the line, not just the detector's name.
 
     def to_dict(self):
         d = self.__dict__.copy()
@@ -419,6 +423,58 @@ class InspectionEngine:
         deviated = abs(count - self.g.mean_contour_count) > tol
         return count, deviated, tol
 
+    # ---------------- quantitative evidence per detector ----------------
+
+    _METRIC_META = {
+        'zscore':   ('z_score',  'statistical deviation (Z-score)', 'sigma'),
+        'ssim':     ('ssim',     'structural dissimilarity (1-SSIM)', ''),
+        'absdiff':  ('absdiff',  'raw intensity change', 'gray levels (0-255)'),
+        'color':    ('delta_e',  'perceptual color deviation (CIE Lab dE)', 'dE'),
+        'edge':     ('edge_xor', 'edge probability deviation', ''),
+        'morph':    ('morph',    'morphological residue (speck/void)', ''),
+        'gradient': ('gradient', 'gradient magnitude change', ''),
+        'texture':  ('texture',  'local texture / density deviation', ''),
+    }
+
+    @staticmethod
+    def _measurements(fired, sigs, comp, T):
+        """
+        For every detector that fired on this blob, report the actual
+        measured value in that region and the threshold it crossed --
+        the concrete parameter that makes this a defect, not just a
+        detector name. This is what an operator (or a reviewer who
+        cannot see the defect by eye) uses to judge the call.
+        """
+        out = {}
+        for k in fired:
+            if k not in sigs or k not in InspectionEngine._METRIC_META:
+                continue
+            tkey, label, unit = InspectionEngine._METRIC_META[k]
+            if tkey not in T:
+                continue
+            val = float(sigs[k][comp].max())
+            thr = float(T[tkey])
+            out[k] = {
+                'label': label,
+                'unit': unit,
+                'value': round(val, 3),
+                'threshold': round(thr, 3),
+                'exceeds_by_pct': round(100.0 * (val / thr - 1.0), 1) if thr else None,
+            }
+        return out
+
+    @staticmethod
+    def top_measurement(measurements: Dict) -> Optional[str]:
+        """Single most-exceeding metric, formatted for a one-line summary."""
+        if not measurements:
+            return None
+        k, m = max(measurements.items(),
+                   key=lambda kv: kv[1].get('exceeds_by_pct') or 0.0)
+        unit = f" {m['unit']}" if m.get('unit') else ""
+        return (f"{m['label']}: {m['value']}{unit} "
+                f"(tolerance {m['threshold']}{unit}, "
+                f"+{m['exceeds_by_pct']}%)")
+
     # ---------------- Stage 4: fusion + blob extraction ----------------
 
     def inspect(self, img: np.ndarray, do_register: bool = True) -> InspectionResult:
@@ -454,7 +510,13 @@ class InspectionEngine:
                 severity="CRITICAL",
                 defect_type="DIMENSION_MISMATCH",
                 peak_deviation=255.0,
-                region="unassigned"
+                region="unassigned",
+                measurements={'dimension': {
+                    'label': 'image dimensions vs golden',
+                    'unit': 'px',
+                    'value': f"{w}x{h}",
+                    'threshold': f"{g_w}x{g_h}",
+                }},
             ))
             return res
 
@@ -538,6 +600,7 @@ class InspectionEngine:
                 defect_type=self._classify(fired, sigs, comp, img),
                 peak_deviation=round(peak, 2),
                 region=self._which_region(x, y, w, h),
+                measurements=self._measurements(fired, sigs, comp, self.T),
             ))
 
         # Topology defect (ink bridge) may have no strong pixel blob
@@ -549,6 +612,14 @@ class InspectionEngine:
                 defect_type="TOPOLOGY_CHANGE (merged/split elements - ink bridge or break)",
                 peak_deviation=abs(contour_count - self.g.mean_contour_count),
                 region="global",
+                measurements={'topology': {
+                    'label': 'connected element count',
+                    'unit': 'elements',
+                    'value': contour_count,
+                    'threshold': round(self.g.mean_contour_count + topo_tol, 2),
+                    'golden_mean': round(self.g.mean_contour_count, 2),
+                    'exceeds_by_pct': round(100.0 * (abs(contour_count - self.g.mean_contour_count) / topo_tol - 1.0), 1) if topo_tol else None,
+                }},
             ))
 
         defects.sort(key=lambda d: (-d.area_mm2, -d.confidence))
@@ -653,5 +724,8 @@ def report(res: InspectionResult, name: str = "") -> str:
             L.append(f"{d.id:>3} {d.severity:<9} {d.area_mm2:>9.3f} "
                      f"{d.confidence:>5.2f} {pos:<14} {d.defect_type:<42} "
                      f"{','.join(d.detectors)}")
+            tm = InspectionEngine.top_measurement(d.measurements)
+            if tm:
+                L.append(f"      -> MEASURED: {tm}")
     L.append("=" * 68)
     return "\n".join(L)
