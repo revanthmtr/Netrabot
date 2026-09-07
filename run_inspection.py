@@ -283,6 +283,7 @@ def run_consensus_inspection(
 
     mm_per_px = float(spec.get("calibration", {}).get("mm_per_px", 1.0))
     sensitivity = float(spec.get("detection", {}).get("sensitivity", 0.85))
+    min_reg_conf = float(spec.get("detection", {}).get("min_registration_confidence", 0.6))
     regions = spec.get("regions", [])
     roi_map = {r["name"]: r["box"] for r in regions if "name" in r and "box" in r}
 
@@ -291,7 +292,8 @@ def run_consensus_inspection(
     part_mask = build_part_mask(sample_images[0])
     golden_ref = GoldenReference(mm_per_px=mm_per_px)
     golden_ref.build_from_median(sample_images, part_mask=part_mask)
-    engine = CalibratedEngine(golden_ref, sensitivity=sensitivity, roi_map=roi_map)
+    engine = CalibratedEngine(golden_ref, sensitivity=sensitivity, roi_map=roi_map,
+                               min_registration_confidence=min_reg_conf)
 
     # Stage 1: Feature extraction & registration per sample
     print("  -> Step 3: Running multi-detector fusion across all samples...")
@@ -573,6 +575,21 @@ def run_consensus_inspection(
         res = InspectionResult(verdict=verdict)
         res.defects = surviving_defects
         res.gate_failures = engine.quality_gate(sd["registered"])
+        reg_response = sd["reg_info"].get("response", 1.0)
+        if reg_response < engine.min_registration_confidence:
+            # Same failure mode as the standard track: a badly-aligned
+            # frame produces hundreds/thousands of edge-jitter candidates
+            # that the consensus filter cannot reliably tell apart from a
+            # real, isolated defect. Flag it so the operator knows this
+            # sample's result is not trustworthy, even though (unlike the
+            # standard track) we don't skip it here -- doing so would
+            # distort the cross-sample systematic-noise frequency count
+            # the other samples depend on.
+            res.verdict = "REVIEW"
+            res.gate_failures.append(
+                f"REGISTRATION CONFIDENCE TOO LOW: {reg_response:.3f} "
+                f"(need >= {engine.min_registration_confidence}) -- alignment "
+                f"unreliable, candidates below are not trustworthy")
         res.global_metrics = {
             "registration": sd["reg_info"],
             "topology": {
@@ -703,6 +720,7 @@ def run_standard_inspection(
     """Standard single-image or multi-golden reference inspection."""
     mm_per_px = float(spec.get("calibration", {}).get("mm_per_px", 1.0))
     sensitivity = float(spec.get("detection", {}).get("sensitivity", 0.85))
+    min_reg_conf = float(spec.get("detection", {}).get("min_registration_confidence", 0.6))
     noise_percentile = float(
         spec.get("detection", {}).get("noise_floor_percentile", 99.5)
     )
@@ -741,7 +759,8 @@ def run_standard_inspection(
     golden_ref.build(golden_images, part_mask=part_mask)
 
     # Instantiate Calibrated Engine
-    engine = CalibratedEngine(golden_ref, sensitivity=sensitivity, roi_map=roi_map)
+    engine = CalibratedEngine(golden_ref, sensitivity=sensitivity, roi_map=roi_map,
+                               min_registration_confidence=min_reg_conf)
 
     # Calibrate noise floor if 2+ golden images exist
     if len(golden_images) >= 2:

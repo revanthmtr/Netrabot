@@ -216,6 +216,54 @@ class TestAOIEngine(unittest.TestCase):
         top_defect = s0_data["defects"][0]
         self.assertEqual(top_defect["sample_str"], "1/3")
 
+    def test_low_registration_confidence_is_refused_not_scored(self):
+        """
+        A sample the phase-correlation step cannot reliably align must be
+        refused (verdict REVIEW, zero defects) rather than run through the
+        9 detectors -- on a real misaligned sample this produced 5366
+        false candidates from edge jitter alone, burying the one real
+        defect. Reproduced here with heavy uncorrelated noise (same shape,
+        no actual shift) which reliably drops phase-correlation response
+        without tripping the separate shift-exceeded path.
+        """
+        mask = build_part_mask(self.base_img)
+        ref = GoldenReference(mm_per_px=0.25)
+        ref.build([self.base_img], part_mask=mask)
+        engine = CalibratedEngine(ref, sensitivity=0.85)
+
+        rng = np.random.default_rng(0)
+        noise = rng.normal(0, 60, self.base_img.shape)
+        noisy = np.clip(self.base_img.astype(np.float32) + noise, 0, 255).astype(np.uint8)
+
+        res = engine.inspect(noisy)
+        self.assertEqual(res.verdict, "REVIEW")
+        self.assertEqual(len(res.defects), 0)
+        self.assertTrue(
+            any("REGISTRATION CONFIDENCE" in g for g in res.gate_failures),
+            res.gate_failures,
+        )
+        self.assertLess(res.global_metrics["registration"]["response"], 0.6)
+
+    def test_quality_gate_ignores_background_composition(self):
+        """
+        Exposure/clipping must be measured over the product region only.
+        This fixture's background is pure black outside the part -- before
+        the part-mask fix this alone tripped SHADOW CLIPPING on every
+        sample regardless of the product's actual condition (matching
+        what was observed on every real FELT-PAD sample: 10-14% highlight
+        clipping purely from its white studio background).
+        """
+        mask = build_part_mask(self.base_img)
+        ref = GoldenReference(mm_per_px=0.25)
+        ref.build([self.base_img], part_mask=mask)
+        engine = CalibratedEngine(ref, sensitivity=0.85)
+
+        fails = engine.quality_gate(self.base_img)
+        self.assertFalse(
+            any("CLIPPING" in f for f in fails),
+            f"background composition should not trigger clipping: {fails}",
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
