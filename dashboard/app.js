@@ -6,7 +6,7 @@
  */
 
 document.addEventListener("DOMContentLoaded", () => {
-  // ── State ──────────────────────────────────────────────────────────
+  // ── State ───────────────────────────────────────────────
   let modelsList = [];
   let activeModelName = null;
   let activeModelData = null;
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let zoom = 1.0, panX = 0, panY = 0;
   let isDragging = false, dragStartX = 0, dragStartY = 0;
 
-  // ── DOM Elements ───────────────────────────────────────────────────
+  // ── DOM Elements ───────────────────────────────────────────────
   const $ = id => document.getElementById(id);
   const galleryOverlay     = $("model-gallery-overlay");
   const detailOverlay      = $("model-detail-overlay");
@@ -40,9 +40,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const roiBadgesContainer = $("roi-badges-container");
   const formulaDetail      = $("selected-defect-saliency-breakdown");
 
-  // ═══════════════════════════════════════════════════════════════════
+  // ═════════════════════════════════════════════════════════════════════════
   //  MODEL GALLERY
-  // ═══════════════════════════════════════════════════════════════════
+  // ═════════════════════════════════════════════════════════════════════════
   function showGallery()  { galleryOverlay.classList.add("visible");    refreshModelsList(); }
   function hideGallery()  { galleryOverlay.classList.remove("visible"); }
   function showDetail()   { detailOverlay.classList.add("visible"); }
@@ -124,9 +124,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ═══════════════════════════════════════════════════════════════════
+  // ═════════════════════════════════════════════════════════════════════════
   //  MODEL DETAIL (golden + samples management)
-  // ═══════════════════════════════════════════════════════════════════
+  // ═════════════════════════════════════════════════════════════════════════
   async function openModelDetail(modelName) {
     detailModelName = modelName;
     hideGallery();
@@ -268,9 +268,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // ═══════════════════════════════════════════════════════════════════
+  // ═════════════════════════════════════════════════════════════════════════
   //  ACTIVE MODEL SELECTION & INSPECTION
-  // ═══════════════════════════════════════════════════════════════════
+  // ═════════════════════════════════════════════════════════════════════════
   async function activateModel(modelName) {
     activeModelName = modelName;
     const resp = await fetch(`/api/models/${modelName}`);
@@ -343,9 +343,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // ═══════════════════════════════════════════════════════════════════
+  // ═════════════════════════════════════════════════════════════════════════
   //  INSPECTION RESULTS UI (same as before, adapted to activeModelData)
-  // ═══════════════════════════════════════════════════════════════════
+  // ═════════════════════════════════════════════════════════════════════════
   function renderPartsList() {
     if (!activeModelData?.parts?.length) return;
     partsCountBadge.textContent = `${activeModelData.parts.length} Parts`;
@@ -467,6 +467,23 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  function renderMeasurements(measurements) {
+    if (!measurements || !Object.keys(measurements).length) return "";
+    const rows = Object.entries(measurements).map(([key, m]) => {
+      const unit = m.unit ? ` ${m.unit}` : "";
+      const pct = (m.exceeds_by_pct !== undefined && m.exceeds_by_pct !== null)
+        ? `<span class="measure-over">+${m.exceeds_by_pct}%</span>` : "";
+      return `<div class="measure-row">
+        <span class="measure-label">${m.label || key}</span>
+        <span class="measure-val">${m.value}${unit} <span class="measure-tol">(tol ${m.threshold}${unit})</span> ${pct}</span>
+      </div>`;
+    }).join("");
+    return `<div class="defect-measurements">
+      <div class="evidence-label">WHY FLAGGED — MEASURED PARAMETER vs TOLERANCE</div>
+      ${rows}
+    </div>`;
+  }
+
   function renderDefectsList() {
     const part = activeModelData?.parts?.[currentPartIndex];
     if (!part?.report?.defects) return;
@@ -492,6 +509,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <span>Pos: <strong>(${d.x}, ${d.y})</strong></span>
             <span>Seen: <strong>${d.sample_str||'—'}</strong></span>
           </div>
+          ${renderMeasurements(d.measurements)}
           ${d.crop_url ? `
           <div class="defect-evidence">
             <div class="evidence-label">MASTER vs SAMPLE vs DIFF</div>
@@ -530,9 +548,21 @@ document.addEventListener("DOMContentLoaded", () => {
     drawOverlay(); updateHover(id);
   }
 
+  function topMeasurementText(measurements) {
+    if (!measurements) return null;
+    const entries = Object.values(measurements);
+    if (!entries.length) return null;
+    const m = entries.reduce((a, b) => (b.exceeds_by_pct || 0) > (a.exceeds_by_pct || 0) ? b : a);
+    const unit = m.unit ? ` ${m.unit}` : "";
+    return `${m.label}: ${m.value}${unit} (tol ${m.threshold}${unit})`;
+  }
+
   function updateHover(id) {
     const d = activeModelData.parts[currentPartIndex].report.defects.find(x=>x.id===id);
-    if (d) hoverInspectPill.textContent = `[#${d.rank}] ${d.defect_type} | ${d.area_mm2?.toFixed(2)}mm² | Sal: ${d.saliency?.toFixed(4)} | (${d.x},${d.y})`;
+    if (!d) return;
+    const measure = topMeasurementText(d.measurements);
+    hoverInspectPill.textContent = `[#${d.rank}] ${d.defect_type} | ${d.area_mm2?.toFixed(2)}mm² | Sal: ${d.saliency?.toFixed(4)} | (${d.x},${d.y})` +
+      (measure ? ` | ${measure}` : "");
   }
 
   function renderDetectorActivity(stats) {
@@ -552,9 +582,9 @@ document.addEventListener("DOMContentLoaded", () => {
     zoomLevelText.textContent = `${Math.round(zoom*100)}%`;
   }
 
-  // ═══════════════════════════════════════════════════════════════════
+  // ═════════════════════════════════════════════════════════════════════════
   //  EVENTS SETUP
-  // ═══════════════════════════════════════════════════════════════════
+  // ═════════════════════════════════════════════════════════════════════════
   function setupEvents() {
     // Gallery open/close
     $("btn-open-gallery").addEventListener("click", showGallery);
@@ -705,9 +735,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ═══════════════════════════════════════════════════════════════════
+  // ═════════════════════════════════════════════════════════════════════════
   //  INIT
-  // ═══════════════════════════════════════════════════════════════════
+  // ═════════════════════════════════════════════════════════════════════════
   async function init() {
     setupEvents();
     // Load models and auto-select first one with reports

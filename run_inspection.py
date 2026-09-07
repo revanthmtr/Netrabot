@@ -18,7 +18,13 @@ import numpy as np
 from skimage.color import rgb2lab
 
 from engine.calibrated_engine import CalibratedEngine
-from engine.inspection_engine import Defect, GoldenReference, InspectionResult, report
+from engine.inspection_engine import (
+    Defect,
+    GoldenReference,
+    InspectionEngine,
+    InspectionResult,
+    report,
+)
 from engine.io_utils import build_part_mask, load_image
 
 SUPPORTED_IMAGE_EXTENSIONS = {
@@ -164,6 +170,9 @@ DEFECTS FOUND: {total_candidates}")
                     f"{rank:>3} {d.id:>3} {d.severity:<8} {d.area_mm2:>8.3f} "
                     f"{saliency:>8.4f} {pos:<12} {sample_str:<8} {dtype:<28} {det_str}"
                 )
+                tm = InspectionEngine.top_measurement(getattr(d, "measurements", None))
+                if tm:
+                    L.append(f"      -> MEASURED: {tm}")
         else:
             L.append(
                 f"{'RNK':>3} {'ID':>3} {'SEV':<8} {'AREA mm2':>8} {'SALIENCY':>8} "
@@ -184,6 +193,9 @@ DEFECTS FOUND: {total_candidates}")
                     f"{rank:>3} {d.id:>3} {d.severity:<8} {d.area_mm2:>8.3f} "
                     f"{saliency:>8.4f} {pos:<12} {dtype:<32} {det_str}"
                 )
+                tm = InspectionEngine.top_measurement(getattr(d, "measurements", None))
+                if tm:
+                    L.append(f"      -> MEASURED: {tm}")
     L.append("=" * 72)
     return "\n".join(L)
 
@@ -452,6 +464,7 @@ def run_consensus_inspection(
                 defect_type=engine._classify(fired, sd["sigs"], comp, sd["registered"]),
                 peak_deviation=round(peak, 2),
                 region=engine._which_region(x, y, w, h),
+                measurements=engine._measurements(fired, sd["sigs"], comp, engine.T),
             )
             d.__dict__["sample_count"] = hits
             d.__dict__["sample_ratio"] = sample_ratio
@@ -496,6 +509,14 @@ def run_consensus_inspection(
                 defect_type="TOPOLOGY_CHANGE (merged/split elements - ink bridge or break)",
                 peak_deviation=abs(sd["contour_count"] - golden_ref.mean_contour_count),
                 region="global",
+                measurements={"topology": {
+                    "label": "connected element count",
+                    "unit": "elements",
+                    "value": sd["contour_count"],
+                    "threshold": round(golden_ref.mean_contour_count + sd["topo_tol"], 2),
+                    "golden_mean": round(golden_ref.mean_contour_count, 2),
+                    "exceeds_by_pct": round(100.0 * (abs(sd["contour_count"] - golden_ref.mean_contour_count) / sd["topo_tol"] - 1.0), 1) if sd["topo_tol"] else None,
+                }},
             )
             d_topo.__dict__["sample_count"] = topo_hits
             d_topo.__dict__["sample_ratio"] = topo_hits / n_samples
@@ -526,6 +547,13 @@ def run_consensus_inspection(
                         defect_type=f"REGIONAL_COLOR_FADE (dE={dE_val:.2f} vs tol {rc['tolerance']})",
                         peak_deviation=round(dE_val, 2),
                         region=rc["name"],
+                        measurements={"color_regional": {
+                            "label": "perceptual color deviation (CIE Lab dE, region average)",
+                            "unit": "dE",
+                            "value": round(dE_val, 3),
+                            "threshold": rc["tolerance"],
+                            "exceeds_by_pct": round(100.0 * (dE_val / rc["tolerance"] - 1.0), 1) if rc["tolerance"] else None,
+                        }},
                     )
                     d_reg.__dict__["sample_count"] = dE_hits
                     d_reg.__dict__["sample_ratio"] = dE_hits / n_samples
