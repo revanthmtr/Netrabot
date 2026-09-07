@@ -1,0 +1,123 @@
+{
+  "part_id": "TOP-TETHER-GUIDE-001",
+  "file": "Top Tether Child Seat Guide -B.png",
+  "verdict": "FAIL",
+  "gate_failures": [
+    "HIGHLIGHT CLIPPING: 39.1%"
+  ],
+  "global_metrics": {
+    "registration": {
+      "dx": 0.002634267269627344,
+      "dy": 0.0036126322090694885,
+      "shift_px": 0.004471070959606456,
+      "shift_mm": 0.001068585959345943,
+      "response": 0.9565679948590696,
+      "exceeded": false
+    },
+    "topology": {
+      "contour_count": 27,
+      "golden_mean": 26.0,
+      "tolerance": 6.0,
+      "deviated": false
+    },
+    "total_candidates": 2,
+    "shown": 2
+  },
+  "detector_stats": {
+    "zscore": {
+      "flagged_px": 108,
+      "pct": 0.014
+    },
+    "ssim": {
+      "flagged_px": 1129,
+      "pct": 0.1462
+    },
+    "absdiff": {
+      "flagged_px": 212,
+      "pct": 0.0274
+    },
+    "color": {
+      "flagged_px": 226,
+      "pct": 0.0293
+    },
+    "edge": {
+      "flagged_px": 98,
+      "pct": 0.0127
+    },
+    "morph": {
+      "flagged_px": 176,
+      "pct": 0.0228
+    },
+    "gradient": {
+      "flagged_px": 304,
+      "pct": 0.0394
+    },
+    "texture": {
+      "flagged_px": 610,
+      "pct": 0.079
+    }
+  },
+  "total_candidates": 2,
+  "top_n_shown": 2,
+  "defects": [
+    {
+      "id": 1,
+      "x": 480,
+      "y": 519,
+      "w": 28,
+      "h": 29,
+      "area_px": 761.0,
+      "area_mm2": 43.469080999999996,
+      "centroid": [
+        493.68068331143235,
+        532.7056504599211
+      ],
+      "detectors": [
+        "zscore",
+        "ssim",
+        "absdiff",
+        "color",
+        "edge",
+        "morph",
+        "gradient",
+        "texture"
+      ],
+      "confidence": 1.0,
+      "severity": "CRITICAL",
+      "defect_type": "SPECK / CONTAMINATION",
+      "peak_deviation": 255.0,
+      "region": "unassigned",
+      "saliency": 0.985,
+      "rank": 1
+    },
+    {
+      "id": 2,
+      "x": 474,
+      "y": 793,
+      "w": 31,
+      "h": 19,
+      "area_px": 390.0,
+      "area_mm2": 22.27719,
+      "centroid": [
+        489.64871794871794,
+        800.1435897435897
+      ],
+      "detectors": [
+        "ssim",
+        "absdiff",
+        "color",
+        "edge",
+        "morph",
+        "gradient",
+        "texture"
+      ],
+      "confidence": 0.875,
+      "severity": "CRITICAL",
+      "defect_type": "SPECK / CONTAMINATION",
+      "peak_deviation": 138.0,
+      "region": "unassigned",
+      "saliency": 0.8601,
+      "rank": 2
+    }
+  ]
+}

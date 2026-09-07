@@ -1,0 +1,93 @@
+{
+  "part_id": "FELT-PAD-001",
+  "file": "Textured Black Felt Pad with Circular Cutout A A.png",
+  "verdict": "FAIL",
+  "gate_failures": [
+    "HIGHLIGHT CLIPPING: 10.8%"
+  ],
+  "global_metrics": {
+    "registration": {
+      "dx": -0.000649529024713047,
+      "dy": 0.001000217544287807,
+      "shift_px": 0.0011926118772869123,
+      "shift_mm": 0.000285034238671572,
+      "response": 0.9851779935602099,
+      "exceeded": false
+    },
+    "topology": {
+      "contour_count": 3,
+      "golden_mean": 3.0,
+      "tolerance": 6.0,
+      "deviated": false
+    },
+    "total_candidates": 1,
+    "shown": 1
+  },
+  "detector_stats": {
+    "zscore": {
+      "flagged_px": 0,
+      "pct": 0.0
+    },
+    "ssim": {
+      "flagged_px": 432,
+      "pct": 0.051
+    },
+    "absdiff": {
+      "flagged_px": 8,
+      "pct": 0.0009
+    },
+    "color": {
+      "flagged_px": 9,
+      "pct": 0.0011
+    },
+    "edge": {
+      "flagged_px": 19,
+      "pct": 0.0022
+    },
+    "morph": {
+      "flagged_px": 17,
+      "pct": 0.002
+    },
+    "gradient": {
+      "flagged_px": 26,
+      "pct": 0.0031
+    },
+    "texture": {
+      "flagged_px": 0,
+      "pct": 0.0
+    }
+  },
+  "total_candidates": 1,
+  "top_n_shown": 1,
+  "defects": [
+    {
+      "id": 1,
+      "x": 182,
+      "y": 372,
+      "w": 32,
+      "h": 43,
+      "area_px": 432.0,
+      "area_mm2": 24.676272,
+      "centroid": [
+        204.66203703703704,
+        394.21064814814815
+      ],
+      "detectors": [
+        "ssim",
+        "absdiff",
+        "color",
+        "edge",
+        "morph",
+        "gradient"
+      ],
+      "confidence": 0.75,
+      "severity": "CRITICAL",
+      "defect_type": "SPECK / CONTAMINATION",
+      "peak_deviation": 46.0,
+      "region": "unassigned",
+      "saliency": 0.7593,
+      "rank": 1,
+      "crop_url": "crops/Textured Black Felt Pad with Circular Cutout A A_defect_1.png"
+    }
+  ]
+}

@@ -1,0 +1,228 @@
+{
+  "mode": "consensus",
+  "n_samples": 5,
+  "consensus_threshold_pct": 60.0,
+  "spec": "WARN-LABEL-001",
+  "parts": {
+    "Warning - A.HEIC": {
+      "verdict": "FAIL",
+      "raw_candidates": 1075,
+      "suppressed_count": 1074,
+      "surviving_count": 1,
+      "surviving_defects": [
+        {
+          "id": 1,
+          "severity": "CRITICAL",
+          "area_mm2": 18.564325,
+          "saliency": 0.4699,
+          "pos": "(295,510)",
+          "samples": "1/5",
+          "type": "SMEAR / PRINT_DENSITY_LOSS",
+          "region": "unassigned"
+        }
+      ]
+    },
+    "Warning-B.HEIC": {
+      "verdict": "FAIL",
+      "raw_candidates": 1076,
+      "suppressed_count": 1075,
+      "surviving_count": 1,
+      "surviving_defects": [
+        {
+          "id": 1,
+          "severity": "CRITICAL",
+          "area_mm2": 3.141655,
+          "saliency": 0.617,
+          "pos": "(187,448)",
+          "samples": "1/5",
+          "type": "SPECK / CONTAMINATION",
+          "region": "orange_panel"
+        }
+      ]
+    },
+    "Warning-C.HEIC": {
+      "verdict": "FAIL",
+      "raw_candidates": 1077,
+      "suppressed_count": 1076,
+      "surviving_count": 1,
+      "surviving_defects": [
+        {
+          "id": 1,
+          "severity": "CRITICAL",
+          "area_mm2": 2.056356,
+          "saliency": 0.3609,
+          "pos": "(777,174)",
+          "samples": "1/5",
+          "type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+          "region": "unassigned"
+        }
+      ]
+    },
+    "Warning-D.HEIC": {
+      "verdict": "FAIL",
+      "raw_candidates": 1083,
+      "suppressed_count": 1070,
+      "surviving_count": 13,
+      "surviving_defects": [
+        {
+          "id": 10,
+          "severity": "CRITICAL",
+          "area_mm2": 2004.9470999999999,
+          "saliency": 0.98,
+          "pos": "(135,110)",
+          "samples": "1/5",
+          "type": "REGIONAL_COLOR_FADE (dE=13.21 vs tol 3.0)",
+          "region": "orange_panel"
+        },
+        {
+          "id": 11,
+          "severity": "CRITICAL",
+          "area_mm2": 274.1808,
+          "saliency": 0.98,
+          "pos": "(150,150)",
+          "samples": "1/5",
+          "type": "REGIONAL_COLOR_FADE (dE=8.23 vs tol 3.0)",
+          "region": "icon_warn"
+        },
+        {
+          "id": 12,
+          "severity": "CRITICAL",
+          "area_mm2": 274.1808,
+          "saliency": 0.98,
+          "pos": "(150,258)",
+          "samples": "1/5",
+          "type": "REGIONAL_COLOR_FADE (dE=11.18 vs tol 3.0)",
+          "region": "icon_info"
+        },
+        {
+          "id": 13,
+          "severity": "CRITICAL",
+          "area_mm2": 281.03532,
+          "saliency": 0.98,
+          "pos": "(150,368)",
+          "samples": "1/5",
+          "type": "REGIONAL_COLOR_FADE (dE=10.64 vs tol 3.0)",
+          "region": "icon_pinch"
+        },
+        {
+          "id": 1,
+          "severity": "CRITICAL",
+          "area_mm2": 2199.615468,
+          "saliency": 0.7434,
+          "pos": "(114,102)",
+          "samples": "1/5",
+          "type": "EDGE_DEFECT / LINE_BREAK_OR_BRIDGE",
+          "region": "orange_panel"
+        },
+        {
+          "id": 7,
+          "severity": "CRITICAL",
+          "area_mm2": 206.492415,
+          "saliency": 0.6897,
+          "pos": "(396,393)",
+          "samples": "1/5",
+          "type": "EDGE_DEFECT / LINE_BREAK_OR_BRIDGE",
+          "region": "pictogram"
+        },
+        {
+          "id": 3,
+          "severity": "CRITICAL",
+          "area_mm2": 12.680862,
+          "saliency": 0.4545,
+          "pos": "(178,170)",
+          "samples": "1/5",
+          "type": "EDGE_DEFECT / LINE_BREAK_OR_BRIDGE",
+          "region": "orange_panel"
+        },
+        {
+          "id": 8,
+          "severity": "CRITICAL",
+          "area_mm2": 6.054825999999999,
+          "saliency": 0.3626,
+          "pos": "(178,427)",
+          "samples": "1/5",
+          "type": "COLOR_DEVIATION",
+          "region": "orange_panel"
+        },
+        {
+          "id": 2,
+          "severity": "MAJOR",
+          "area_mm2": 0.514089,
+          "saliency": 0.2869,
+          "pos": "(417,110)",
+          "samples": "1/5",
+          "type": "COLOR_DEVIATION",
+          "region": "unassigned"
+        },
+        {
+          "id": 4,
+          "severity": "MAJOR",
+          "area_mm2": 0.685452,
+          "saliency": 0.2785,
+          "pos": "(178,212)",
+          "samples": "1/5",
+          "type": "COLOR_DEVIATION",
+          "region": "orange_panel"
+        },
+        {
+          "id": 6,
+          "severity": "MAJOR",
+          "area_mm2": 0.913936,
+          "saliency": 0.278,
+          "pos": "(168,378)",
+          "samples": "1/5",
+          "type": "COLOR_DEVIATION",
+          "region": "orange_panel"
+        },
+        {
+          "id": 5,
+          "severity": "MAJOR",
+          "area_mm2": 0.514089,
+          "saliency": 0.2226,
+          "pos": "(111,340)",
+          "samples": "2/5",
+          "type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+          "region": "unassigned"
+        },
+        {
+          "id": 9,
+          "severity": "MAJOR",
+          "area_mm2": 0.514089,
+          "saliency": 0.2146,
+          "pos": "(424,434)",
+          "samples": "1/5",
+          "type": "COLOR_DEVIATION",
+          "region": "pictogram"
+        }
+      ]
+    },
+    "Warning.HEIC": {
+      "verdict": "FAIL",
+      "raw_candidates": 1160,
+      "suppressed_count": 1158,
+      "surviving_count": 2,
+      "surviving_defects": [
+        {
+          "id": 1,
+          "severity": "MAJOR",
+          "area_mm2": 0.913936,
+          "saliency": 0.2719,
+          "pos": "(179,157)",
+          "samples": "2/5",
+          "type": "COLOR_DEVIATION",
+          "region": "orange_panel"
+        },
+        {
+          "id": 2,
+          "severity": "MAJOR",
+          "area_mm2": 0.685452,
+          "saliency": 0.2246,
+          "pos": "(154,410)",
+          "samples": "2/5",
+          "type": "COLOR_DEVIATION",
+          "region": "orange_panel"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,1957 @@
+{
+  "part_id": "TOP-TETHER-GUIDE-001",
+  "file": "Top Tether Child Seat Guide - D.png",
+  "verdict": "FAIL",
+  "gate_failures": [
+    "HIGHLIGHT CLIPPING: 54.4%"
+  ],
+  "global_metrics": {
+    "registration": {
+      "dx": 0.002293094084848235,
+      "dy": -0.044127371197305365,
+      "shift_px": 0.04418691174167687,
+      "shift_mm": 0.01056067190626077,
+      "response": 0.9743287565559149,
+      "exceeded": false
+    },
+    "topology": {
+      "contour_count": 26,
+      "golden_mean": 26.0,
+      "tolerance": 6.0,
+      "deviated": false
+    },
+    "total_candidates": 82,
+    "shown": 15
+  },
+  "detector_stats": {
+    "zscore": {
+      "flagged_px": 628825,
+      "pct": 81.4201
+    },
+    "ssim": {
+      "flagged_px": 22177,
+      "pct": 2.8715
+    },
+    "absdiff": {
+      "flagged_px": 679294,
+      "pct": 87.9548
+    },
+    "color": {
+      "flagged_px": 686382,
+      "pct": 88.8725
+    },
+    "edge": {
+      "flagged_px": 5745,
+      "pct": 0.7439
+    },
+    "morph": {
+      "flagged_px": 1492,
+      "pct": 0.1932
+    },
+    "gradient": {
+      "flagged_px": 35549,
+      "pct": 4.6029
+    },
+    "texture": {
+      "flagged_px": 3522,
+      "pct": 0.456
+    }
+  },
+  "total_candidates": 82,
+  "top_n_shown": 15,
+  "defects": [
+    {
+      "id": 1,
+      "x": 161,
+      "y": 226,
+      "w": 963,
+      "h": 802,
+      "area_px": 729707.0,
+      "area_mm2": 41681.593547,
+      "centroid": [
+        639.5325754035524,
+        625.7499708787226
+      ],
+      "detectors": [
+        "zscore",
+        "ssim",
+        "absdiff",
+        "color",
+        "edge",
+        "morph",
+        "gradient",
+        "texture"
+      ],
+      "confidence": 1.0,
+      "severity": "CRITICAL",
+      "defect_type": "SPECK / CONTAMINATION",
+      "peak_deviation": 75.0,
+      "region": "unassigned",
+      "saliency": 0.9945,
+      "rank": 1
+    },
+    {
+      "id": 81,
+      "x": 693,
+      "y": 695,
+      "w": 148,
+      "h": 1,
+      "area_px": 148.0,
+      "area_mm2": 8.453908,
+      "centroid": [
+        766.5,
+        695.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "CRITICAL",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.3071,
+      "rank": 2
+    },
+    {
+      "id": 82,
+      "x": 789,
+      "y": 832,
+      "w": 30,
+      "h": 1,
+      "area_px": 30.0,
+      "area_mm2": 1.71363,
+      "centroid": [
+        803.5,
+        832.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MAJOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 3.0,
+      "region": "unassigned",
+      "saliency": 0.2317,
+      "rank": 3
+    },
+    {
+      "id": 33,
+      "x": 808,
+      "y": 563,
+      "w": 21,
+      "h": 1,
+      "area_px": 21.0,
+      "area_mm2": 1.199541,
+      "centroid": [
+        818.0,
+        563.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MAJOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 3.0,
+      "region": "unassigned",
+      "saliency": 0.2184,
+      "rank": 4
+    },
+    {
+      "id": 73,
+      "x": 804,
+      "y": 662,
+      "w": 18,
+      "h": 1,
+      "area_px": 18.0,
+      "area_mm2": 1.028178,
+      "centroid": [
+        812.5,
+        662.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MAJOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.2092,
+      "rank": 5
+    },
+    {
+      "id": 76,
+      "x": 660,
+      "y": 676,
+      "w": 14,
+      "h": 1,
+      "area_px": 14.0,
+      "area_mm2": 0.799694,
+      "centroid": [
+        666.5,
+        676.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MAJOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.2016,
+      "rank": 6
+    },
+    {
+      "id": 53,
+      "x": 749,
+      "y": 608,
+      "w": 9,
+      "h": 1,
+      "area_px": 9.0,
+      "area_mm2": 0.514089,
+      "centroid": [
+        753.0,
+        608.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MAJOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.1906,
+      "rank": 7
+    },
+    {
+      "id": 42,
+      "x": 815,
+      "y": 588,
+      "w": 8,
+      "h": 1,
+      "area_px": 8.0,
+      "area_mm2": 0.456968,
+      "centroid": [
+        818.5,
+        588.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MAJOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.1882,
+      "rank": 8
+    },
+    {
+      "id": 49,
+      "x": 778,
+      "y": 605,
+      "w": 8,
+      "h": 1,
+      "area_px": 8.0,
+      "area_mm2": 0.456968,
+      "centroid": [
+        781.5,
+        605.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MAJOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.1882,
+      "rank": 9
+    },
+    {
+      "id": 67,
+      "x": 775,
+      "y": 656,
+      "w": 7,
+      "h": 1,
+      "area_px": 7.0,
+      "area_mm2": 0.399847,
+      "centroid": [
+        778.0,
+        656.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MAJOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.1856,
+      "rank": 10
+    },
+    {
+      "id": 50,
+      "x": 789,
+      "y": 604,
+      "w": 8,
+      "h": 1,
+      "area_px": 8.0,
+      "area_mm2": 0.456968,
+      "centroid": [
+        792.5,
+        604.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MAJOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 1.0,
+      "region": "unassigned",
+      "saliency": 0.1842,
+      "rank": 11
+    },
+    {
+      "id": 77,
+      "x": 434,
+      "y": 679,
+      "w": 1,
+      "h": 8,
+      "area_px": 8.0,
+      "area_mm2": 0.456968,
+      "centroid": [
+        434.0,
+        682.5
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MAJOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 1.0,
+      "region": "unassigned",
+      "saliency": 0.1842,
+      "rank": 12
+    },
+    {
+      "id": 65,
+      "x": 786,
+      "y": 655,
+      "w": 6,
+      "h": 1,
+      "area_px": 6.0,
+      "area_mm2": 0.342726,
+      "centroid": [
+        788.5,
+        655.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MAJOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.183,
+      "rank": 13
+    },
+    {
+      "id": 66,
+      "x": 766,
+      "y": 657,
+      "w": 6,
+      "h": 1,
+      "area_px": 6.0,
+      "area_mm2": 0.342726,
+      "centroid": [
+        768.5,
+        657.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MAJOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.183,
+      "rank": 14
+    },
+    {
+      "id": 52,
+      "x": 767,
+      "y": 606,
+      "w": 7,
+      "h": 1,
+      "area_px": 7.0,
+      "area_mm2": 0.399847,
+      "centroid": [
+        770.0,
+        606.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MAJOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 1.0,
+      "region": "unassigned",
+      "saliency": 0.1816,
+      "rank": 15
+    },
+    {
+      "id": 6,
+      "x": 590,
+      "y": 460,
+      "w": 1,
+      "h": 5,
+      "area_px": 5.0,
+      "area_mm2": 0.285605,
+      "centroid": [
+        590.0,
+        462.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.1802,
+      "rank": 16
+    },
+    {
+      "id": 18,
+      "x": 772,
+      "y": 500,
+      "w": 5,
+      "h": 1,
+      "area_px": 5.0,
+      "area_mm2": 0.285605,
+      "centroid": [
+        774.0,
+        500.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.1802,
+      "rank": 17
+    },
+    {
+      "id": 46,
+      "x": 614,
+      "y": 596,
+      "w": 1,
+      "h": 5,
+      "area_px": 5.0,
+      "area_mm2": 0.285605,
+      "centroid": [
+        614.0,
+        598.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.1802,
+      "rank": 18
+    },
+    {
+      "id": 47,
+      "x": 761,
+      "y": 598,
+      "w": 5,
+      "h": 1,
+      "area_px": 5.0,
+      "area_mm2": 0.285605,
+      "centroid": [
+        763.0,
+        598.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.1802,
+      "rank": 19
+    },
+    {
+      "id": 51,
+      "x": 760,
+      "y": 607,
+      "w": 5,
+      "h": 1,
+      "area_px": 5.0,
+      "area_mm2": 0.285605,
+      "centroid": [
+        762.0,
+        607.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.1802,
+      "rank": 20
+    },
+    {
+      "id": 57,
+      "x": 619,
+      "y": 624,
+      "w": 1,
+      "h": 5,
+      "area_px": 5.0,
+      "area_mm2": 0.285605,
+      "centroid": [
+        619.0,
+        626.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.1802,
+      "rank": 21
+    },
+    {
+      "id": 64,
+      "x": 624,
+      "y": 652,
+      "w": 1,
+      "h": 5,
+      "area_px": 5.0,
+      "area_mm2": 0.285605,
+      "centroid": [
+        624.0,
+        654.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.1802,
+      "rank": 22
+    },
+    {
+      "id": 79,
+      "x": 630,
+      "y": 685,
+      "w": 1,
+      "h": 5,
+      "area_px": 5.0,
+      "area_mm2": 0.285605,
+      "centroid": [
+        630.0,
+        687.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.1802,
+      "rank": 23
+    },
+    {
+      "id": 36,
+      "x": 831,
+      "y": 564,
+      "w": 6,
+      "h": 1,
+      "area_px": 6.0,
+      "area_mm2": 0.342726,
+      "centroid": [
+        833.5,
+        564.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MAJOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 1.0,
+      "region": "unassigned",
+      "saliency": 0.179,
+      "rank": 24
+    },
+    {
+      "id": 2,
+      "x": 652,
+      "y": 415,
+      "w": 1,
+      "h": 4,
+      "area_px": 4.0,
+      "area_mm2": 0.228484,
+      "centroid": [
+        652.0,
+        416.5
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.1773,
+      "rank": 25
+    },
+    {
+      "id": 13,
+      "x": 676,
+      "y": 476,
+      "w": 1,
+      "h": 4,
+      "area_px": 4.0,
+      "area_mm2": 0.228484,
+      "centroid": [
+        676.0,
+        477.5
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.1773,
+      "rank": 26
+    },
+    {
+      "id": 44,
+      "x": 637,
+      "y": 593,
+      "w": 1,
+      "h": 4,
+      "area_px": 4.0,
+      "area_mm2": 0.228484,
+      "centroid": [
+        637.0,
+        594.5
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.1773,
+      "rank": 27
+    },
+    {
+      "id": 80,
+      "x": 631,
+      "y": 691,
+      "w": 1,
+      "h": 4,
+      "area_px": 4.0,
+      "area_mm2": 0.228484,
+      "centroid": [
+        631.0,
+        692.5
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.1773,
+      "rank": 28
+    },
+    {
+      "id": 5,
+      "x": 589,
+      "y": 454,
+      "w": 1,
+      "h": 5,
+      "area_px": 5.0,
+      "area_mm2": 0.285605,
+      "centroid": [
+        589.0,
+        456.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 1.0,
+      "region": "unassigned",
+      "saliency": 0.1762,
+      "rank": 29
+    },
+    {
+      "id": 9,
+      "x": 591,
+      "y": 466,
+      "w": 1,
+      "h": 5,
+      "area_px": 5.0,
+      "area_mm2": 0.285605,
+      "centroid": [
+        591.0,
+        468.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 1.0,
+      "region": "unassigned",
+      "saliency": 0.1762,
+      "rank": 30
+    },
+    {
+      "id": 34,
+      "x": 794,
+      "y": 565,
+      "w": 5,
+      "h": 1,
+      "area_px": 5.0,
+      "area_mm2": 0.285605,
+      "centroid": [
+        796.0,
+        565.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 1.0,
+      "region": "unassigned",
+      "saliency": 0.1762,
+      "rank": 31
+    },
+    {
+      "id": 35,
+      "x": 801,
+      "y": 564,
+      "w": 5,
+      "h": 1,
+      "area_px": 5.0,
+      "area_mm2": 0.285605,
+      "centroid": [
+        803.0,
+        564.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 1.0,
+      "region": "unassigned",
+      "saliency": 0.1762,
+      "rank": 32
+    },
+    {
+      "id": 43,
+      "x": 803,
+      "y": 590,
+      "w": 5,
+      "h": 1,
+      "area_px": 5.0,
+      "area_mm2": 0.285605,
+      "centroid": [
+        805.0,
+        590.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 1.0,
+      "region": "unassigned",
+      "saliency": 0.1762,
+      "rank": 33
+    },
+    {
+      "id": 60,
+      "x": 621,
+      "y": 635,
+      "w": 1,
+      "h": 5,
+      "area_px": 5.0,
+      "area_mm2": 0.285605,
+      "centroid": [
+        621.0,
+        637.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 1.0,
+      "region": "unassigned",
+      "saliency": 0.1762,
+      "rank": 34
+    },
+    {
+      "id": 72,
+      "x": 626,
+      "y": 663,
+      "w": 1,
+      "h": 5,
+      "area_px": 5.0,
+      "area_mm2": 0.285605,
+      "centroid": [
+        626.0,
+        665.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 1.0,
+      "region": "unassigned",
+      "saliency": 0.1762,
+      "rank": 35
+    },
+    {
+      "id": 41,
+      "x": 810,
+      "y": 589,
+      "w": 4,
+      "h": 1,
+      "area_px": 4.0,
+      "area_mm2": 0.228484,
+      "centroid": [
+        811.5,
+        589.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 1.0,
+      "region": "unassigned",
+      "saliency": 0.1733,
+      "rank": 36
+    },
+    {
+      "id": 54,
+      "x": 617,
+      "y": 613,
+      "w": 1,
+      "h": 4,
+      "area_px": 4.0,
+      "area_mm2": 0.228484,
+      "centroid": [
+        617.0,
+        614.5
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 1.0,
+      "region": "unassigned",
+      "saliency": 0.1733,
+      "rank": 37
+    },
+    {
+      "id": 55,
+      "x": 618,
+      "y": 619,
+      "w": 1,
+      "h": 4,
+      "area_px": 4.0,
+      "area_mm2": 0.228484,
+      "centroid": [
+        618.0,
+        620.5
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 1.0,
+      "region": "unassigned",
+      "saliency": 0.1733,
+      "rank": 38
+    },
+    {
+      "id": 56,
+      "x": 644,
+      "y": 623,
+      "w": 1,
+      "h": 4,
+      "area_px": 4.0,
+      "area_mm2": 0.228484,
+      "centroid": [
+        644.0,
+        624.5
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 1.0,
+      "region": "unassigned",
+      "saliency": 0.1733,
+      "rank": 39
+    },
+    {
+      "id": 58,
+      "x": 645,
+      "y": 628,
+      "w": 1,
+      "h": 4,
+      "area_px": 4.0,
+      "area_mm2": 0.228484,
+      "centroid": [
+        645.0,
+        629.5
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 1.0,
+      "region": "unassigned",
+      "saliency": 0.1733,
+      "rank": 40
+    },
+    {
+      "id": 59,
+      "x": 620,
+      "y": 630,
+      "w": 1,
+      "h": 4,
+      "area_px": 4.0,
+      "area_mm2": 0.228484,
+      "centroid": [
+        620.0,
+        631.5
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 1.0,
+      "region": "unassigned",
+      "saliency": 0.1733,
+      "rank": 41
+    },
+    {
+      "id": 62,
+      "x": 648,
+      "y": 641,
+      "w": 1,
+      "h": 4,
+      "area_px": 4.0,
+      "area_mm2": 0.228484,
+      "centroid": [
+        648.0,
+        642.5
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 1.0,
+      "region": "unassigned",
+      "saliency": 0.1733,
+      "rank": 42
+    },
+    {
+      "id": 68,
+      "x": 625,
+      "y": 658,
+      "w": 1,
+      "h": 4,
+      "area_px": 4.0,
+      "area_mm2": 0.228484,
+      "centroid": [
+        625.0,
+        659.5
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 1.0,
+      "region": "unassigned",
+      "saliency": 0.1733,
+      "rank": 43
+    },
+    {
+      "id": 69,
+      "x": 754,
+      "y": 659,
+      "w": 4,
+      "h": 1,
+      "area_px": 4.0,
+      "area_mm2": 0.228484,
+      "centroid": [
+        755.5,
+        659.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 1.0,
+      "region": "unassigned",
+      "saliency": 0.1733,
+      "rank": 44
+    },
+    {
+      "id": 70,
+      "x": 760,
+      "y": 658,
+      "w": 4,
+      "h": 1,
+      "area_px": 4.0,
+      "area_mm2": 0.228484,
+      "centroid": [
+        761.5,
+        658.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 1.0,
+      "region": "unassigned",
+      "saliency": 0.1733,
+      "rank": 45
+    },
+    {
+      "id": 71,
+      "x": 748,
+      "y": 660,
+      "w": 4,
+      "h": 1,
+      "area_px": 4.0,
+      "area_mm2": 0.228484,
+      "centroid": [
+        749.5,
+        660.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 1.0,
+      "region": "unassigned",
+      "saliency": 0.1733,
+      "rank": 46
+    },
+    {
+      "id": 75,
+      "x": 654,
+      "y": 668,
+      "w": 1,
+      "h": 4,
+      "area_px": 4.0,
+      "area_mm2": 0.228484,
+      "centroid": [
+        654.0,
+        669.5
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 1.0,
+      "region": "unassigned",
+      "saliency": 0.1733,
+      "rank": 47
+    },
+    {
+      "id": 7,
+      "x": 660,
+      "y": 460,
+      "w": 2,
+      "h": 8,
+      "area_px": 12.0,
+      "area_mm2": 0.685452,
+      "centroid": [
+        660.6666666666666,
+        463.1666666666667
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MAJOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.1724,
+      "rank": 48
+    },
+    {
+      "id": 17,
+      "x": 766,
+      "y": 501,
+      "w": 4,
+      "h": 1,
+      "area_px": 4.0,
+      "area_mm2": 0.228484,
+      "centroid": [
+        767.5,
+        501.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 0.36,
+      "region": "unassigned",
+      "saliency": 0.1708,
+      "rank": 49
+    },
+    {
+      "id": 3,
+      "x": 496,
+      "y": 417,
+      "w": 2,
+      "h": 6,
+      "area_px": 8.0,
+      "area_mm2": 0.456968,
+      "centroid": [
+        496.75,
+        420.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MAJOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 3.0,
+      "region": "unassigned",
+      "saliency": 0.1588,
+      "rank": 50
+    },
+    {
+      "id": 8,
+      "x": 734,
+      "y": 464,
+      "w": 2,
+      "h": 6,
+      "area_px": 8.0,
+      "area_mm2": 0.456968,
+      "centroid": [
+        734.25,
+        466.5
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MAJOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 1.0,
+      "region": "unassigned",
+      "saliency": 0.1508,
+      "rank": 51
+    },
+    {
+      "id": 30,
+      "x": 604,
+      "y": 540,
+      "w": 6,
+      "h": 33,
+      "area_px": 33.0,
+      "area_mm2": 1.884993,
+      "centroid": [
+        606.4848484848485,
+        556.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MAJOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.1483,
+      "rank": 52
+    },
+    {
+      "id": 11,
+      "x": 592,
+      "y": 472,
+      "w": 2,
+      "h": 11,
+      "area_px": 11.0,
+      "area_mm2": 0.628331,
+      "centroid": [
+        592.4545454545455,
+        477.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MAJOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.1453,
+      "rank": 53
+    },
+    {
+      "id": 4,
+      "x": 587,
+      "y": 444,
+      "w": 4,
+      "h": 9,
+      "area_px": 14.0,
+      "area_mm2": 0.799694,
+      "centroid": [
+        588.0,
+        446.92857142857144
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MAJOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 3.0,
+      "region": "unassigned",
+      "saliency": 0.1445,
+      "rank": 54
+    },
+    {
+      "id": 19,
+      "x": 598,
+      "y": 507,
+      "w": 2,
+      "h": 10,
+      "area_px": 10.0,
+      "area_mm2": 0.57121,
+      "centroid": [
+        598.5,
+        511.5
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MAJOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.143,
+      "rank": 55
+    },
+    {
+      "id": 25,
+      "x": 602,
+      "y": 529,
+      "w": 2,
+      "h": 10,
+      "area_px": 10.0,
+      "area_mm2": 0.57121,
+      "centroid": [
+        602.5,
+        533.5
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MAJOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.143,
+      "rank": 56
+    },
+    {
+      "id": 39,
+      "x": 610,
+      "y": 574,
+      "w": 2,
+      "h": 10,
+      "area_px": 10.0,
+      "area_mm2": 0.57121,
+      "centroid": [
+        610.5,
+        578.5
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MAJOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.143,
+      "rank": 57
+    },
+    {
+      "id": 48,
+      "x": 615,
+      "y": 602,
+      "w": 2,
+      "h": 10,
+      "area_px": 10.0,
+      "area_mm2": 0.57121,
+      "centroid": [
+        615.5,
+        606.5
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MAJOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.143,
+      "rank": 58
+    },
+    {
+      "id": 61,
+      "x": 622,
+      "y": 641,
+      "w": 2,
+      "h": 10,
+      "area_px": 10.0,
+      "area_mm2": 0.57121,
+      "centroid": [
+        622.5,
+        645.5
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MAJOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.143,
+      "rank": 59
+    },
+    {
+      "id": 15,
+      "x": 594,
+      "y": 484,
+      "w": 4,
+      "h": 22,
+      "area_px": 22.0,
+      "area_mm2": 1.256662,
+      "centroid": [
+        595.5,
+        494.5
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MAJOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.141,
+      "rank": 60
+    },
+    {
+      "id": 78,
+      "x": 555,
+      "y": 679,
+      "w": 2,
+      "h": 6,
+      "area_px": 7.0,
+      "area_mm2": 0.399847,
+      "centroid": [
+        555.1428571428571,
+        681.1428571428571
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MAJOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 1.0,
+      "region": "unassigned",
+      "saliency": 0.14,
+      "rank": 61
+    },
+    {
+      "id": 21,
+      "x": 727,
+      "y": 514,
+      "w": 2,
+      "h": 3,
+      "area_px": 4.0,
+      "area_mm2": 0.228484,
+      "centroid": [
+        727.75,
+        515.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 1.0,
+      "region": "unassigned",
+      "saliency": 0.14,
+      "rank": 62
+    },
+    {
+      "id": 24,
+      "x": 493,
+      "y": 524,
+      "w": 3,
+      "h": 2,
+      "area_px": 4.0,
+      "area_mm2": 0.228484,
+      "centroid": [
+        494.0,
+        524.75
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 1.0,
+      "region": "unassigned",
+      "saliency": 0.14,
+      "rank": 63
+    },
+    {
+      "id": 22,
+      "x": 600,
+      "y": 518,
+      "w": 2,
+      "h": 10,
+      "area_px": 10.0,
+      "area_mm2": 0.57121,
+      "centroid": [
+        600.5,
+        522.5
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MAJOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 1.0,
+      "region": "unassigned",
+      "saliency": 0.139,
+      "rank": 64
+    },
+    {
+      "id": 40,
+      "x": 612,
+      "y": 585,
+      "w": 2,
+      "h": 10,
+      "area_px": 10.0,
+      "area_mm2": 0.57121,
+      "centroid": [
+        612.5,
+        589.5
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MAJOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 1.0,
+      "region": "unassigned",
+      "saliency": 0.139,
+      "rank": 65
+    },
+    {
+      "id": 14,
+      "x": 677,
+      "y": 481,
+      "w": 2,
+      "h": 9,
+      "area_px": 9.0,
+      "area_mm2": 0.514089,
+      "centroid": [
+        677.4444444444445,
+        485.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MAJOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 1.33,
+      "region": "unassigned",
+      "saliency": 0.1379,
+      "rank": 66
+    },
+    {
+      "id": 74,
+      "x": 627,
+      "y": 669,
+      "w": 2,
+      "h": 9,
+      "area_px": 9.0,
+      "area_mm2": 0.514089,
+      "centroid": [
+        627.4444444444445,
+        673.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MAJOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 1.0,
+      "region": "unassigned",
+      "saliency": 0.1366,
+      "rank": 67
+    },
+    {
+      "id": 63,
+      "x": 650,
+      "y": 650,
+      "w": 4,
+      "h": 17,
+      "area_px": 17.0,
+      "area_mm2": 0.971057,
+      "centroid": [
+        651.5294117647059,
+        658.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MAJOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.1324,
+      "rank": 68
+    },
+    {
+      "id": 10,
+      "x": 673,
+      "y": 466,
+      "w": 2,
+      "h": 5,
+      "area_px": 5.0,
+      "area_mm2": 0.285605,
+      "centroid": [
+        673.6,
+        468.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.1302,
+      "rank": 69
+    },
+    {
+      "id": 16,
+      "x": 779,
+      "y": 499,
+      "w": 5,
+      "h": 2,
+      "area_px": 5.0,
+      "area_mm2": 0.285605,
+      "centroid": [
+        781.0,
+        499.2
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.1302,
+      "rank": 70
+    },
+    {
+      "id": 20,
+      "x": 762,
+      "y": 507,
+      "w": 20,
+      "h": 6,
+      "area_px": 20.0,
+      "area_mm2": 1.14242,
+      "centroid": [
+        771.5,
+        510.1
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MAJOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.1294,
+      "rank": 71
+    },
+    {
+      "id": 12,
+      "x": 664,
+      "y": 476,
+      "w": 2,
+      "h": 6,
+      "area_px": 6.0,
+      "area_mm2": 0.342726,
+      "centroid": [
+        664.5,
+        478.5
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MAJOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 1.0,
+      "region": "unassigned",
+      "saliency": 0.129,
+      "rank": 72
+    },
+    {
+      "id": 38,
+      "x": 856,
+      "y": 569,
+      "w": 6,
+      "h": 4,
+      "area_px": 9.0,
+      "area_mm2": 0.514089,
+      "centroid": [
+        859.0,
+        571.1111111111111
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MAJOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.1281,
+      "rank": 73
+    },
+    {
+      "id": 26,
+      "x": 681,
+      "y": 528,
+      "w": 2,
+      "h": 4,
+      "area_px": 4.0,
+      "area_mm2": 0.228484,
+      "centroid": [
+        681.5,
+        529.5
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.1273,
+      "rank": 74
+    },
+    {
+      "id": 31,
+      "x": 686,
+      "y": 540,
+      "w": 2,
+      "h": 4,
+      "area_px": 4.0,
+      "area_mm2": 0.228484,
+      "centroid": [
+        686.5,
+        541.5
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.1273,
+      "rank": 75
+    },
+    {
+      "id": 37,
+      "x": 849,
+      "y": 568,
+      "w": 4,
+      "h": 2,
+      "area_px": 4.0,
+      "area_mm2": 0.228484,
+      "centroid": [
+        850.5,
+        568.5
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.1273,
+      "rank": 76
+    },
+    {
+      "id": 29,
+      "x": 767,
+      "y": 536,
+      "w": 7,
+      "h": 7,
+      "area_px": 7.0,
+      "area_mm2": 0.399847,
+      "centroid": [
+        770.0,
+        539.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MAJOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.0999,
+      "rank": 77
+    },
+    {
+      "id": 28,
+      "x": 747,
+      "y": 534,
+      "w": 6,
+      "h": 6,
+      "area_px": 6.0,
+      "area_mm2": 0.342726,
+      "centroid": [
+        749.5,
+        536.5
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MAJOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.0997,
+      "rank": 78
+    },
+    {
+      "id": 45,
+      "x": 720,
+      "y": 594,
+      "w": 4,
+      "h": 4,
+      "area_px": 4.0,
+      "area_mm2": 0.228484,
+      "centroid": [
+        721.5,
+        595.5
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 1.0,
+      "region": "unassigned",
+      "saliency": 0.0983,
+      "rank": 79
+    },
+    {
+      "id": 32,
+      "x": 762,
+      "y": 548,
+      "w": 5,
+      "h": 5,
+      "area_px": 5.0,
+      "area_mm2": 0.285605,
+      "centroid": [
+        764.0,
+        550.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 1.33,
+      "region": "unassigned",
+      "saliency": 0.0975,
+      "rank": 80
+    },
+    {
+      "id": 23,
+      "x": 733,
+      "y": 521,
+      "w": 5,
+      "h": 5,
+      "area_px": 5.0,
+      "area_mm2": 0.285605,
+      "centroid": [
+        735.0,
+        523.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 1.0,
+      "region": "unassigned",
+      "saliency": 0.0962,
+      "rank": 81
+    },
+    {
+      "id": 27,
+      "x": 497,
+      "y": 535,
+      "w": 5,
+      "h": 5,
+      "area_px": 5.0,
+      "area_mm2": 0.285605,
+      "centroid": [
+        499.0,
+        537.0
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 1.0,
+      "region": "unassigned",
+      "saliency": 0.0962,
+      "rank": 82
+    }
+  ]
+}

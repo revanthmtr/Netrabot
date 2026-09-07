@@ -1,0 +1,31 @@
+# Virtual Environment
+.venv/
+venv/
+env/
+ENV/
+
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# macOS system files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Large archives
+*.zip
+*.tar.gz
+*.tar
+*.rar
+
+# IDE & editor files
+.idea/
+.vscode/
+*.swp
+*.swo

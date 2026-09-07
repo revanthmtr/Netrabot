@@ -1,0 +1,45 @@
+{
+  "part_id": "AIRBAG-PATCH-001",
+  "description": "Vertical AIRBAG Embroidered Patch",
+  "_comment": "Replace mm_per_px with YOUR rig's calibration. Measure a known dimension on a real part, divide by its pixel width.",
+  "calibration": {
+    "mm_per_px": 0.239,
+    "calibrated_from": "part width 200mm / 837px",
+    "recalibrate_if": "camera moved, lens changed, or working distance altered"
+  },
+  "golden_set": {
+    "min_samples": 20,
+    "recommended_samples": 30,
+    "path": "data/models/AIRBAG-PATCH-001/golden/",
+    "_comment": "Real known-good parts photographed in the rig. NOT edits of one image."
+  },
+  "global_tolerances": {
+    "position_shift_mm": 0.5,
+    "rotation_deg": 1.0,
+    "dimension_pct": 1.0,
+    "_comment": "Exceeding these is a DEFECT, not something to correct for."
+  },
+  "quality_gate": {
+    "min_sharpness_ratio": 0.55,
+    "exposure_mean_range": [
+      35,
+      225
+    ],
+    "max_highlight_clip_pct": 10.0,
+    "max_shadow_clip_pct": 15.0
+  },
+  "detection": {
+    "sensitivity": 0.85,
+    "noise_floor_percentile": 99.5,
+    "threshold_margin": 1.02,
+    "min_blob_px": 2,
+    "review_top_n": 15,
+    "_comment": "review_top_n is what the operator sees. All candidates persist for audit."
+  },
+  "regions": [],
+  "severity_rules": {
+    "CRITICAL": "area > 2.0mm2 OR detector_agreement > 0.6 OR color defect > 5mm2",
+    "MAJOR": "area > 0.3mm2 OR detector_agreement > 0.35",
+    "MINOR": "everything else"
+  }
+}

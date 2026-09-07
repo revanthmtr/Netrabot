@@ -1,0 +1,7040 @@
+{
+  "part_id": "WARN-LABEL-001",
+  "file": "Warning - A.HEIC",
+  "verdict": "FAIL",
+  "mode": "consensus",
+  "gate_failures": [],
+  "global_metrics": {
+    "registration": {
+      "dx": 0.0004026552653044746,
+      "dy": 0.5003907884451451,
+      "shift_px": 0.5003909504497625,
+      "shift_mm": 0.11959343715749322,
+      "response": 0.9987013458824158,
+      "exceeded": false
+    },
+    "topology": {
+      "contour_count": 104,
+      "golden_mean": 106.0,
+      "tolerance": 1.299038105676658,
+      "deviated": true
+    },
+    "consensus": {
+      "total_raw_candidates": 1203,
+      "suppressed_count": 1202,
+      "surviving_count": 1,
+      "threshold_pct": 60.0,
+      "n_samples": 4
+    }
+  },
+  "detector_stats": {
+    "zscore": {
+      "flagged_px": 1,
+      "pct": 0.0002
+    },
+    "ssim": {
+      "flagged_px": 52285,
+      "pct": 12.796
+    },
+    "absdiff": {
+      "flagged_px": 23010,
+      "pct": 5.6314
+    },
+    "color": {
+      "flagged_px": 34726,
+      "pct": 8.4987
+    },
+    "edge": {
+      "flagged_px": 17217,
+      "pct": 4.2136
+    },
+    "morph": {
+      "flagged_px": 22673,
+      "pct": 5.5489
+    },
+    "gradient": {
+      "flagged_px": 65547,
+      "pct": 16.0417
+    },
+    "texture": {
+      "flagged_px": 1209,
+      "pct": 0.2959
+    }
+  },
+  "total_raw_candidates": 1203,
+  "suppressed_systematic_noise_count": 1202,
+  "surviving_defects_count": 1,
+  "top_n_shown": 1,
+  "defects": [
+    {
+      "id": 1,
+      "x": 294,
+      "y": 510,
+      "w": 30,
+      "h": 14,
+      "area_px": 335.0,
+      "area_mm2": 19.135535,
+      "centroid": [
+        308.2238805970149,
+        517.0507462686567
+      ],
+      "detectors": [
+        "ssim",
+        "gradient",
+        "texture"
+      ],
+      "confidence": 0.375,
+      "severity": "CRITICAL",
+      "defect_type": "SMEAR / PRINT_DENSITY_LOSS",
+      "peak_deviation": 9.0,
+      "region": "unassigned",
+      "sample_count": 1,
+      "sample_ratio": 0.25,
+      "sample_str": "1/4",
+      "saliency": 0.4754,
+      "rank": 1,
+      "crop_url": "crops/Warning - A_defect_1.png"
+    }
+  ],
+  "suppressed_candidates": [
+    {
+      "raw_id": 1,
+      "x": 136,
+      "y": 50,
+      "w": 2,
+      "h": 2,
+      "area_mm2": 0.228,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 2,
+      "x": 354,
+      "y": 52,
+      "w": 39,
+      "h": 4,
+      "area_mm2": 2.685,
+      "reason": "systematic noise (>60% sample frequency, 70.2% noise overlap)"
+    },
+    {
+      "raw_id": 4,
+      "x": 123,
+      "y": 56,
+      "w": 1,
+      "h": 2,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 5,
+      "x": 218,
+      "y": 56,
+      "w": 4,
+      "h": 7,
+      "area_mm2": 0.8,
+      "reason": "systematic noise (>60% sample frequency, 57.1% noise overlap)"
+    },
+    {
+      "raw_id": 9,
+      "x": 198,
+      "y": 61,
+      "w": 4,
+      "h": 3,
+      "area_mm2": 0.514,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 10,
+      "x": 643,
+      "y": 63,
+      "w": 9,
+      "h": 1,
+      "area_mm2": 0.514,
+      "reason": "systematic noise (>60% sample frequency, 55.6% noise overlap)"
+    },
+    {
+      "raw_id": 12,
+      "x": 685,
+      "y": 64,
+      "w": 2,
+      "h": 3,
+      "area_mm2": 0.228,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 13,
+      "x": 110,
+      "y": 66,
+      "w": 4,
+      "h": 3,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 14,
+      "x": 573,
+      "y": 72,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.228,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 15,
+      "x": 638,
+      "y": 72,
+      "w": 2,
+      "h": 2,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 17,
+      "x": 123,
+      "y": 80,
+      "w": 3,
+      "h": 4,
+      "area_mm2": 0.685,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 18,
+      "x": 595,
+      "y": 81,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 20,
+      "x": 656,
+      "y": 81,
+      "w": 5,
+      "h": 3,
+      "area_mm2": 0.571,
+      "reason": "systematic noise (>60% sample frequency, 60.0% noise overlap)"
+    },
+    {
+      "raw_id": 21,
+      "x": 816,
+      "y": 81,
+      "w": 4,
+      "h": 4,
+      "area_mm2": 0.8,
+      "reason": "systematic noise (>60% sample frequency, 78.6% noise overlap)"
+    },
+    {
+      "raw_id": 23,
+      "x": 116,
+      "y": 82,
+      "w": 716,
+      "h": 445,
+      "area_mm2": 3943.52,
+      "reason": "systematic noise (>60% sample frequency, 88.5% noise overlap)"
+    },
+    {
+      "raw_id": 25,
+      "x": 777,
+      "y": 82,
+      "w": 7,
+      "h": 3,
+      "area_mm2": 0.8,
+      "reason": "systematic noise (>60% sample frequency, 57.1% noise overlap)"
+    },
+    {
+      "raw_id": 27,
+      "x": 183,
+      "y": 84,
+      "w": 32,
+      "h": 1,
+      "area_mm2": 1.828,
+      "reason": "systematic noise (>60% sample frequency, 81.2% noise overlap)"
+    },
+    {
+      "raw_id": 30,
+      "x": 678,
+      "y": 90,
+      "w": 4,
+      "h": 2,
+      "area_mm2": 0.4,
+      "reason": "systematic noise (>60% sample frequency, 57.1% noise overlap)"
+    },
+    {
+      "raw_id": 33,
+      "x": 93,
+      "y": 99,
+      "w": 6,
+      "h": 4,
+      "area_mm2": 0.743,
+      "reason": "systematic noise (>60% sample frequency, 53.8% noise overlap)"
+    },
+    {
+      "raw_id": 36,
+      "x": 263,
+      "y": 111,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.4,
+      "reason": "systematic noise (>60% sample frequency, 42.9% noise overlap)"
+    },
+    {
+      "raw_id": 37,
+      "x": 309,
+      "y": 111,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 80.0% noise overlap)"
+    },
+    {
+      "raw_id": 38,
+      "x": 348,
+      "y": 111,
+      "w": 7,
+      "h": 3,
+      "area_mm2": 0.743,
+      "reason": "systematic noise (>60% sample frequency, 38.5% noise overlap)"
+    },
+    {
+      "raw_id": 39,
+      "x": 257,
+      "y": 113,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 40,
+      "x": 271,
+      "y": 112,
+      "w": 5,
+      "h": 3,
+      "area_mm2": 0.571,
+      "reason": "systematic noise (>60% sample frequency, 80.0% noise overlap)"
+    },
+    {
+      "raw_id": 41,
+      "x": 296,
+      "y": 113,
+      "w": 2,
+      "h": 3,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 60.0% noise overlap)"
+    },
+    {
+      "raw_id": 42,
+      "x": 304,
+      "y": 114,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 44,
+      "x": 317,
+      "y": 114,
+      "w": 5,
+      "h": 4,
+      "area_mm2": 0.628,
+      "reason": "systematic noise (>60% sample frequency, 63.6% noise overlap)"
+    },
+    {
+      "raw_id": 45,
+      "x": 367,
+      "y": 115,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 47,
+      "x": 460,
+      "y": 114,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 48,
+      "x": 477,
+      "y": 114,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 50,
+      "x": 280,
+      "y": 116,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.4,
+      "reason": "systematic noise (>60% sample frequency, 42.9% noise overlap)"
+    },
+    {
+      "raw_id": 51,
+      "x": 439,
+      "y": 116,
+      "w": 2,
+      "h": 3,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 60.0% noise overlap)"
+    },
+    {
+      "raw_id": 53,
+      "x": 472,
+      "y": 116,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 54,
+      "x": 497,
+      "y": 117,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 56,
+      "x": 534,
+      "y": 117,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 58,
+      "x": 340,
+      "y": 119,
+      "w": 2,
+      "h": 3,
+      "area_mm2": 0.228,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 59,
+      "x": 402,
+      "y": 118,
+      "w": 4,
+      "h": 6,
+      "area_mm2": 0.743,
+      "reason": "systematic noise (>60% sample frequency, 53.8% noise overlap)"
+    },
+    {
+      "raw_id": 60,
+      "x": 411,
+      "y": 119,
+      "w": 27,
+      "h": 4,
+      "area_mm2": 1.714,
+      "reason": "systematic noise (>60% sample frequency, 83.3% noise overlap)"
+    },
+    {
+      "raw_id": 63,
+      "x": 294,
+      "y": 121,
+      "w": 5,
+      "h": 3,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 68,
+      "x": 462,
+      "y": 121,
+      "w": 4,
+      "h": 4,
+      "area_mm2": 0.628,
+      "reason": "systematic noise (>60% sample frequency, 90.9% noise overlap)"
+    },
+    {
+      "raw_id": 69,
+      "x": 511,
+      "y": 120,
+      "w": 30,
+      "h": 24,
+      "area_mm2": 14.851,
+      "reason": "systematic noise (>60% sample frequency, 61.9% noise overlap)"
+    },
+    {
+      "raw_id": 76,
+      "x": 549,
+      "y": 123,
+      "w": 2,
+      "h": 3,
+      "area_mm2": 0.228,
+      "reason": "systematic noise (>60% sample frequency, 75.0% noise overlap)"
+    },
+    {
+      "raw_id": 78,
+      "x": 645,
+      "y": 122,
+      "w": 4,
+      "h": 4,
+      "area_mm2": 0.571,
+      "reason": "systematic noise (>60% sample frequency, 70.0% noise overlap)"
+    },
+    {
+      "raw_id": 79,
+      "x": 118,
+      "y": 125,
+      "w": 4,
+      "h": 4,
+      "area_mm2": 0.4,
+      "reason": "systematic noise (>60% sample frequency, 42.9% noise overlap)"
+    },
+    {
+      "raw_id": 80,
+      "x": 276,
+      "y": 125,
+      "w": 80,
+      "h": 77,
+      "area_mm2": 102.132,
+      "reason": "systematic noise (>60% sample frequency, 76.0% noise overlap)"
+    },
+    {
+      "raw_id": 81,
+      "x": 306,
+      "y": 124,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 82,
+      "x": 449,
+      "y": 124,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.228,
+      "reason": "systematic noise (>60% sample frequency, 75.0% noise overlap)"
+    },
+    {
+      "raw_id": 87,
+      "x": 756,
+      "y": 125,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 80.0% noise overlap)"
+    },
+    {
+      "raw_id": 88,
+      "x": 249,
+      "y": 126,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 90,
+      "x": 347,
+      "y": 126,
+      "w": 62,
+      "h": 81,
+      "area_mm2": 88.195,
+      "reason": "systematic noise (>60% sample frequency, 77.8% noise overlap)"
+    },
+    {
+      "raw_id": 93,
+      "x": 567,
+      "y": 126,
+      "w": 5,
+      "h": 16,
+      "area_mm2": 1.942,
+      "reason": "systematic noise (>60% sample frequency, 41.2% noise overlap)"
+    },
+    {
+      "raw_id": 94,
+      "x": 779,
+      "y": 126,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 95,
+      "x": 254,
+      "y": 129,
+      "w": 9,
+      "h": 12,
+      "area_mm2": 2.171,
+      "reason": "systematic noise (>60% sample frequency, 44.7% noise overlap)"
+    },
+    {
+      "raw_id": 96,
+      "x": 393,
+      "y": 128,
+      "w": 5,
+      "h": 5,
+      "area_mm2": 0.685,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 97,
+      "x": 542,
+      "y": 129,
+      "w": 40,
+      "h": 49,
+      "area_mm2": 22.963,
+      "reason": "systematic noise (>60% sample frequency, 73.4% noise overlap)"
+    },
+    {
+      "raw_id": 98,
+      "x": 788,
+      "y": 128,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 99,
+      "x": 793,
+      "y": 128,
+      "w": 9,
+      "h": 4,
+      "area_mm2": 1.257,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 100,
+      "x": 830,
+      "y": 128,
+      "w": 3,
+      "h": 1,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 33.3% noise overlap)"
+    },
+    {
+      "raw_id": 101,
+      "x": 409,
+      "y": 130,
+      "w": 47,
+      "h": 69,
+      "area_mm2": 73.515,
+      "reason": "systematic noise (>60% sample frequency, 81.0% noise overlap)"
+    },
+    {
+      "raw_id": 102,
+      "x": 447,
+      "y": 131,
+      "w": 10,
+      "h": 4,
+      "area_mm2": 0.914,
+      "reason": "systematic noise (>60% sample frequency, 31.2% noise overlap)"
+    },
+    {
+      "raw_id": 103,
+      "x": 463,
+      "y": 131,
+      "w": 47,
+      "h": 66,
+      "area_mm2": 33.759,
+      "reason": "systematic noise (>60% sample frequency, 85.4% noise overlap)"
+    },
+    {
+      "raw_id": 104,
+      "x": 577,
+      "y": 131,
+      "w": 19,
+      "h": 18,
+      "area_mm2": 9.139,
+      "reason": "systematic noise (>60% sample frequency, 70.6% noise overlap)"
+    },
+    {
+      "raw_id": 105,
+      "x": 667,
+      "y": 131,
+      "w": 5,
+      "h": 5,
+      "area_mm2": 0.743,
+      "reason": "systematic noise (>60% sample frequency, 38.5% noise overlap)"
+    },
+    {
+      "raw_id": 106,
+      "x": 125,
+      "y": 133,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 107,
+      "x": 327,
+      "y": 133,
+      "w": 7,
+      "h": 9,
+      "area_mm2": 1.771,
+      "reason": "systematic noise (>60% sample frequency, 48.4% noise overlap)"
+    },
+    {
+      "raw_id": 108,
+      "x": 493,
+      "y": 132,
+      "w": 19,
+      "h": 12,
+      "area_mm2": 7.883,
+      "reason": "systematic noise (>60% sample frequency, 73.2% noise overlap)"
+    },
+    {
+      "raw_id": 109,
+      "x": 600,
+      "y": 132,
+      "w": 47,
+      "h": 36,
+      "area_mm2": 44.097,
+      "reason": "systematic noise (>60% sample frequency, 81.6% noise overlap)"
+    },
+    {
+      "raw_id": 110,
+      "x": 647,
+      "y": 134,
+      "w": 8,
+      "h": 9,
+      "area_mm2": 2.056,
+      "reason": "systematic noise (>60% sample frequency, 38.9% noise overlap)"
+    },
+    {
+      "raw_id": 112,
+      "x": 244,
+      "y": 136,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 114,
+      "x": 302,
+      "y": 137,
+      "w": 4,
+      "h": 3,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 116,
+      "x": 405,
+      "y": 136,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.4,
+      "reason": "systematic noise (>60% sample frequency, 71.4% noise overlap)"
+    },
+    {
+      "raw_id": 117,
+      "x": 762,
+      "y": 137,
+      "w": 2,
+      "h": 2,
+      "area_mm2": 0.228,
+      "reason": "systematic noise (>60% sample frequency, 75.0% noise overlap)"
+    },
+    {
+      "raw_id": 118,
+      "x": 250,
+      "y": 139,
+      "w": 1,
+      "h": 2,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 120,
+      "x": 124,
+      "y": 140,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 121,
+      "x": 512,
+      "y": 141,
+      "w": 6,
+      "h": 6,
+      "area_mm2": 0.971,
+      "reason": "systematic noise (>60% sample frequency, 52.9% noise overlap)"
+    },
+    {
+      "raw_id": 124,
+      "x": 258,
+      "y": 143,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 127,
+      "x": 219,
+      "y": 144,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 128,
+      "x": 457,
+      "y": 145,
+      "w": 4,
+      "h": 7,
+      "area_mm2": 1.2,
+      "reason": "systematic noise (>60% sample frequency, 85.7% noise overlap)"
+    },
+    {
+      "raw_id": 129,
+      "x": 648,
+      "y": 145,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 131,
+      "x": 670,
+      "y": 144,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 83.3% noise overlap)"
+    },
+    {
+      "raw_id": 132,
+      "x": 764,
+      "y": 144,
+      "w": 4,
+      "h": 3,
+      "area_mm2": 0.571,
+      "reason": "systematic noise (>60% sample frequency, 90.0% noise overlap)"
+    },
+    {
+      "raw_id": 134,
+      "x": 261,
+      "y": 146,
+      "w": 10,
+      "h": 13,
+      "area_mm2": 2.513,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 136,
+      "x": 572,
+      "y": 146,
+      "w": 4,
+      "h": 3,
+      "area_mm2": 0.571,
+      "reason": "systematic noise (>60% sample frequency, 70.0% noise overlap)"
+    },
+    {
+      "raw_id": 138,
+      "x": 824,
+      "y": 147,
+      "w": 2,
+      "h": 2,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 139,
+      "x": 467,
+      "y": 149,
+      "w": 3,
+      "h": 4,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 33.3% noise overlap)"
+    },
+    {
+      "raw_id": 142,
+      "x": 115,
+      "y": 150,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 143,
+      "x": 138,
+      "y": 150,
+      "w": 84,
+      "h": 83,
+      "area_mm2": 70.316,
+      "reason": "systematic noise (>60% sample frequency, 80.4% noise overlap)"
+    },
+    {
+      "raw_id": 144,
+      "x": 496,
+      "y": 150,
+      "w": 1,
+      "h": 2,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 145,
+      "x": 679,
+      "y": 150,
+      "w": 10,
+      "h": 25,
+      "area_mm2": 6.855,
+      "reason": "systematic noise (>60% sample frequency, 81.7% noise overlap)"
+    },
+    {
+      "raw_id": 146,
+      "x": 754,
+      "y": 151,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 147,
+      "x": 210,
+      "y": 152,
+      "w": 2,
+      "h": 3,
+      "area_mm2": 0.228,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 149,
+      "x": 539,
+      "y": 152,
+      "w": 5,
+      "h": 7,
+      "area_mm2": 1.371,
+      "reason": "systematic noise (>60% sample frequency, 79.2% noise overlap)"
+    },
+    {
+      "raw_id": 150,
+      "x": 652,
+      "y": 153,
+      "w": 4,
+      "h": 3,
+      "area_mm2": 0.571,
+      "reason": "systematic noise (>60% sample frequency, 70.0% noise overlap)"
+    },
+    {
+      "raw_id": 151,
+      "x": 244,
+      "y": 154,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 154,
+      "x": 676,
+      "y": 154,
+      "w": 4,
+      "h": 6,
+      "area_mm2": 0.914,
+      "reason": "systematic noise (>60% sample frequency, 75.0% noise overlap)"
+    },
+    {
+      "raw_id": 155,
+      "x": 744,
+      "y": 155,
+      "w": 11,
+      "h": 28,
+      "area_mm2": 5.541,
+      "reason": "systematic noise (>60% sample frequency, 86.6% noise overlap)"
+    },
+    {
+      "raw_id": 156,
+      "x": 459,
+      "y": 156,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.514,
+      "reason": "systematic noise (>60% sample frequency, 33.3% noise overlap)"
+    },
+    {
+      "raw_id": 157,
+      "x": 521,
+      "y": 156,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 158,
+      "x": 557,
+      "y": 157,
+      "w": 35,
+      "h": 45,
+      "area_mm2": 18.279,
+      "reason": "systematic noise (>60% sample frequency, 81.2% noise overlap)"
+    },
+    {
+      "raw_id": 161,
+      "x": 397,
+      "y": 158,
+      "w": 3,
+      "h": 6,
+      "area_mm2": 0.571,
+      "reason": "systematic noise (>60% sample frequency, 60.0% noise overlap)"
+    },
+    {
+      "raw_id": 162,
+      "x": 496,
+      "y": 158,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 165,
+      "x": 598,
+      "y": 159,
+      "w": 50,
+      "h": 44,
+      "area_mm2": 53.351,
+      "reason": "systematic noise (>60% sample frequency, 86.2% noise overlap)"
+    },
+    {
+      "raw_id": 166,
+      "x": 647,
+      "y": 159,
+      "w": 4,
+      "h": 1,
+      "area_mm2": 0.228,
+      "reason": "systematic noise (>60% sample frequency, 75.0% noise overlap)"
+    },
+    {
+      "raw_id": 168,
+      "x": 579,
+      "y": 161,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 169,
+      "x": 660,
+      "y": 160,
+      "w": 7,
+      "h": 6,
+      "area_mm2": 1.257,
+      "reason": "systematic noise (>60% sample frequency, 40.9% noise overlap)"
+    },
+    {
+      "raw_id": 170,
+      "x": 670,
+      "y": 160,
+      "w": 4,
+      "h": 3,
+      "area_mm2": 0.457,
+      "reason": "systematic noise (>60% sample frequency, 75.0% noise overlap)"
+    },
+    {
+      "raw_id": 172,
+      "x": 257,
+      "y": 163,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.457,
+      "reason": "systematic noise (>60% sample frequency, 62.5% noise overlap)"
+    },
+    {
+      "raw_id": 173,
+      "x": 279,
+      "y": 164,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 174,
+      "x": 650,
+      "y": 164,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 175,
+      "x": 757,
+      "y": 165,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 60.0% noise overlap)"
+    },
+    {
+      "raw_id": 176,
+      "x": 261,
+      "y": 167,
+      "w": 4,
+      "h": 3,
+      "area_mm2": 0.628,
+      "reason": "systematic noise (>60% sample frequency, 63.6% noise overlap)"
+    },
+    {
+      "raw_id": 177,
+      "x": 266,
+      "y": 166,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 179,
+      "x": 281,
+      "y": 166,
+      "w": 3,
+      "h": 1,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 181,
+      "x": 661,
+      "y": 166,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 182,
+      "x": 838,
+      "y": 167,
+      "w": 2,
+      "h": 2,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 185,
+      "x": 763,
+      "y": 168,
+      "w": 2,
+      "h": 2,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 186,
+      "x": 658,
+      "y": 170,
+      "w": 7,
+      "h": 9,
+      "area_mm2": 1.771,
+      "reason": "systematic noise (>60% sample frequency, 58.1% noise overlap)"
+    },
+    {
+      "raw_id": 187,
+      "x": 667,
+      "y": 170,
+      "w": 1,
+      "h": 3,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 33.3% noise overlap)"
+    },
+    {
+      "raw_id": 189,
+      "x": 243,
+      "y": 173,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 190,
+      "x": 280,
+      "y": 172,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 60.0% noise overlap)"
+    },
+    {
+      "raw_id": 191,
+      "x": 412,
+      "y": 172,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 192,
+      "x": 548,
+      "y": 172,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 193,
+      "x": 601,
+      "y": 172,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 80.0% noise overlap)"
+    },
+    {
+      "raw_id": 196,
+      "x": 464,
+      "y": 175,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 197,
+      "x": 505,
+      "y": 175,
+      "w": 2,
+      "h": 2,
+      "area_mm2": 0.228,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 198,
+      "x": 588,
+      "y": 175,
+      "w": 2,
+      "h": 3,
+      "area_mm2": 0.228,
+      "reason": "systematic noise (>60% sample frequency, 75.0% noise overlap)"
+    },
+    {
+      "raw_id": 199,
+      "x": 644,
+      "y": 174,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 200,
+      "x": 818,
+      "y": 174,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 202,
+      "x": 459,
+      "y": 177,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 204,
+      "x": 877,
+      "y": 176,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 40.0% noise overlap)"
+    },
+    {
+      "raw_id": 205,
+      "x": 67,
+      "y": 179,
+      "w": 3,
+      "h": 4,
+      "area_mm2": 0.457,
+      "reason": "systematic noise (>60% sample frequency, 62.5% noise overlap)"
+    },
+    {
+      "raw_id": 207,
+      "x": 283,
+      "y": 179,
+      "w": 2,
+      "h": 2,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 33.3% noise overlap)"
+    },
+    {
+      "raw_id": 208,
+      "x": 422,
+      "y": 178,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 210,
+      "x": 516,
+      "y": 179,
+      "w": 3,
+      "h": 5,
+      "area_mm2": 0.743,
+      "reason": "systematic noise (>60% sample frequency, 69.2% noise overlap)"
+    },
+    {
+      "raw_id": 211,
+      "x": 522,
+      "y": 178,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 212,
+      "x": 639,
+      "y": 178,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 213,
+      "x": 664,
+      "y": 178,
+      "w": 14,
+      "h": 14,
+      "area_mm2": 3.884,
+      "reason": "systematic noise (>60% sample frequency, 58.8% noise overlap)"
+    },
+    {
+      "raw_id": 214,
+      "x": 704,
+      "y": 178,
+      "w": 3,
+      "h": 1,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 33.3% noise overlap)"
+    },
+    {
+      "raw_id": 215,
+      "x": 816,
+      "y": 179,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 216,
+      "x": 153,
+      "y": 181,
+      "w": 2,
+      "h": 2,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 217,
+      "x": 541,
+      "y": 180,
+      "w": 3,
+      "h": 7,
+      "area_mm2": 0.914,
+      "reason": "systematic noise (>60% sample frequency, 68.8% noise overlap)"
+    },
+    {
+      "raw_id": 218,
+      "x": 685,
+      "y": 180,
+      "w": 6,
+      "h": 7,
+      "area_mm2": 1.314,
+      "reason": "systematic noise (>60% sample frequency, 82.6% noise overlap)"
+    },
+    {
+      "raw_id": 220,
+      "x": 200,
+      "y": 182,
+      "w": 4,
+      "h": 7,
+      "area_mm2": 0.571,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 222,
+      "x": 659,
+      "y": 183,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 224,
+      "x": 184,
+      "y": 184,
+      "w": 2,
+      "h": 2,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 225,
+      "x": 280,
+      "y": 185,
+      "w": 1,
+      "h": 3,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 33.3% noise overlap)"
+    },
+    {
+      "raw_id": 227,
+      "x": 286,
+      "y": 185,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 229,
+      "x": 463,
+      "y": 185,
+      "w": 15,
+      "h": 14,
+      "area_mm2": 6.34,
+      "reason": "systematic noise (>60% sample frequency, 77.5% noise overlap)"
+    },
+    {
+      "raw_id": 230,
+      "x": 484,
+      "y": 185,
+      "w": 4,
+      "h": 4,
+      "area_mm2": 0.685,
+      "reason": "systematic noise (>60% sample frequency, 75.0% noise overlap)"
+    },
+    {
+      "raw_id": 231,
+      "x": 509,
+      "y": 184,
+      "w": 3,
+      "h": 4,
+      "area_mm2": 0.571,
+      "reason": "systematic noise (>60% sample frequency, 90.0% noise overlap)"
+    },
+    {
+      "raw_id": 232,
+      "x": 643,
+      "y": 185,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 233,
+      "x": 656,
+      "y": 184,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 234,
+      "x": 663,
+      "y": 184,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 237,
+      "x": 412,
+      "y": 186,
+      "w": 14,
+      "h": 14,
+      "area_mm2": 5.712,
+      "reason": "systematic noise (>60% sample frequency, 79.0% noise overlap)"
+    },
+    {
+      "raw_id": 238,
+      "x": 686,
+      "y": 186,
+      "w": 24,
+      "h": 13,
+      "area_mm2": 10.282,
+      "reason": "systematic noise (>60% sample frequency, 80.6% noise overlap)"
+    },
+    {
+      "raw_id": 240,
+      "x": 242,
+      "y": 188,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 241,
+      "x": 248,
+      "y": 188,
+      "w": 1,
+      "h": 3,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 242,
+      "x": 272,
+      "y": 189,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 243,
+      "x": 278,
+      "y": 189,
+      "w": 1,
+      "h": 2,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 245,
+      "x": 311,
+      "y": 188,
+      "w": 2,
+      "h": 2,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 33.3% noise overlap)"
+    },
+    {
+      "raw_id": 247,
+      "x": 517,
+      "y": 189,
+      "w": 16,
+      "h": 14,
+      "area_mm2": 6.855,
+      "reason": "systematic noise (>60% sample frequency, 64.2% noise overlap)"
+    },
+    {
+      "raw_id": 248,
+      "x": 547,
+      "y": 189,
+      "w": 20,
+      "h": 11,
+      "area_mm2": 7.083,
+      "reason": "systematic noise (>60% sample frequency, 69.4% noise overlap)"
+    },
+    {
+      "raw_id": 249,
+      "x": 204,
+      "y": 190,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 251,
+      "x": 427,
+      "y": 191,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 252,
+      "x": 280,
+      "y": 193,
+      "w": 4,
+      "h": 3,
+      "area_mm2": 0.571,
+      "reason": "systematic noise (>60% sample frequency, 80.0% noise overlap)"
+    },
+    {
+      "raw_id": 253,
+      "x": 406,
+      "y": 193,
+      "w": 4,
+      "h": 5,
+      "area_mm2": 0.971,
+      "reason": "systematic noise (>60% sample frequency, 35.3% noise overlap)"
+    },
+    {
+      "raw_id": 254,
+      "x": 652,
+      "y": 192,
+      "w": 5,
+      "h": 8,
+      "area_mm2": 0.971,
+      "reason": "systematic noise (>60% sample frequency, 58.8% noise overlap)"
+    },
+    {
+      "raw_id": 258,
+      "x": 509,
+      "y": 194,
+      "w": 5,
+      "h": 7,
+      "area_mm2": 0.971,
+      "reason": "systematic noise (>60% sample frequency, 47.1% noise overlap)"
+    },
+    {
+      "raw_id": 259,
+      "x": 183,
+      "y": 197,
+      "w": 6,
+      "h": 2,
+      "area_mm2": 0.4,
+      "reason": "systematic noise (>60% sample frequency, 85.7% noise overlap)"
+    },
+    {
+      "raw_id": 261,
+      "x": 334,
+      "y": 196,
+      "w": 9,
+      "h": 8,
+      "area_mm2": 1.999,
+      "reason": "systematic noise (>60% sample frequency, 71.4% noise overlap)"
+    },
+    {
+      "raw_id": 263,
+      "x": 390,
+      "y": 197,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 265,
+      "x": 266,
+      "y": 198,
+      "w": 5,
+      "h": 14,
+      "area_mm2": 2.171,
+      "reason": "systematic noise (>60% sample frequency, 34.2% noise overlap)"
+    },
+    {
+      "raw_id": 266,
+      "x": 307,
+      "y": 199,
+      "w": 4,
+      "h": 2,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 267,
+      "x": 384,
+      "y": 198,
+      "w": 2,
+      "h": 2,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 268,
+      "x": 414,
+      "y": 199,
+      "w": 5,
+      "h": 6,
+      "area_mm2": 1.085,
+      "reason": "systematic noise (>60% sample frequency, 57.9% noise overlap)"
+    },
+    {
+      "raw_id": 270,
+      "x": 481,
+      "y": 199,
+      "w": 8,
+      "h": 5,
+      "area_mm2": 1.085,
+      "reason": "systematic noise (>60% sample frequency, 73.7% noise overlap)"
+    },
+    {
+      "raw_id": 271,
+      "x": 602,
+      "y": 199,
+      "w": 9,
+      "h": 6,
+      "area_mm2": 1.942,
+      "reason": "systematic noise (>60% sample frequency, 41.2% noise overlap)"
+    },
+    {
+      "raw_id": 272,
+      "x": 113,
+      "y": 200,
+      "w": 5,
+      "h": 4,
+      "area_mm2": 0.8,
+      "reason": "systematic noise (>60% sample frequency, 78.6% noise overlap)"
+    },
+    {
+      "raw_id": 273,
+      "x": 254,
+      "y": 200,
+      "w": 6,
+      "h": 6,
+      "area_mm2": 1.428,
+      "reason": "systematic noise (>60% sample frequency, 56.0% noise overlap)"
+    },
+    {
+      "raw_id": 275,
+      "x": 280,
+      "y": 201,
+      "w": 3,
+      "h": 5,
+      "area_mm2": 0.628,
+      "reason": "systematic noise (>60% sample frequency, 54.5% noise overlap)"
+    },
+    {
+      "raw_id": 277,
+      "x": 361,
+      "y": 201,
+      "w": 1,
+      "h": 3,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 278,
+      "x": 389,
+      "y": 201,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 279,
+      "x": 432,
+      "y": 200,
+      "w": 5,
+      "h": 3,
+      "area_mm2": 0.8,
+      "reason": "systematic noise (>60% sample frequency, 71.4% noise overlap)"
+    },
+    {
+      "raw_id": 282,
+      "x": 536,
+      "y": 201,
+      "w": 5,
+      "h": 6,
+      "area_mm2": 0.8,
+      "reason": "systematic noise (>60% sample frequency, 85.7% noise overlap)"
+    },
+    {
+      "raw_id": 283,
+      "x": 176,
+      "y": 202,
+      "w": 14,
+      "h": 10,
+      "area_mm2": 4.513,
+      "reason": "systematic noise (>60% sample frequency, 84.8% noise overlap)"
+    },
+    {
+      "raw_id": 286,
+      "x": 423,
+      "y": 202,
+      "w": 3,
+      "h": 4,
+      "area_mm2": 0.571,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 287,
+      "x": 439,
+      "y": 203,
+      "w": 5,
+      "h": 5,
+      "area_mm2": 0.628,
+      "reason": "systematic noise (>60% sample frequency, 72.7% noise overlap)"
+    },
+    {
+      "raw_id": 288,
+      "x": 556,
+      "y": 203,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 290,
+      "x": 673,
+      "y": 203,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 291,
+      "x": 275,
+      "y": 205,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 293,
+      "x": 364,
+      "y": 205,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 83.3% noise overlap)"
+    },
+    {
+      "raw_id": 295,
+      "x": 451,
+      "y": 204,
+      "w": 4,
+      "h": 3,
+      "area_mm2": 0.457,
+      "reason": "systematic noise (>60% sample frequency, 62.5% noise overlap)"
+    },
+    {
+      "raw_id": 297,
+      "x": 479,
+      "y": 204,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 300,
+      "x": 572,
+      "y": 204,
+      "w": 6,
+      "h": 5,
+      "area_mm2": 0.685,
+      "reason": "systematic noise (>60% sample frequency, 41.7% noise overlap)"
+    },
+    {
+      "raw_id": 301,
+      "x": 581,
+      "y": 204,
+      "w": 3,
+      "h": 1,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 33.3% noise overlap)"
+    },
+    {
+      "raw_id": 302,
+      "x": 618,
+      "y": 204,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 305,
+      "x": 681,
+      "y": 205,
+      "w": 5,
+      "h": 3,
+      "area_mm2": 0.743,
+      "reason": "systematic noise (>60% sample frequency, 46.2% noise overlap)"
+    },
+    {
+      "raw_id": 306,
+      "x": 684,
+      "y": 204,
+      "w": 24,
+      "h": 51,
+      "area_mm2": 16.108,
+      "reason": "systematic noise (>60% sample frequency, 69.9% noise overlap)"
+    },
+    {
+      "raw_id": 308,
+      "x": 261,
+      "y": 206,
+      "w": 5,
+      "h": 5,
+      "area_mm2": 0.514,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 310,
+      "x": 335,
+      "y": 207,
+      "w": 10,
+      "h": 17,
+      "area_mm2": 4.113,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 311,
+      "x": 489,
+      "y": 206,
+      "w": 7,
+      "h": 13,
+      "area_mm2": 1.771,
+      "reason": "systematic noise (>60% sample frequency, 54.8% noise overlap)"
+    },
+    {
+      "raw_id": 312,
+      "x": 551,
+      "y": 206,
+      "w": 5,
+      "h": 6,
+      "area_mm2": 0.571,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 313,
+      "x": 638,
+      "y": 207,
+      "w": 6,
+      "h": 2,
+      "area_mm2": 0.457,
+      "reason": "systematic noise (>60% sample frequency, 75.0% noise overlap)"
+    },
+    {
+      "raw_id": 314,
+      "x": 78,
+      "y": 208,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 320,
+      "x": 412,
+      "y": 208,
+      "w": 5,
+      "h": 4,
+      "area_mm2": 0.685,
+      "reason": "systematic noise (>60% sample frequency, 75.0% noise overlap)"
+    },
+    {
+      "raw_id": 321,
+      "x": 423,
+      "y": 209,
+      "w": 8,
+      "h": 8,
+      "area_mm2": 1.942,
+      "reason": "systematic noise (>60% sample frequency, 47.1% noise overlap)"
+    },
+    {
+      "raw_id": 322,
+      "x": 527,
+      "y": 208,
+      "w": 3,
+      "h": 4,
+      "area_mm2": 0.571,
+      "reason": "systematic noise (>60% sample frequency, 80.0% noise overlap)"
+    },
+    {
+      "raw_id": 324,
+      "x": 652,
+      "y": 208,
+      "w": 7,
+      "h": 6,
+      "area_mm2": 0.8,
+      "reason": "systematic noise (>60% sample frequency, 57.1% noise overlap)"
+    },
+    {
+      "raw_id": 326,
+      "x": 284,
+      "y": 211,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.457,
+      "reason": "systematic noise (>60% sample frequency, 75.0% noise overlap)"
+    },
+    {
+      "raw_id": 327,
+      "x": 295,
+      "y": 211,
+      "w": 6,
+      "h": 6,
+      "area_mm2": 1.028,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 328,
+      "x": 308,
+      "y": 210,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 329,
+      "x": 382,
+      "y": 210,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 334,
+      "x": 533,
+      "y": 211,
+      "w": 2,
+      "h": 3,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 60.0% noise overlap)"
+    },
+    {
+      "raw_id": 335,
+      "x": 621,
+      "y": 211,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 336,
+      "x": 644,
+      "y": 211,
+      "w": 6,
+      "h": 7,
+      "area_mm2": 1.085,
+      "reason": "systematic noise (>60% sample frequency, 36.8% noise overlap)"
+    },
+    {
+      "raw_id": 337,
+      "x": 201,
+      "y": 212,
+      "w": 11,
+      "h": 5,
+      "area_mm2": 1.142,
+      "reason": "systematic noise (>60% sample frequency, 70.0% noise overlap)"
+    },
+    {
+      "raw_id": 339,
+      "x": 304,
+      "y": 212,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 341,
+      "x": 462,
+      "y": 212,
+      "w": 5,
+      "h": 4,
+      "area_mm2": 0.514,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 342,
+      "x": 468,
+      "y": 213,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.514,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 343,
+      "x": 501,
+      "y": 213,
+      "w": 4,
+      "h": 3,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 40.0% noise overlap)"
+    },
+    {
+      "raw_id": 344,
+      "x": 571,
+      "y": 213,
+      "w": 6,
+      "h": 4,
+      "area_mm2": 0.685,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 345,
+      "x": 617,
+      "y": 212,
+      "w": 1,
+      "h": 3,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 346,
+      "x": 664,
+      "y": 212,
+      "w": 6,
+      "h": 9,
+      "area_mm2": 1.314,
+      "reason": "systematic noise (>60% sample frequency, 43.5% noise overlap)"
+    },
+    {
+      "raw_id": 347,
+      "x": 249,
+      "y": 214,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 352,
+      "x": 635,
+      "y": 215,
+      "w": 1,
+      "h": 2,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 353,
+      "x": 821,
+      "y": 214,
+      "w": 2,
+      "h": 3,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 354,
+      "x": 65,
+      "y": 216,
+      "w": 4,
+      "h": 3,
+      "area_mm2": 0.457,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 355,
+      "x": 256,
+      "y": 216,
+      "w": 4,
+      "h": 6,
+      "area_mm2": 0.8,
+      "reason": "systematic noise (>60% sample frequency, 42.9% noise overlap)"
+    },
+    {
+      "raw_id": 357,
+      "x": 289,
+      "y": 217,
+      "w": 11,
+      "h": 12,
+      "area_mm2": 2.113,
+      "reason": "systematic noise (>60% sample frequency, 48.6% noise overlap)"
+    },
+    {
+      "raw_id": 358,
+      "x": 369,
+      "y": 216,
+      "w": 8,
+      "h": 8,
+      "area_mm2": 1.542,
+      "reason": "systematic noise (>60% sample frequency, 37.0% noise overlap)"
+    },
+    {
+      "raw_id": 359,
+      "x": 403,
+      "y": 216,
+      "w": 2,
+      "h": 3,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 360,
+      "x": 415,
+      "y": 217,
+      "w": 5,
+      "h": 4,
+      "area_mm2": 0.685,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 361,
+      "x": 450,
+      "y": 217,
+      "w": 4,
+      "h": 9,
+      "area_mm2": 0.971,
+      "reason": "systematic noise (>60% sample frequency, 58.8% noise overlap)"
+    },
+    {
+      "raw_id": 362,
+      "x": 472,
+      "y": 217,
+      "w": 3,
+      "h": 1,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 33.3% noise overlap)"
+    },
+    {
+      "raw_id": 367,
+      "x": 268,
+      "y": 221,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 40.0% noise overlap)"
+    },
+    {
+      "raw_id": 368,
+      "x": 306,
+      "y": 220,
+      "w": 9,
+      "h": 9,
+      "area_mm2": 2.228,
+      "reason": "systematic noise (>60% sample frequency, 41.0% noise overlap)"
+    },
+    {
+      "raw_id": 369,
+      "x": 384,
+      "y": 221,
+      "w": 3,
+      "h": 4,
+      "area_mm2": 0.571,
+      "reason": "systematic noise (>60% sample frequency, 90.0% noise overlap)"
+    },
+    {
+      "raw_id": 370,
+      "x": 393,
+      "y": 220,
+      "w": 2,
+      "h": 3,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 80.0% noise overlap)"
+    },
+    {
+      "raw_id": 371,
+      "x": 408,
+      "y": 220,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 374,
+      "x": 479,
+      "y": 220,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 375,
+      "x": 483,
+      "y": 220,
+      "w": 4,
+      "h": 4,
+      "area_mm2": 0.628,
+      "reason": "systematic noise (>60% sample frequency, 72.7% noise overlap)"
+    },
+    {
+      "raw_id": 376,
+      "x": 523,
+      "y": 221,
+      "w": 1,
+      "h": 2,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 378,
+      "x": 618,
+      "y": 221,
+      "w": 11,
+      "h": 6,
+      "area_mm2": 1.942,
+      "reason": "systematic noise (>60% sample frequency, 52.9% noise overlap)"
+    },
+    {
+      "raw_id": 379,
+      "x": 647,
+      "y": 221,
+      "w": 5,
+      "h": 12,
+      "area_mm2": 1.657,
+      "reason": "systematic noise (>60% sample frequency, 51.7% noise overlap)"
+    },
+    {
+      "raw_id": 380,
+      "x": 655,
+      "y": 220,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.457,
+      "reason": "systematic noise (>60% sample frequency, 37.5% noise overlap)"
+    },
+    {
+      "raw_id": 381,
+      "x": 104,
+      "y": 223,
+      "w": 4,
+      "h": 4,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 382,
+      "x": 287,
+      "y": 223,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.228,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 383,
+      "x": 423,
+      "y": 223,
+      "w": 2,
+      "h": 3,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 384,
+      "x": 503,
+      "y": 222,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 385,
+      "x": 584,
+      "y": 223,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 386,
+      "x": 327,
+      "y": 225,
+      "w": 10,
+      "h": 9,
+      "area_mm2": 2.171,
+      "reason": "systematic noise (>60% sample frequency, 55.3% noise overlap)"
+    },
+    {
+      "raw_id": 387,
+      "x": 336,
+      "y": 224,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 388,
+      "x": 358,
+      "y": 225,
+      "w": 10,
+      "h": 3,
+      "area_mm2": 0.857,
+      "reason": "systematic noise (>60% sample frequency, 46.7% noise overlap)"
+    },
+    {
+      "raw_id": 390,
+      "x": 400,
+      "y": 225,
+      "w": 9,
+      "h": 16,
+      "area_mm2": 4.284,
+      "reason": "systematic noise (>60% sample frequency, 65.3% noise overlap)"
+    },
+    {
+      "raw_id": 392,
+      "x": 499,
+      "y": 224,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 393,
+      "x": 538,
+      "y": 224,
+      "w": 6,
+      "h": 6,
+      "area_mm2": 1.371,
+      "reason": "systematic noise (>60% sample frequency, 41.7% noise overlap)"
+    },
+    {
+      "raw_id": 394,
+      "x": 554,
+      "y": 224,
+      "w": 10,
+      "h": 7,
+      "area_mm2": 2.685,
+      "reason": "systematic noise (>60% sample frequency, 59.6% noise overlap)"
+    },
+    {
+      "raw_id": 401,
+      "x": 529,
+      "y": 226,
+      "w": 4,
+      "h": 7,
+      "area_mm2": 1.257,
+      "reason": "systematic noise (>60% sample frequency, 63.6% noise overlap)"
+    },
+    {
+      "raw_id": 402,
+      "x": 579,
+      "y": 226,
+      "w": 19,
+      "h": 18,
+      "area_mm2": 5.484,
+      "reason": "systematic noise (>60% sample frequency, 58.3% noise overlap)"
+    },
+    {
+      "raw_id": 403,
+      "x": 657,
+      "y": 226,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 404,
+      "x": 684,
+      "y": 226,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 407,
+      "x": 257,
+      "y": 228,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 408,
+      "x": 269,
+      "y": 228,
+      "w": 4,
+      "h": 3,
+      "area_mm2": 0.457,
+      "reason": "systematic noise (>60% sample frequency, 62.5% noise overlap)"
+    },
+    {
+      "raw_id": 411,
+      "x": 479,
+      "y": 229,
+      "w": 7,
+      "h": 5,
+      "area_mm2": 1.714,
+      "reason": "systematic noise (>60% sample frequency, 56.7% noise overlap)"
+    },
+    {
+      "raw_id": 412,
+      "x": 494,
+      "y": 229,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 80.0% noise overlap)"
+    },
+    {
+      "raw_id": 413,
+      "x": 570,
+      "y": 228,
+      "w": 9,
+      "h": 5,
+      "area_mm2": 1.657,
+      "reason": "systematic noise (>60% sample frequency, 55.2% noise overlap)"
+    },
+    {
+      "raw_id": 414,
+      "x": 616,
+      "y": 229,
+      "w": 7,
+      "h": 9,
+      "area_mm2": 1.542,
+      "reason": "systematic noise (>60% sample frequency, 55.6% noise overlap)"
+    },
+    {
+      "raw_id": 417,
+      "x": 709,
+      "y": 229,
+      "w": 3,
+      "h": 4,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 33.3% noise overlap)"
+    },
+    {
+      "raw_id": 419,
+      "x": 305,
+      "y": 230,
+      "w": 19,
+      "h": 11,
+      "area_mm2": 4.341,
+      "reason": "systematic noise (>60% sample frequency, 46.1% noise overlap)"
+    },
+    {
+      "raw_id": 420,
+      "x": 369,
+      "y": 231,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 421,
+      "x": 414,
+      "y": 230,
+      "w": 24,
+      "h": 19,
+      "area_mm2": 3.427,
+      "reason": "systematic noise (>60% sample frequency, 55.0% noise overlap)"
+    },
+    {
+      "raw_id": 422,
+      "x": 436,
+      "y": 231,
+      "w": 6,
+      "h": 5,
+      "area_mm2": 1.142,
+      "reason": "systematic noise (>60% sample frequency, 80.0% noise overlap)"
+    },
+    {
+      "raw_id": 424,
+      "x": 609,
+      "y": 231,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 425,
+      "x": 638,
+      "y": 230,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 427,
+      "x": 864,
+      "y": 230,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 428,
+      "x": 252,
+      "y": 233,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 429,
+      "x": 377,
+      "y": 233,
+      "w": 20,
+      "h": 8,
+      "area_mm2": 4.056,
+      "reason": "systematic noise (>60% sample frequency, 39.4% noise overlap)"
+    },
+    {
+      "raw_id": 433,
+      "x": 193,
+      "y": 234,
+      "w": 6,
+      "h": 5,
+      "area_mm2": 0.8,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 434,
+      "x": 211,
+      "y": 234,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 435,
+      "x": 245,
+      "y": 235,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 437,
+      "x": 335,
+      "y": 235,
+      "w": 6,
+      "h": 6,
+      "area_mm2": 0.743,
+      "reason": "systematic noise (>60% sample frequency, 38.5% noise overlap)"
+    },
+    {
+      "raw_id": 440,
+      "x": 426,
+      "y": 234,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 443,
+      "x": 640,
+      "y": 234,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 445,
+      "x": 220,
+      "y": 236,
+      "w": 3,
+      "h": 4,
+      "area_mm2": 0.514,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 447,
+      "x": 267,
+      "y": 237,
+      "w": 3,
+      "h": 4,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 449,
+      "x": 428,
+      "y": 236,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 451,
+      "x": 451,
+      "y": 236,
+      "w": 10,
+      "h": 16,
+      "area_mm2": 3.37,
+      "reason": "systematic noise (>60% sample frequency, 52.5% noise overlap)"
+    },
+    {
+      "raw_id": 454,
+      "x": 526,
+      "y": 236,
+      "w": 5,
+      "h": 3,
+      "area_mm2": 0.514,
+      "reason": "systematic noise (>60% sample frequency, 55.6% noise overlap)"
+    },
+    {
+      "raw_id": 455,
+      "x": 566,
+      "y": 236,
+      "w": 6,
+      "h": 7,
+      "area_mm2": 1.142,
+      "reason": "systematic noise (>60% sample frequency, 45.0% noise overlap)"
+    },
+    {
+      "raw_id": 457,
+      "x": 667,
+      "y": 236,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 458,
+      "x": 669,
+      "y": 237,
+      "w": 4,
+      "h": 3,
+      "area_mm2": 0.514,
+      "reason": "systematic noise (>60% sample frequency, 77.8% noise overlap)"
+    },
+    {
+      "raw_id": 460,
+      "x": 80,
+      "y": 238,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 461,
+      "x": 496,
+      "y": 239,
+      "w": 1,
+      "h": 3,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 33.3% noise overlap)"
+    },
+    {
+      "raw_id": 462,
+      "x": 535,
+      "y": 238,
+      "w": 5,
+      "h": 5,
+      "area_mm2": 0.628,
+      "reason": "systematic noise (>60% sample frequency, 63.6% noise overlap)"
+    },
+    {
+      "raw_id": 468,
+      "x": 486,
+      "y": 241,
+      "w": 4,
+      "h": 8,
+      "area_mm2": 1.428,
+      "reason": "systematic noise (>60% sample frequency, 52.0% noise overlap)"
+    },
+    {
+      "raw_id": 469,
+      "x": 552,
+      "y": 240,
+      "w": 2,
+      "h": 3,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 40.0% noise overlap)"
+    },
+    {
+      "raw_id": 470,
+      "x": 562,
+      "y": 241,
+      "w": 1,
+      "h": 2,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 471,
+      "x": 575,
+      "y": 240,
+      "w": 2,
+      "h": 2,
+      "area_mm2": 0.228,
+      "reason": "systematic noise (>60% sample frequency, 75.0% noise overlap)"
+    },
+    {
+      "raw_id": 472,
+      "x": 594,
+      "y": 241,
+      "w": 5,
+      "h": 3,
+      "area_mm2": 0.628,
+      "reason": "systematic noise (>60% sample frequency, 54.5% noise overlap)"
+    },
+    {
+      "raw_id": 473,
+      "x": 653,
+      "y": 241,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 474,
+      "x": 680,
+      "y": 240,
+      "w": 4,
+      "h": 6,
+      "area_mm2": 0.743,
+      "reason": "systematic noise (>60% sample frequency, 61.5% noise overlap)"
+    },
+    {
+      "raw_id": 475,
+      "x": 787,
+      "y": 241,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 476,
+      "x": 113,
+      "y": 243,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 60.0% noise overlap)"
+    },
+    {
+      "raw_id": 479,
+      "x": 376,
+      "y": 242,
+      "w": 4,
+      "h": 3,
+      "area_mm2": 0.571,
+      "reason": "systematic noise (>60% sample frequency, 70.0% noise overlap)"
+    },
+    {
+      "raw_id": 481,
+      "x": 523,
+      "y": 243,
+      "w": 6,
+      "h": 8,
+      "area_mm2": 1.542,
+      "reason": "systematic noise (>60% sample frequency, 74.1% noise overlap)"
+    },
+    {
+      "raw_id": 482,
+      "x": 604,
+      "y": 242,
+      "w": 4,
+      "h": 3,
+      "area_mm2": 0.457,
+      "reason": "systematic noise (>60% sample frequency, 37.5% noise overlap)"
+    },
+    {
+      "raw_id": 487,
+      "x": 312,
+      "y": 245,
+      "w": 2,
+      "h": 2,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 33.3% noise overlap)"
+    },
+    {
+      "raw_id": 488,
+      "x": 326,
+      "y": 244,
+      "w": 7,
+      "h": 12,
+      "area_mm2": 1.942,
+      "reason": "systematic noise (>60% sample frequency, 44.1% noise overlap)"
+    },
+    {
+      "raw_id": 489,
+      "x": 386,
+      "y": 244,
+      "w": 6,
+      "h": 4,
+      "area_mm2": 1.085,
+      "reason": "systematic noise (>60% sample frequency, 68.4% noise overlap)"
+    },
+    {
+      "raw_id": 490,
+      "x": 466,
+      "y": 244,
+      "w": 1,
+      "h": 2,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 491,
+      "x": 478,
+      "y": 244,
+      "w": 3,
+      "h": 5,
+      "area_mm2": 0.514,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 492,
+      "x": 495,
+      "y": 244,
+      "w": 9,
+      "h": 10,
+      "area_mm2": 3.199,
+      "reason": "systematic noise (>60% sample frequency, 85.7% noise overlap)"
+    },
+    {
+      "raw_id": 494,
+      "x": 599,
+      "y": 245,
+      "w": 2,
+      "h": 2,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 495,
+      "x": 616,
+      "y": 244,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 497,
+      "x": 674,
+      "y": 245,
+      "w": 5,
+      "h": 5,
+      "area_mm2": 0.685,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 498,
+      "x": 783,
+      "y": 245,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 499,
+      "x": 828,
+      "y": 245,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 500,
+      "x": 468,
+      "y": 246,
+      "w": 8,
+      "h": 8,
+      "area_mm2": 1.599,
+      "reason": "systematic noise (>60% sample frequency, 75.0% noise overlap)"
+    },
+    {
+      "raw_id": 501,
+      "x": 577,
+      "y": 246,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 40.0% noise overlap)"
+    },
+    {
+      "raw_id": 502,
+      "x": 593,
+      "y": 247,
+      "w": 3,
+      "h": 1,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 503,
+      "x": 614,
+      "y": 246,
+      "w": 2,
+      "h": 3,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 33.3% noise overlap)"
+    },
+    {
+      "raw_id": 505,
+      "x": 669,
+      "y": 246,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 506,
+      "x": 263,
+      "y": 248,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 509,
+      "x": 320,
+      "y": 248,
+      "w": 4,
+      "h": 7,
+      "area_mm2": 0.743,
+      "reason": "systematic noise (>60% sample frequency, 53.8% noise overlap)"
+    },
+    {
+      "raw_id": 512,
+      "x": 406,
+      "y": 248,
+      "w": 6,
+      "h": 4,
+      "area_mm2": 0.628,
+      "reason": "systematic noise (>60% sample frequency, 54.5% noise overlap)"
+    },
+    {
+      "raw_id": 514,
+      "x": 550,
+      "y": 248,
+      "w": 15,
+      "h": 12,
+      "area_mm2": 2.513,
+      "reason": "systematic noise (>60% sample frequency, 52.3% noise overlap)"
+    },
+    {
+      "raw_id": 516,
+      "x": 647,
+      "y": 248,
+      "w": 4,
+      "h": 6,
+      "area_mm2": 0.857,
+      "reason": "systematic noise (>60% sample frequency, 46.7% noise overlap)"
+    },
+    {
+      "raw_id": 518,
+      "x": 187,
+      "y": 251,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 519,
+      "x": 240,
+      "y": 250,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 520,
+      "x": 279,
+      "y": 251,
+      "w": 4,
+      "h": 3,
+      "area_mm2": 0.514,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 521,
+      "x": 295,
+      "y": 251,
+      "w": 11,
+      "h": 7,
+      "area_mm2": 1.657,
+      "reason": "systematic noise (>60% sample frequency, 51.7% noise overlap)"
+    },
+    {
+      "raw_id": 522,
+      "x": 309,
+      "y": 250,
+      "w": 9,
+      "h": 9,
+      "area_mm2": 1.314,
+      "reason": "systematic noise (>60% sample frequency, 39.1% noise overlap)"
+    },
+    {
+      "raw_id": 524,
+      "x": 415,
+      "y": 250,
+      "w": 5,
+      "h": 5,
+      "area_mm2": 0.914,
+      "reason": "systematic noise (>60% sample frequency, 81.2% noise overlap)"
+    },
+    {
+      "raw_id": 525,
+      "x": 423,
+      "y": 250,
+      "w": 64,
+      "h": 61,
+      "area_mm2": 52.723,
+      "reason": "systematic noise (>60% sample frequency, 86.3% noise overlap)"
+    },
+    {
+      "raw_id": 526,
+      "x": 448,
+      "y": 250,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 527,
+      "x": 529,
+      "y": 250,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.228,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 529,
+      "x": 581,
+      "y": 251,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 530,
+      "x": 592,
+      "y": 251,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 60.0% noise overlap)"
+    },
+    {
+      "raw_id": 531,
+      "x": 654,
+      "y": 251,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 532,
+      "x": 828,
+      "y": 251,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 533,
+      "x": 284,
+      "y": 253,
+      "w": 3,
+      "h": 1,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 535,
+      "x": 462,
+      "y": 253,
+      "w": 2,
+      "h": 2,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 33.3% noise overlap)"
+    },
+    {
+      "raw_id": 536,
+      "x": 487,
+      "y": 252,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 538,
+      "x": 568,
+      "y": 252,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 539,
+      "x": 674,
+      "y": 253,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 40.0% noise overlap)"
+    },
+    {
+      "raw_id": 540,
+      "x": 266,
+      "y": 254,
+      "w": 13,
+      "h": 10,
+      "area_mm2": 2.97,
+      "reason": "systematic noise (>60% sample frequency, 67.3% noise overlap)"
+    },
+    {
+      "raw_id": 541,
+      "x": 282,
+      "y": 255,
+      "w": 10,
+      "h": 5,
+      "area_mm2": 1.2,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 547,
+      "x": 617,
+      "y": 255,
+      "w": 2,
+      "h": 2,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 548,
+      "x": 621,
+      "y": 254,
+      "w": 4,
+      "h": 6,
+      "area_mm2": 0.971,
+      "reason": "systematic noise (>60% sample frequency, 70.6% noise overlap)"
+    },
+    {
+      "raw_id": 550,
+      "x": 650,
+      "y": 255,
+      "w": 7,
+      "h": 6,
+      "area_mm2": 0.914,
+      "reason": "systematic noise (>60% sample frequency, 56.2% noise overlap)"
+    },
+    {
+      "raw_id": 551,
+      "x": 652,
+      "y": 254,
+      "w": 15,
+      "h": 19,
+      "area_mm2": 5.484,
+      "reason": "systematic noise (>60% sample frequency, 52.1% noise overlap)"
+    },
+    {
+      "raw_id": 552,
+      "x": 729,
+      "y": 255,
+      "w": 2,
+      "h": 3,
+      "area_mm2": 0.228,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 553,
+      "x": 256,
+      "y": 256,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 555,
+      "x": 543,
+      "y": 256,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.228,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 556,
+      "x": 565,
+      "y": 256,
+      "w": 3,
+      "h": 1,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 557,
+      "x": 593,
+      "y": 257,
+      "w": 8,
+      "h": 12,
+      "area_mm2": 2.171,
+      "reason": "systematic noise (>60% sample frequency, 34.2% noise overlap)"
+    },
+    {
+      "raw_id": 559,
+      "x": 685,
+      "y": 256,
+      "w": 4,
+      "h": 4,
+      "area_mm2": 0.4,
+      "reason": "systematic noise (>60% sample frequency, 71.4% noise overlap)"
+    },
+    {
+      "raw_id": 560,
+      "x": 135,
+      "y": 259,
+      "w": 85,
+      "h": 23,
+      "area_mm2": 52.323,
+      "reason": "systematic noise (>60% sample frequency, 86.5% noise overlap)"
+    },
+    {
+      "raw_id": 562,
+      "x": 403,
+      "y": 259,
+      "w": 2,
+      "h": 4,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 564,
+      "x": 496,
+      "y": 259,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 565,
+      "x": 507,
+      "y": 258,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 566,
+      "x": 639,
+      "y": 259,
+      "w": 2,
+      "h": 3,
+      "area_mm2": 0.228,
+      "reason": "systematic noise (>60% sample frequency, 75.0% noise overlap)"
+    },
+    {
+      "raw_id": 569,
+      "x": 301,
+      "y": 261,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.4,
+      "reason": "systematic noise (>60% sample frequency, 57.1% noise overlap)"
+    },
+    {
+      "raw_id": 571,
+      "x": 499,
+      "y": 260,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.514,
+      "reason": "systematic noise (>60% sample frequency, 33.3% noise overlap)"
+    },
+    {
+      "raw_id": 572,
+      "x": 508,
+      "y": 260,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 573,
+      "x": 532,
+      "y": 260,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.514,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 574,
+      "x": 609,
+      "y": 261,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 575,
+      "x": 671,
+      "y": 260,
+      "w": 5,
+      "h": 6,
+      "area_mm2": 0.971,
+      "reason": "systematic noise (>60% sample frequency, 64.7% noise overlap)"
+    },
+    {
+      "raw_id": 576,
+      "x": 423,
+      "y": 261,
+      "w": 265,
+      "h": 164,
+      "area_mm2": 178.389,
+      "reason": "systematic noise (>60% sample frequency, 80.0% noise overlap)"
+    },
+    {
+      "raw_id": 577,
+      "x": 257,
+      "y": 263,
+      "w": 6,
+      "h": 4,
+      "area_mm2": 0.857,
+      "reason": "systematic noise (>60% sample frequency, 53.3% noise overlap)"
+    },
+    {
+      "raw_id": 578,
+      "x": 317,
+      "y": 263,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 579,
+      "x": 337,
+      "y": 262,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 580,
+      "x": 508,
+      "y": 263,
+      "w": 13,
+      "h": 8,
+      "area_mm2": 2.056,
+      "reason": "systematic noise (>60% sample frequency, 44.4% noise overlap)"
+    },
+    {
+      "raw_id": 581,
+      "x": 545,
+      "y": 262,
+      "w": 5,
+      "h": 4,
+      "area_mm2": 0.571,
+      "reason": "systematic noise (>60% sample frequency, 90.0% noise overlap)"
+    },
+    {
+      "raw_id": 583,
+      "x": 546,
+      "y": 263,
+      "w": 23,
+      "h": 21,
+      "area_mm2": 7.768,
+      "reason": "systematic noise (>60% sample frequency, 49.3% noise overlap)"
+    },
+    {
+      "raw_id": 584,
+      "x": 573,
+      "y": 263,
+      "w": 2,
+      "h": 5,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 586,
+      "x": 648,
+      "y": 263,
+      "w": 4,
+      "h": 4,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 587,
+      "x": 284,
+      "y": 264,
+      "w": 7,
+      "h": 5,
+      "area_mm2": 1.028,
+      "reason": "systematic noise (>60% sample frequency, 55.6% noise overlap)"
+    },
+    {
+      "raw_id": 589,
+      "x": 408,
+      "y": 265,
+      "w": 7,
+      "h": 4,
+      "area_mm2": 0.571,
+      "reason": "systematic noise (>60% sample frequency, 60.0% noise overlap)"
+    },
+    {
+      "raw_id": 592,
+      "x": 805,
+      "y": 264,
+      "w": 6,
+      "h": 5,
+      "area_mm2": 0.8,
+      "reason": "systematic noise (>60% sample frequency, 92.9% noise overlap)"
+    },
+    {
+      "raw_id": 593,
+      "x": 244,
+      "y": 266,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 594,
+      "x": 266,
+      "y": 267,
+      "w": 2,
+      "h": 3,
+      "area_mm2": 0.228,
+      "reason": "systematic noise (>60% sample frequency, 75.0% noise overlap)"
+    },
+    {
+      "raw_id": 595,
+      "x": 283,
+      "y": 267,
+      "w": 23,
+      "h": 18,
+      "area_mm2": 8.111,
+      "reason": "systematic noise (>60% sample frequency, 40.1% noise overlap)"
+    },
+    {
+      "raw_id": 596,
+      "x": 496,
+      "y": 266,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.457,
+      "reason": "systematic noise (>60% sample frequency, 75.0% noise overlap)"
+    },
+    {
+      "raw_id": 597,
+      "x": 780,
+      "y": 266,
+      "w": 5,
+      "h": 3,
+      "area_mm2": 0.743,
+      "reason": "systematic noise (>60% sample frequency, 38.5% noise overlap)"
+    },
+    {
+      "raw_id": 599,
+      "x": 402,
+      "y": 269,
+      "w": 2,
+      "h": 3,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 33.3% noise overlap)"
+    },
+    {
+      "raw_id": 600,
+      "x": 434,
+      "y": 268,
+      "w": 5,
+      "h": 1,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 605,
+      "x": 260,
+      "y": 270,
+      "w": 12,
+      "h": 11,
+      "area_mm2": 2.628,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 606,
+      "x": 487,
+      "y": 271,
+      "w": 8,
+      "h": 5,
+      "area_mm2": 0.971,
+      "reason": "systematic noise (>60% sample frequency, 52.9% noise overlap)"
+    },
+    {
+      "raw_id": 607,
+      "x": 497,
+      "y": 270,
+      "w": 8,
+      "h": 8,
+      "area_mm2": 1.942,
+      "reason": "systematic noise (>60% sample frequency, 55.9% noise overlap)"
+    },
+    {
+      "raw_id": 609,
+      "x": 543,
+      "y": 270,
+      "w": 2,
+      "h": 3,
+      "area_mm2": 0.228,
+      "reason": "systematic noise (>60% sample frequency, 75.0% noise overlap)"
+    },
+    {
+      "raw_id": 610,
+      "x": 575,
+      "y": 271,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 611,
+      "x": 603,
+      "y": 270,
+      "w": 12,
+      "h": 11,
+      "area_mm2": 3.542,
+      "reason": "systematic noise (>60% sample frequency, 48.4% noise overlap)"
+    },
+    {
+      "raw_id": 612,
+      "x": 621,
+      "y": 271,
+      "w": 3,
+      "h": 6,
+      "area_mm2": 0.571,
+      "reason": "systematic noise (>60% sample frequency, 40.0% noise overlap)"
+    },
+    {
+      "raw_id": 613,
+      "x": 72,
+      "y": 272,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.228,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 614,
+      "x": 315,
+      "y": 272,
+      "w": 3,
+      "h": 1,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 615,
+      "x": 400,
+      "y": 272,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 617,
+      "x": 668,
+      "y": 272,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 80.0% noise overlap)"
+    },
+    {
+      "raw_id": 618,
+      "x": 744,
+      "y": 272,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 40.0% noise overlap)"
+    },
+    {
+      "raw_id": 619,
+      "x": 258,
+      "y": 275,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 622,
+      "x": 535,
+      "y": 275,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 623,
+      "x": 573,
+      "y": 274,
+      "w": 14,
+      "h": 5,
+      "area_mm2": 1.428,
+      "reason": "systematic noise (>60% sample frequency, 40.0% noise overlap)"
+    },
+    {
+      "raw_id": 625,
+      "x": 811,
+      "y": 274,
+      "w": 10,
+      "h": 10,
+      "area_mm2": 2.342,
+      "reason": "systematic noise (>60% sample frequency, 48.8% noise overlap)"
+    },
+    {
+      "raw_id": 626,
+      "x": 248,
+      "y": 277,
+      "w": 3,
+      "h": 4,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 627,
+      "x": 275,
+      "y": 277,
+      "w": 1,
+      "h": 3,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 33.3% noise overlap)"
+    },
+    {
+      "raw_id": 628,
+      "x": 406,
+      "y": 277,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 630,
+      "x": 632,
+      "y": 277,
+      "w": 1,
+      "h": 2,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 631,
+      "x": 91,
+      "y": 278,
+      "w": 5,
+      "h": 4,
+      "area_mm2": 1.085,
+      "reason": "systematic noise (>60% sample frequency, 73.7% noise overlap)"
+    },
+    {
+      "raw_id": 632,
+      "x": 177,
+      "y": 279,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 633,
+      "x": 279,
+      "y": 278,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 634,
+      "x": 311,
+      "y": 279,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.457,
+      "reason": "systematic noise (>60% sample frequency, 62.5% noise overlap)"
+    },
+    {
+      "raw_id": 636,
+      "x": 408,
+      "y": 278,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 638,
+      "x": 641,
+      "y": 278,
+      "w": 7,
+      "h": 5,
+      "area_mm2": 0.857,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 639,
+      "x": 651,
+      "y": 278,
+      "w": 7,
+      "h": 4,
+      "area_mm2": 0.571,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 640,
+      "x": 846,
+      "y": 278,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 641,
+      "x": 257,
+      "y": 281,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.228,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 642,
+      "x": 317,
+      "y": 280,
+      "w": 7,
+      "h": 6,
+      "area_mm2": 1.085,
+      "reason": "systematic noise (>60% sample frequency, 47.4% noise overlap)"
+    },
+    {
+      "raw_id": 644,
+      "x": 634,
+      "y": 280,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 646,
+      "x": 763,
+      "y": 280,
+      "w": 6,
+      "h": 3,
+      "area_mm2": 0.514,
+      "reason": "systematic noise (>60% sample frequency, 88.9% noise overlap)"
+    },
+    {
+      "raw_id": 649,
+      "x": 429,
+      "y": 283,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 650,
+      "x": 498,
+      "y": 283,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 652,
+      "x": 508,
+      "y": 282,
+      "w": 5,
+      "h": 4,
+      "area_mm2": 0.4,
+      "reason": "systematic noise (>60% sample frequency, 57.1% noise overlap)"
+    },
+    {
+      "raw_id": 654,
+      "x": 582,
+      "y": 283,
+      "w": 4,
+      "h": 4,
+      "area_mm2": 0.685,
+      "reason": "systematic noise (>60% sample frequency, 83.3% noise overlap)"
+    },
+    {
+      "raw_id": 656,
+      "x": 770,
+      "y": 283,
+      "w": 3,
+      "h": 4,
+      "area_mm2": 0.685,
+      "reason": "systematic noise (>60% sample frequency, 83.3% noise overlap)"
+    },
+    {
+      "raw_id": 657,
+      "x": 75,
+      "y": 285,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 658,
+      "x": 261,
+      "y": 284,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 660,
+      "x": 421,
+      "y": 285,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 661,
+      "x": 434,
+      "y": 284,
+      "w": 7,
+      "h": 8,
+      "area_mm2": 1.371,
+      "reason": "systematic noise (>60% sample frequency, 54.2% noise overlap)"
+    },
+    {
+      "raw_id": 665,
+      "x": 798,
+      "y": 284,
+      "w": 2,
+      "h": 3,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 60.0% noise overlap)"
+    },
+    {
+      "raw_id": 666,
+      "x": 189,
+      "y": 286,
+      "w": 22,
+      "h": 15,
+      "area_mm2": 11.253,
+      "reason": "systematic noise (>60% sample frequency, 81.7% noise overlap)"
+    },
+    {
+      "raw_id": 669,
+      "x": 505,
+      "y": 287,
+      "w": 6,
+      "h": 4,
+      "area_mm2": 0.685,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 670,
+      "x": 520,
+      "y": 286,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 672,
+      "x": 604,
+      "y": 286,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 673,
+      "x": 618,
+      "y": 287,
+      "w": 2,
+      "h": 3,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 83.3% noise overlap)"
+    },
+    {
+      "raw_id": 674,
+      "x": 627,
+      "y": 287,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 675,
+      "x": 239,
+      "y": 289,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 676,
+      "x": 252,
+      "y": 289,
+      "w": 2,
+      "h": 2,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 678,
+      "x": 613,
+      "y": 288,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 680,
+      "x": 528,
+      "y": 290,
+      "w": 2,
+      "h": 3,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 681,
+      "x": 584,
+      "y": 291,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 682,
+      "x": 661,
+      "y": 291,
+      "w": 3,
+      "h": 4,
+      "area_mm2": 0.571,
+      "reason": "systematic noise (>60% sample frequency, 80.0% noise overlap)"
+    },
+    {
+      "raw_id": 683,
+      "x": 760,
+      "y": 291,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 684,
+      "x": 136,
+      "y": 293,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 685,
+      "x": 290,
+      "y": 292,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 686,
+      "x": 433,
+      "y": 293,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.4,
+      "reason": "systematic noise (>60% sample frequency, 57.1% noise overlap)"
+    },
+    {
+      "raw_id": 688,
+      "x": 516,
+      "y": 292,
+      "w": 6,
+      "h": 7,
+      "area_mm2": 1.2,
+      "reason": "systematic noise (>60% sample frequency, 76.2% noise overlap)"
+    },
+    {
+      "raw_id": 690,
+      "x": 813,
+      "y": 293,
+      "w": 3,
+      "h": 1,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 33.3% noise overlap)"
+    },
+    {
+      "raw_id": 692,
+      "x": 299,
+      "y": 294,
+      "w": 5,
+      "h": 5,
+      "area_mm2": 1.028,
+      "reason": "systematic noise (>60% sample frequency, 61.1% noise overlap)"
+    },
+    {
+      "raw_id": 693,
+      "x": 486,
+      "y": 295,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 694,
+      "x": 506,
+      "y": 294,
+      "w": 8,
+      "h": 9,
+      "area_mm2": 1.657,
+      "reason": "systematic noise (>60% sample frequency, 34.5% noise overlap)"
+    },
+    {
+      "raw_id": 696,
+      "x": 858,
+      "y": 294,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 83.3% noise overlap)"
+    },
+    {
+      "raw_id": 697,
+      "x": 287,
+      "y": 296,
+      "w": 3,
+      "h": 4,
+      "area_mm2": 0.457,
+      "reason": "systematic noise (>60% sample frequency, 62.5% noise overlap)"
+    },
+    {
+      "raw_id": 698,
+      "x": 621,
+      "y": 297,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 700,
+      "x": 715,
+      "y": 296,
+      "w": 4,
+      "h": 3,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 701,
+      "x": 764,
+      "y": 296,
+      "w": 4,
+      "h": 3,
+      "area_mm2": 0.457,
+      "reason": "systematic noise (>60% sample frequency, 37.5% noise overlap)"
+    },
+    {
+      "raw_id": 705,
+      "x": 490,
+      "y": 298,
+      "w": 7,
+      "h": 8,
+      "area_mm2": 0.971,
+      "reason": "systematic noise (>60% sample frequency, 76.5% noise overlap)"
+    },
+    {
+      "raw_id": 706,
+      "x": 665,
+      "y": 298,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 711,
+      "x": 488,
+      "y": 301,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 713,
+      "x": 624,
+      "y": 301,
+      "w": 3,
+      "h": 4,
+      "area_mm2": 0.4,
+      "reason": "systematic noise (>60% sample frequency, 71.4% noise overlap)"
+    },
+    {
+      "raw_id": 714,
+      "x": 682,
+      "y": 300,
+      "w": 1,
+      "h": 2,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 715,
+      "x": 824,
+      "y": 301,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 716,
+      "x": 178,
+      "y": 303,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 724,
+      "x": 251,
+      "y": 304,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 725,
+      "x": 280,
+      "y": 305,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 727,
+      "x": 613,
+      "y": 305,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 60.0% noise overlap)"
+    },
+    {
+      "raw_id": 729,
+      "x": 637,
+      "y": 304,
+      "w": 4,
+      "h": 5,
+      "area_mm2": 0.685,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 730,
+      "x": 791,
+      "y": 305,
+      "w": 2,
+      "h": 3,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 734,
+      "x": 92,
+      "y": 307,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 736,
+      "x": 137,
+      "y": 307,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 737,
+      "x": 287,
+      "y": 307,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 738,
+      "x": 303,
+      "y": 307,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 739,
+      "x": 524,
+      "y": 306,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.4,
+      "reason": "systematic noise (>60% sample frequency, 71.4% noise overlap)"
+    },
+    {
+      "raw_id": 740,
+      "x": 577,
+      "y": 309,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 741,
+      "x": 643,
+      "y": 308,
+      "w": 3,
+      "h": 4,
+      "area_mm2": 0.457,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 744,
+      "x": 183,
+      "y": 311,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 745,
+      "x": 274,
+      "y": 310,
+      "w": 2,
+      "h": 3,
+      "area_mm2": 0.228,
+      "reason": "systematic noise (>60% sample frequency, 75.0% noise overlap)"
+    },
+    {
+      "raw_id": 746,
+      "x": 289,
+      "y": 311,
+      "w": 1,
+      "h": 3,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 747,
+      "x": 302,
+      "y": 310,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 748,
+      "x": 628,
+      "y": 310,
+      "w": 9,
+      "h": 4,
+      "area_mm2": 1.028,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 749,
+      "x": 653,
+      "y": 310,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 60.0% noise overlap)"
+    },
+    {
+      "raw_id": 750,
+      "x": 770,
+      "y": 311,
+      "w": 2,
+      "h": 2,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 33.3% noise overlap)"
+    },
+    {
+      "raw_id": 751,
+      "x": 789,
+      "y": 310,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.4,
+      "reason": "systematic noise (>60% sample frequency, 42.9% noise overlap)"
+    },
+    {
+      "raw_id": 753,
+      "x": 380,
+      "y": 313,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.514,
+      "reason": "systematic noise (>60% sample frequency, 77.8% noise overlap)"
+    },
+    {
+      "raw_id": 754,
+      "x": 582,
+      "y": 313,
+      "w": 2,
+      "h": 3,
+      "area_mm2": 0.228,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 757,
+      "x": 99,
+      "y": 315,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 40.0% noise overlap)"
+    },
+    {
+      "raw_id": 758,
+      "x": 138,
+      "y": 315,
+      "w": 85,
+      "h": 27,
+      "area_mm2": 56.778,
+      "reason": "systematic noise (>60% sample frequency, 84.2% noise overlap)"
+    },
+    {
+      "raw_id": 759,
+      "x": 200,
+      "y": 314,
+      "w": 3,
+      "h": 1,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 760,
+      "x": 221,
+      "y": 315,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 761,
+      "x": 275,
+      "y": 315,
+      "w": 1,
+      "h": 3,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 33.3% noise overlap)"
+    },
+    {
+      "raw_id": 762,
+      "x": 283,
+      "y": 315,
+      "w": 3,
+      "h": 1,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 763,
+      "x": 526,
+      "y": 315,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 765,
+      "x": 842,
+      "y": 314,
+      "w": 3,
+      "h": 5,
+      "area_mm2": 0.628,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 767,
+      "x": 505,
+      "y": 317,
+      "w": 3,
+      "h": 1,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 33.3% noise overlap)"
+    },
+    {
+      "raw_id": 769,
+      "x": 758,
+      "y": 317,
+      "w": 4,
+      "h": 3,
+      "area_mm2": 0.514,
+      "reason": "systematic noise (>60% sample frequency, 77.8% noise overlap)"
+    },
+    {
+      "raw_id": 770,
+      "x": 791,
+      "y": 317,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 771,
+      "x": 259,
+      "y": 319,
+      "w": 2,
+      "h": 3,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 80.0% noise overlap)"
+    },
+    {
+      "raw_id": 773,
+      "x": 272,
+      "y": 319,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 774,
+      "x": 284,
+      "y": 319,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 40.0% noise overlap)"
+    },
+    {
+      "raw_id": 775,
+      "x": 468,
+      "y": 318,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 777,
+      "x": 242,
+      "y": 321,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 780,
+      "x": 545,
+      "y": 321,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 781,
+      "x": 653,
+      "y": 321,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 60.0% noise overlap)"
+    },
+    {
+      "raw_id": 783,
+      "x": 287,
+      "y": 323,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 784,
+      "x": 301,
+      "y": 322,
+      "w": 4,
+      "h": 4,
+      "area_mm2": 0.628,
+      "reason": "systematic noise (>60% sample frequency, 45.5% noise overlap)"
+    },
+    {
+      "raw_id": 786,
+      "x": 823,
+      "y": 323,
+      "w": 1,
+      "h": 4,
+      "area_mm2": 0.228,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 787,
+      "x": 217,
+      "y": 324,
+      "w": 2,
+      "h": 3,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 788,
+      "x": 272,
+      "y": 324,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 789,
+      "x": 276,
+      "y": 325,
+      "w": 11,
+      "h": 8,
+      "area_mm2": 2.171,
+      "reason": "systematic noise (>60% sample frequency, 55.3% noise overlap)"
+    },
+    {
+      "raw_id": 791,
+      "x": 408,
+      "y": 325,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 60.0% noise overlap)"
+    },
+    {
+      "raw_id": 793,
+      "x": 293,
+      "y": 326,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 794,
+      "x": 748,
+      "y": 327,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 796,
+      "x": 288,
+      "y": 328,
+      "w": 2,
+      "h": 3,
+      "area_mm2": 0.228,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 797,
+      "x": 780,
+      "y": 328,
+      "w": 13,
+      "h": 23,
+      "area_mm2": 4.227,
+      "reason": "systematic noise (>60% sample frequency, 55.4% noise overlap)"
+    },
+    {
+      "raw_id": 798,
+      "x": 81,
+      "y": 330,
+      "w": 5,
+      "h": 6,
+      "area_mm2": 0.857,
+      "reason": "systematic noise (>60% sample frequency, 53.3% noise overlap)"
+    },
+    {
+      "raw_id": 800,
+      "x": 251,
+      "y": 331,
+      "w": 2,
+      "h": 3,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 40.0% noise overlap)"
+    },
+    {
+      "raw_id": 801,
+      "x": 294,
+      "y": 330,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.457,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 804,
+      "x": 545,
+      "y": 331,
+      "w": 15,
+      "h": 1,
+      "area_mm2": 0.857,
+      "reason": "systematic noise (>60% sample frequency, 93.3% noise overlap)"
+    },
+    {
+      "raw_id": 806,
+      "x": 259,
+      "y": 335,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 807,
+      "x": 450,
+      "y": 335,
+      "w": 6,
+      "h": 3,
+      "area_mm2": 0.743,
+      "reason": "systematic noise (>60% sample frequency, 84.6% noise overlap)"
+    },
+    {
+      "raw_id": 809,
+      "x": 809,
+      "y": 335,
+      "w": 6,
+      "h": 3,
+      "area_mm2": 1.028,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 811,
+      "x": 257,
+      "y": 337,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 812,
+      "x": 271,
+      "y": 337,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 40.0% noise overlap)"
+    },
+    {
+      "raw_id": 813,
+      "x": 276,
+      "y": 336,
+      "w": 9,
+      "h": 10,
+      "area_mm2": 2.113,
+      "reason": "systematic noise (>60% sample frequency, 59.5% noise overlap)"
+    },
+    {
+      "raw_id": 814,
+      "x": 288,
+      "y": 337,
+      "w": 8,
+      "h": 3,
+      "area_mm2": 0.8,
+      "reason": "systematic noise (>60% sample frequency, 57.1% noise overlap)"
+    },
+    {
+      "raw_id": 818,
+      "x": 117,
+      "y": 338,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 819,
+      "x": 199,
+      "y": 338,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 80.0% noise overlap)"
+    },
+    {
+      "raw_id": 820,
+      "x": 261,
+      "y": 339,
+      "w": 4,
+      "h": 2,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 822,
+      "x": 682,
+      "y": 339,
+      "w": 1,
+      "h": 3,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 33.3% noise overlap)"
+    },
+    {
+      "raw_id": 823,
+      "x": 742,
+      "y": 339,
+      "w": 7,
+      "h": 4,
+      "area_mm2": 1.142,
+      "reason": "systematic noise (>60% sample frequency, 60.0% noise overlap)"
+    },
+    {
+      "raw_id": 825,
+      "x": 826,
+      "y": 338,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 826,
+      "x": 396,
+      "y": 341,
+      "w": 6,
+      "h": 4,
+      "area_mm2": 0.914,
+      "reason": "systematic noise (>60% sample frequency, 75.0% noise overlap)"
+    },
+    {
+      "raw_id": 827,
+      "x": 117,
+      "y": 343,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 829,
+      "x": 444,
+      "y": 343,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 830,
+      "x": 449,
+      "y": 343,
+      "w": 6,
+      "h": 3,
+      "area_mm2": 0.628,
+      "reason": "systematic noise (>60% sample frequency, 63.6% noise overlap)"
+    },
+    {
+      "raw_id": 831,
+      "x": 491,
+      "y": 343,
+      "w": 6,
+      "h": 8,
+      "area_mm2": 0.8,
+      "reason": "systematic noise (>60% sample frequency, 57.1% noise overlap)"
+    },
+    {
+      "raw_id": 833,
+      "x": 433,
+      "y": 345,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 80.0% noise overlap)"
+    },
+    {
+      "raw_id": 839,
+      "x": 87,
+      "y": 349,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.514,
+      "reason": "systematic noise (>60% sample frequency, 88.9% noise overlap)"
+    },
+    {
+      "raw_id": 840,
+      "x": 117,
+      "y": 349,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 841,
+      "x": 275,
+      "y": 349,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 842,
+      "x": 504,
+      "y": 349,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.228,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 843,
+      "x": 751,
+      "y": 348,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 846,
+      "x": 277,
+      "y": 351,
+      "w": 6,
+      "h": 3,
+      "area_mm2": 0.514,
+      "reason": "systematic noise (>60% sample frequency, 55.6% noise overlap)"
+    },
+    {
+      "raw_id": 847,
+      "x": 310,
+      "y": 350,
+      "w": 2,
+      "h": 2,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 848,
+      "x": 501,
+      "y": 351,
+      "w": 2,
+      "h": 2,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 850,
+      "x": 805,
+      "y": 350,
+      "w": 6,
+      "h": 3,
+      "area_mm2": 0.514,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 853,
+      "x": 392,
+      "y": 352,
+      "w": 6,
+      "h": 7,
+      "area_mm2": 0.971,
+      "reason": "systematic noise (>60% sample frequency, 47.1% noise overlap)"
+    },
+    {
+      "raw_id": 854,
+      "x": 484,
+      "y": 352,
+      "w": 8,
+      "h": 4,
+      "area_mm2": 0.971,
+      "reason": "systematic noise (>60% sample frequency, 47.1% noise overlap)"
+    },
+    {
+      "raw_id": 856,
+      "x": 784,
+      "y": 352,
+      "w": 7,
+      "h": 8,
+      "area_mm2": 1.485,
+      "reason": "systematic noise (>60% sample frequency, 46.2% noise overlap)"
+    },
+    {
+      "raw_id": 858,
+      "x": 431,
+      "y": 356,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 860,
+      "x": 496,
+      "y": 356,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 60.0% noise overlap)"
+    },
+    {
+      "raw_id": 861,
+      "x": 809,
+      "y": 357,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.4,
+      "reason": "systematic noise (>60% sample frequency, 71.4% noise overlap)"
+    },
+    {
+      "raw_id": 862,
+      "x": 237,
+      "y": 358,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 865,
+      "x": 505,
+      "y": 359,
+      "w": 3,
+      "h": 4,
+      "area_mm2": 0.457,
+      "reason": "systematic noise (>60% sample frequency, 75.0% noise overlap)"
+    },
+    {
+      "raw_id": 866,
+      "x": 548,
+      "y": 358,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.514,
+      "reason": "systematic noise (>60% sample frequency, 55.6% noise overlap)"
+    },
+    {
+      "raw_id": 867,
+      "x": 66,
+      "y": 361,
+      "w": 7,
+      "h": 9,
+      "area_mm2": 2.228,
+      "reason": "systematic noise (>60% sample frequency, 41.0% noise overlap)"
+    },
+    {
+      "raw_id": 868,
+      "x": 428,
+      "y": 360,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 869,
+      "x": 490,
+      "y": 360,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 870,
+      "x": 493,
+      "y": 360,
+      "w": 2,
+      "h": 3,
+      "area_mm2": 0.228,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 872,
+      "x": 571,
+      "y": 360,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 874,
+      "x": 835,
+      "y": 361,
+      "w": 3,
+      "h": 1,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 875,
+      "x": 471,
+      "y": 363,
+      "w": 1,
+      "h": 4,
+      "area_mm2": 0.228,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 876,
+      "x": 807,
+      "y": 363,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 877,
+      "x": 257,
+      "y": 364,
+      "w": 7,
+      "h": 5,
+      "area_mm2": 1.2,
+      "reason": "systematic noise (>60% sample frequency, 47.6% noise overlap)"
+    },
+    {
+      "raw_id": 878,
+      "x": 302,
+      "y": 365,
+      "w": 6,
+      "h": 1,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 83.3% noise overlap)"
+    },
+    {
+      "raw_id": 882,
+      "x": 504,
+      "y": 365,
+      "w": 2,
+      "h": 2,
+      "area_mm2": 0.228,
+      "reason": "systematic noise (>60% sample frequency, 75.0% noise overlap)"
+    },
+    {
+      "raw_id": 883,
+      "x": 582,
+      "y": 364,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 83.3% noise overlap)"
+    },
+    {
+      "raw_id": 884,
+      "x": 618,
+      "y": 364,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 885,
+      "x": 793,
+      "y": 364,
+      "w": 2,
+      "h": 5,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 33.3% noise overlap)"
+    },
+    {
+      "raw_id": 886,
+      "x": 160,
+      "y": 366,
+      "w": 17,
+      "h": 12,
+      "area_mm2": 7.997,
+      "reason": "systematic noise (>60% sample frequency, 80.7% noise overlap)"
+    },
+    {
+      "raw_id": 887,
+      "x": 445,
+      "y": 366,
+      "w": 14,
+      "h": 8,
+      "area_mm2": 2.285,
+      "reason": "systematic noise (>60% sample frequency, 52.5% noise overlap)"
+    },
+    {
+      "raw_id": 889,
+      "x": 510,
+      "y": 367,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 890,
+      "x": 521,
+      "y": 366,
+      "w": 46,
+      "h": 72,
+      "area_mm2": 21.306,
+      "reason": "systematic noise (>60% sample frequency, 89.0% noise overlap)"
+    },
+    {
+      "raw_id": 891,
+      "x": 592,
+      "y": 367,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 893,
+      "x": 416,
+      "y": 368,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 60.0% noise overlap)"
+    },
+    {
+      "raw_id": 895,
+      "x": 430,
+      "y": 369,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 60.0% noise overlap)"
+    },
+    {
+      "raw_id": 896,
+      "x": 733,
+      "y": 368,
+      "w": 3,
+      "h": 5,
+      "area_mm2": 0.514,
+      "reason": "systematic noise (>60% sample frequency, 33.3% noise overlap)"
+    },
+    {
+      "raw_id": 898,
+      "x": 791,
+      "y": 369,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 900,
+      "x": 805,
+      "y": 368,
+      "w": 8,
+      "h": 6,
+      "area_mm2": 0.971,
+      "reason": "systematic noise (>60% sample frequency, 41.2% noise overlap)"
+    },
+    {
+      "raw_id": 904,
+      "x": 497,
+      "y": 370,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 906,
+      "x": 798,
+      "y": 371,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 907,
+      "x": 118,
+      "y": 372,
+      "w": 2,
+      "h": 6,
+      "area_mm2": 0.514,
+      "reason": "systematic noise (>60% sample frequency, 77.8% noise overlap)"
+    },
+    {
+      "raw_id": 909,
+      "x": 340,
+      "y": 373,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.514,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 910,
+      "x": 435,
+      "y": 372,
+      "w": 4,
+      "h": 4,
+      "area_mm2": 0.571,
+      "reason": "systematic noise (>60% sample frequency, 40.0% noise overlap)"
+    },
+    {
+      "raw_id": 911,
+      "x": 498,
+      "y": 372,
+      "w": 3,
+      "h": 4,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 915,
+      "x": 569,
+      "y": 374,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 916,
+      "x": 597,
+      "y": 375,
+      "w": 3,
+      "h": 1,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 919,
+      "x": 789,
+      "y": 375,
+      "w": 2,
+      "h": 2,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 921,
+      "x": 821,
+      "y": 375,
+      "w": 3,
+      "h": 5,
+      "area_mm2": 0.4,
+      "reason": "systematic noise (>60% sample frequency, 42.9% noise overlap)"
+    },
+    {
+      "raw_id": 922,
+      "x": 291,
+      "y": 377,
+      "w": 5,
+      "h": 5,
+      "area_mm2": 0.628,
+      "reason": "systematic noise (>60% sample frequency, 63.6% noise overlap)"
+    },
+    {
+      "raw_id": 926,
+      "x": 441,
+      "y": 377,
+      "w": 3,
+      "h": 5,
+      "area_mm2": 0.514,
+      "reason": "systematic noise (>60% sample frequency, 44.4% noise overlap)"
+    },
+    {
+      "raw_id": 927,
+      "x": 566,
+      "y": 377,
+      "w": 2,
+      "h": 2,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 929,
+      "x": 800,
+      "y": 377,
+      "w": 6,
+      "h": 3,
+      "area_mm2": 0.571,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 930,
+      "x": 808,
+      "y": 377,
+      "w": 3,
+      "h": 4,
+      "area_mm2": 0.4,
+      "reason": "systematic noise (>60% sample frequency, 71.4% noise overlap)"
+    },
+    {
+      "raw_id": 931,
+      "x": 195,
+      "y": 378,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 934,
+      "x": 456,
+      "y": 378,
+      "w": 3,
+      "h": 1,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 936,
+      "x": 175,
+      "y": 381,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 937,
+      "x": 303,
+      "y": 380,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 940,
+      "x": 570,
+      "y": 381,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 941,
+      "x": 733,
+      "y": 381,
+      "w": 4,
+      "h": 4,
+      "area_mm2": 0.628,
+      "reason": "systematic noise (>60% sample frequency, 90.9% noise overlap)"
+    },
+    {
+      "raw_id": 942,
+      "x": 776,
+      "y": 380,
+      "w": 8,
+      "h": 4,
+      "area_mm2": 1.028,
+      "reason": "systematic noise (>60% sample frequency, 33.3% noise overlap)"
+    },
+    {
+      "raw_id": 943,
+      "x": 825,
+      "y": 380,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 944,
+      "x": 153,
+      "y": 383,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 945,
+      "x": 159,
+      "y": 382,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 946,
+      "x": 158,
+      "y": 382,
+      "w": 42,
+      "h": 47,
+      "area_mm2": 44.84,
+      "reason": "systematic noise (>60% sample frequency, 74.5% noise overlap)"
+    },
+    {
+      "raw_id": 947,
+      "x": 288,
+      "y": 383,
+      "w": 6,
+      "h": 5,
+      "area_mm2": 0.857,
+      "reason": "systematic noise (>60% sample frequency, 73.3% noise overlap)"
+    },
+    {
+      "raw_id": 948,
+      "x": 297,
+      "y": 382,
+      "w": 6,
+      "h": 3,
+      "area_mm2": 0.914,
+      "reason": "systematic noise (>60% sample frequency, 31.2% noise overlap)"
+    },
+    {
+      "raw_id": 949,
+      "x": 437,
+      "y": 383,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 951,
+      "x": 767,
+      "y": 383,
+      "w": 5,
+      "h": 10,
+      "area_mm2": 1.428,
+      "reason": "systematic noise (>60% sample frequency, 68.0% noise overlap)"
+    },
+    {
+      "raw_id": 953,
+      "x": 261,
+      "y": 385,
+      "w": 1,
+      "h": 2,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 954,
+      "x": 268,
+      "y": 385,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 955,
+      "x": 307,
+      "y": 384,
+      "w": 3,
+      "h": 4,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 956,
+      "x": 559,
+      "y": 385,
+      "w": 3,
+      "h": 1,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 958,
+      "x": 738,
+      "y": 384,
+      "w": 4,
+      "h": 4,
+      "area_mm2": 0.457,
+      "reason": "systematic noise (>60% sample frequency, 62.5% noise overlap)"
+    },
+    {
+      "raw_id": 960,
+      "x": 822,
+      "y": 384,
+      "w": 1,
+      "h": 33,
+      "area_mm2": 1.885,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 961,
+      "x": 125,
+      "y": 386,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 962,
+      "x": 157,
+      "y": 386,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 963,
+      "x": 242,
+      "y": 386,
+      "w": 1,
+      "h": 2,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 966,
+      "x": 493,
+      "y": 387,
+      "w": 5,
+      "h": 8,
+      "area_mm2": 1.142,
+      "reason": "systematic noise (>60% sample frequency, 80.0% noise overlap)"
+    },
+    {
+      "raw_id": 967,
+      "x": 777,
+      "y": 386,
+      "w": 7,
+      "h": 9,
+      "area_mm2": 2.399,
+      "reason": "systematic noise (>60% sample frequency, 69.0% noise overlap)"
+    },
+    {
+      "raw_id": 968,
+      "x": 814,
+      "y": 387,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 970,
+      "x": 158,
+      "y": 391,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 971,
+      "x": 308,
+      "y": 390,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 972,
+      "x": 334,
+      "y": 390,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 974,
+      "x": 281,
+      "y": 392,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.514,
+      "reason": "systematic noise (>60% sample frequency, 88.9% noise overlap)"
+    },
+    {
+      "raw_id": 975,
+      "x": 346,
+      "y": 392,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.228,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 977,
+      "x": 561,
+      "y": 392,
+      "w": 11,
+      "h": 6,
+      "area_mm2": 2.113,
+      "reason": "systematic noise (>60% sample frequency, 73.0% noise overlap)"
+    },
+    {
+      "raw_id": 978,
+      "x": 693,
+      "y": 392,
+      "w": 7,
+      "h": 2,
+      "area_mm2": 0.4,
+      "reason": "systematic noise (>60% sample frequency, 85.7% noise overlap)"
+    },
+    {
+      "raw_id": 980,
+      "x": 772,
+      "y": 392,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.228,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 981,
+      "x": 786,
+      "y": 392,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 982,
+      "x": 156,
+      "y": 395,
+      "w": 2,
+      "h": 3,
+      "area_mm2": 0.228,
+      "reason": "systematic noise (>60% sample frequency, 75.0% noise overlap)"
+    },
+    {
+      "raw_id": 984,
+      "x": 373,
+      "y": 395,
+      "w": 12,
+      "h": 10,
+      "area_mm2": 2.228,
+      "reason": "systematic noise (>60% sample frequency, 41.0% noise overlap)"
+    },
+    {
+      "raw_id": 986,
+      "x": 794,
+      "y": 394,
+      "w": 5,
+      "h": 4,
+      "area_mm2": 0.743,
+      "reason": "systematic noise (>60% sample frequency, 69.2% noise overlap)"
+    },
+    {
+      "raw_id": 987,
+      "x": 213,
+      "y": 396,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 988,
+      "x": 246,
+      "y": 396,
+      "w": 10,
+      "h": 4,
+      "area_mm2": 1.314,
+      "reason": "systematic noise (>60% sample frequency, 78.3% noise overlap)"
+    },
+    {
+      "raw_id": 990,
+      "x": 354,
+      "y": 396,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 992,
+      "x": 782,
+      "y": 396,
+      "w": 5,
+      "h": 4,
+      "area_mm2": 0.8,
+      "reason": "systematic noise (>60% sample frequency, 78.6% noise overlap)"
+    },
+    {
+      "raw_id": 993,
+      "x": 66,
+      "y": 398,
+      "w": 6,
+      "h": 7,
+      "area_mm2": 1.485,
+      "reason": "systematic noise (>60% sample frequency, 65.4% noise overlap)"
+    },
+    {
+      "raw_id": 994,
+      "x": 334,
+      "y": 398,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 33.3% noise overlap)"
+    },
+    {
+      "raw_id": 996,
+      "x": 622,
+      "y": 398,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 998,
+      "x": 769,
+      "y": 399,
+      "w": 5,
+      "h": 9,
+      "area_mm2": 1.599,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 999,
+      "x": 344,
+      "y": 401,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1000,
+      "x": 349,
+      "y": 400,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1005,
+      "x": 92,
+      "y": 402,
+      "w": 3,
+      "h": 1,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1006,
+      "x": 153,
+      "y": 402,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.4,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1007,
+      "x": 326,
+      "y": 402,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 1009,
+      "x": 598,
+      "y": 402,
+      "w": 2,
+      "h": 2,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 1011,
+      "x": 352,
+      "y": 404,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1014,
+      "x": 605,
+      "y": 404,
+      "w": 23,
+      "h": 1,
+      "area_mm2": 1.314,
+      "reason": "systematic noise (>60% sample frequency, 95.7% noise overlap)"
+    },
+    {
+      "raw_id": 1016,
+      "x": 641,
+      "y": 405,
+      "w": 5,
+      "h": 3,
+      "area_mm2": 0.571,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 1018,
+      "x": 666,
+      "y": 404,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1019,
+      "x": 676,
+      "y": 405,
+      "w": 1,
+      "h": 3,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 33.3% noise overlap)"
+    },
+    {
+      "raw_id": 1020,
+      "x": 767,
+      "y": 405,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1021,
+      "x": 782,
+      "y": 404,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.4,
+      "reason": "systematic noise (>60% sample frequency, 42.9% noise overlap)"
+    },
+    {
+      "raw_id": 1022,
+      "x": 194,
+      "y": 407,
+      "w": 2,
+      "h": 3,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1024,
+      "x": 552,
+      "y": 407,
+      "w": 5,
+      "h": 6,
+      "area_mm2": 0.743,
+      "reason": "systematic noise (>60% sample frequency, 30.8% noise overlap)"
+    },
+    {
+      "raw_id": 1025,
+      "x": 154,
+      "y": 409,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1027,
+      "x": 342,
+      "y": 409,
+      "w": 4,
+      "h": 3,
+      "area_mm2": 0.571,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1028,
+      "x": 378,
+      "y": 408,
+      "w": 6,
+      "h": 4,
+      "area_mm2": 0.971,
+      "reason": "systematic noise (>60% sample frequency, 52.9% noise overlap)"
+    },
+    {
+      "raw_id": 1029,
+      "x": 387,
+      "y": 409,
+      "w": 3,
+      "h": 7,
+      "area_mm2": 0.628,
+      "reason": "systematic noise (>60% sample frequency, 36.4% noise overlap)"
+    },
+    {
+      "raw_id": 1032,
+      "x": 648,
+      "y": 408,
+      "w": 3,
+      "h": 1,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 1034,
+      "x": 802,
+      "y": 409,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1035,
+      "x": 810,
+      "y": 409,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1036,
+      "x": 274,
+      "y": 411,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1038,
+      "x": 322,
+      "y": 410,
+      "w": 5,
+      "h": 5,
+      "area_mm2": 1.085,
+      "reason": "systematic noise (>60% sample frequency, 47.4% noise overlap)"
+    },
+    {
+      "raw_id": 1039,
+      "x": 430,
+      "y": 411,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1040,
+      "x": 772,
+      "y": 411,
+      "w": 7,
+      "h": 5,
+      "area_mm2": 1.085,
+      "reason": "systematic noise (>60% sample frequency, 78.9% noise overlap)"
+    },
+    {
+      "raw_id": 1041,
+      "x": 804,
+      "y": 410,
+      "w": 9,
+      "h": 13,
+      "area_mm2": 1.942,
+      "reason": "systematic noise (>60% sample frequency, 61.8% noise overlap)"
+    },
+    {
+      "raw_id": 1042,
+      "x": 235,
+      "y": 412,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1043,
+      "x": 439,
+      "y": 413,
+      "w": 31,
+      "h": 20,
+      "area_mm2": 15.88,
+      "reason": "systematic noise (>60% sample frequency, 75.5% noise overlap)"
+    },
+    {
+      "raw_id": 1044,
+      "x": 557,
+      "y": 413,
+      "w": 2,
+      "h": 2,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 1045,
+      "x": 114,
+      "y": 415,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1046,
+      "x": 153,
+      "y": 415,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1048,
+      "x": 372,
+      "y": 414,
+      "w": 3,
+      "h": 1,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1049,
+      "x": 546,
+      "y": 414,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1050,
+      "x": 570,
+      "y": 415,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1051,
+      "x": 783,
+      "y": 414,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 1052,
+      "x": 785,
+      "y": 415,
+      "w": 11,
+      "h": 7,
+      "area_mm2": 2.399,
+      "reason": "systematic noise (>60% sample frequency, 35.7% noise overlap)"
+    },
+    {
+      "raw_id": 1054,
+      "x": 562,
+      "y": 417,
+      "w": 4,
+      "h": 9,
+      "area_mm2": 1.085,
+      "reason": "systematic noise (>60% sample frequency, 63.2% noise overlap)"
+    },
+    {
+      "raw_id": 1057,
+      "x": 824,
+      "y": 420,
+      "w": 2,
+      "h": 3,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 1058,
+      "x": 860,
+      "y": 421,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 33.3% noise overlap)"
+    },
+    {
+      "raw_id": 1060,
+      "x": 579,
+      "y": 422,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1061,
+      "x": 73,
+      "y": 424,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 80.0% noise overlap)"
+    },
+    {
+      "raw_id": 1062,
+      "x": 66,
+      "y": 426,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 1067,
+      "x": 188,
+      "y": 429,
+      "w": 2,
+      "h": 3,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1068,
+      "x": 386,
+      "y": 428,
+      "w": 3,
+      "h": 1,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 1069,
+      "x": 539,
+      "y": 429,
+      "w": 2,
+      "h": 2,
+      "area_mm2": 0.228,
+      "reason": "systematic noise (>60% sample frequency, 75.0% noise overlap)"
+    },
+    {
+      "raw_id": 1070,
+      "x": 569,
+      "y": 429,
+      "w": 2,
+      "h": 5,
+      "area_mm2": 0.4,
+      "reason": "systematic noise (>60% sample frequency, 57.1% noise overlap)"
+    },
+    {
+      "raw_id": 1071,
+      "x": 574,
+      "y": 428,
+      "w": 5,
+      "h": 5,
+      "area_mm2": 0.857,
+      "reason": "systematic noise (>60% sample frequency, 80.0% noise overlap)"
+    },
+    {
+      "raw_id": 1072,
+      "x": 150,
+      "y": 431,
+      "w": 47,
+      "h": 40,
+      "area_mm2": 66.432,
+      "reason": "systematic noise (>60% sample frequency, 83.5% noise overlap)"
+    },
+    {
+      "raw_id": 1074,
+      "x": 483,
+      "y": 430,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1076,
+      "x": 487,
+      "y": 432,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1077,
+      "x": 549,
+      "y": 432,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1078,
+      "x": 539,
+      "y": 434,
+      "w": 6,
+      "h": 7,
+      "area_mm2": 2.056,
+      "reason": "systematic noise (>60% sample frequency, 55.6% noise overlap)"
+    },
+    {
+      "raw_id": 1079,
+      "x": 406,
+      "y": 439,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 83.3% noise overlap)"
+    },
+    {
+      "raw_id": 1080,
+      "x": 521,
+      "y": 441,
+      "w": 13,
+      "h": 10,
+      "area_mm2": 3.599,
+      "reason": "systematic noise (>60% sample frequency, 79.4% noise overlap)"
+    },
+    {
+      "raw_id": 1081,
+      "x": 69,
+      "y": 442,
+      "w": 3,
+      "h": 5,
+      "area_mm2": 0.685,
+      "reason": "systematic noise (>60% sample frequency, 75.0% noise overlap)"
+    },
+    {
+      "raw_id": 1082,
+      "x": 262,
+      "y": 442,
+      "w": 6,
+      "h": 7,
+      "area_mm2": 0.743,
+      "reason": "systematic noise (>60% sample frequency, 69.2% noise overlap)"
+    },
+    {
+      "raw_id": 1084,
+      "x": 553,
+      "y": 442,
+      "w": 5,
+      "h": 2,
+      "area_mm2": 0.4,
+      "reason": "systematic noise (>60% sample frequency, 57.1% noise overlap)"
+    },
+    {
+      "raw_id": 1085,
+      "x": 536,
+      "y": 445,
+      "w": 1,
+      "h": 2,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 1086,
+      "x": 552,
+      "y": 445,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1088,
+      "x": 192,
+      "y": 446,
+      "w": 5,
+      "h": 4,
+      "area_mm2": 0.743,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1089,
+      "x": 544,
+      "y": 447,
+      "w": 5,
+      "h": 9,
+      "area_mm2": 1.371,
+      "reason": "systematic noise (>60% sample frequency, 70.8% noise overlap)"
+    },
+    {
+      "raw_id": 1090,
+      "x": 513,
+      "y": 448,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 1091,
+      "x": 517,
+      "y": 450,
+      "w": 5,
+      "h": 3,
+      "area_mm2": 0.571,
+      "reason": "systematic noise (>60% sample frequency, 80.0% noise overlap)"
+    },
+    {
+      "raw_id": 1092,
+      "x": 552,
+      "y": 450,
+      "w": 5,
+      "h": 3,
+      "area_mm2": 0.514,
+      "reason": "systematic noise (>60% sample frequency, 55.6% noise overlap)"
+    },
+    {
+      "raw_id": 1093,
+      "x": 495,
+      "y": 453,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1095,
+      "x": 452,
+      "y": 454,
+      "w": 5,
+      "h": 1,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1096,
+      "x": 534,
+      "y": 455,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1097,
+      "x": 145,
+      "y": 457,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1098,
+      "x": 471,
+      "y": 456,
+      "w": 8,
+      "h": 1,
+      "area_mm2": 0.457,
+      "reason": "systematic noise (>60% sample frequency, 87.5% noise overlap)"
+    },
+    {
+      "raw_id": 1099,
+      "x": 522,
+      "y": 457,
+      "w": 7,
+      "h": 12,
+      "area_mm2": 2.685,
+      "reason": "systematic noise (>60% sample frequency, 89.4% noise overlap)"
+    },
+    {
+      "raw_id": 1100,
+      "x": 513,
+      "y": 458,
+      "w": 2,
+      "h": 3,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 33.3% noise overlap)"
+    },
+    {
+      "raw_id": 1101,
+      "x": 244,
+      "y": 460,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 83.3% noise overlap)"
+    },
+    {
+      "raw_id": 1103,
+      "x": 233,
+      "y": 466,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1104,
+      "x": 302,
+      "y": 466,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1105,
+      "x": 113,
+      "y": 469,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1106,
+      "x": 533,
+      "y": 469,
+      "w": 7,
+      "h": 1,
+      "area_mm2": 0.4,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1107,
+      "x": 488,
+      "y": 471,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1108,
+      "x": 509,
+      "y": 470,
+      "w": 4,
+      "h": 1,
+      "area_mm2": 0.228,
+      "reason": "systematic noise (>60% sample frequency, 75.0% noise overlap)"
+    },
+    {
+      "raw_id": 1110,
+      "x": 294,
+      "y": 472,
+      "w": 4,
+      "h": 4,
+      "area_mm2": 0.571,
+      "reason": "systematic noise (>60% sample frequency, 60.0% noise overlap)"
+    },
+    {
+      "raw_id": 1111,
+      "x": 311,
+      "y": 472,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1112,
+      "x": 494,
+      "y": 473,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1115,
+      "x": 237,
+      "y": 479,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1116,
+      "x": 250,
+      "y": 478,
+      "w": 1,
+      "h": 3,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 33.3% noise overlap)"
+    },
+    {
+      "raw_id": 1117,
+      "x": 115,
+      "y": 480,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1119,
+      "x": 301,
+      "y": 482,
+      "w": 2,
+      "h": 3,
+      "area_mm2": 0.228,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 1120,
+      "x": 448,
+      "y": 483,
+      "w": 3,
+      "h": 1,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 1121,
+      "x": 262,
+      "y": 487,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1122,
+      "x": 277,
+      "y": 486,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1124,
+      "x": 95,
+      "y": 492,
+      "w": 2,
+      "h": 3,
+      "area_mm2": 0.228,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 1125,
+      "x": 232,
+      "y": 492,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1126,
+      "x": 105,
+      "y": 497,
+      "w": 2,
+      "h": 3,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 40.0% noise overlap)"
+    },
+    {
+      "raw_id": 1127,
+      "x": 154,
+      "y": 498,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1128,
+      "x": 245,
+      "y": 499,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1130,
+      "x": 847,
+      "y": 503,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1131,
+      "x": 128,
+      "y": 505,
+      "w": 3,
+      "h": 6,
+      "area_mm2": 0.685,
+      "reason": "systematic noise (>60% sample frequency, 75.0% noise overlap)"
+    },
+    {
+      "raw_id": 1134,
+      "x": 82,
+      "y": 508,
+      "w": 1,
+      "h": 3,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 33.3% noise overlap)"
+    },
+    {
+      "raw_id": 1135,
+      "x": 145,
+      "y": 515,
+      "w": 5,
+      "h": 3,
+      "area_mm2": 0.514,
+      "reason": "systematic noise (>60% sample frequency, 33.3% noise overlap)"
+    },
+    {
+      "raw_id": 1137,
+      "x": 375,
+      "y": 515,
+      "w": 2,
+      "h": 2,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1138,
+      "x": 134,
+      "y": 516,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 1139,
+      "x": 152,
+      "y": 516,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1141,
+      "x": 289,
+      "y": 518,
+      "w": 2,
+      "h": 2,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1143,
+      "x": 458,
+      "y": 519,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 33.3% noise overlap)"
+    },
+    {
+      "raw_id": 1145,
+      "x": 146,
+      "y": 521,
+      "w": 5,
+      "h": 5,
+      "area_mm2": 0.743,
+      "reason": "systematic noise (>60% sample frequency, 38.5% noise overlap)"
+    },
+    {
+      "raw_id": 1147,
+      "x": 783,
+      "y": 521,
+      "w": 4,
+      "h": 5,
+      "area_mm2": 0.914,
+      "reason": "systematic noise (>60% sample frequency, 56.2% noise overlap)"
+    },
+    {
+      "raw_id": 1148,
+      "x": 798,
+      "y": 520,
+      "w": 2,
+      "h": 3,
+      "area_mm2": 0.228,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 1149,
+      "x": 355,
+      "y": 523,
+      "w": 6,
+      "h": 6,
+      "area_mm2": 0.914,
+      "reason": "systematic noise (>60% sample frequency, 31.2% noise overlap)"
+    },
+    {
+      "raw_id": 1150,
+      "x": 558,
+      "y": 522,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 1151,
+      "x": 621,
+      "y": 523,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1154,
+      "x": 231,
+      "y": 525,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 40.0% noise overlap)"
+    },
+    {
+      "raw_id": 1155,
+      "x": 671,
+      "y": 524,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 40.0% noise overlap)"
+    },
+    {
+      "raw_id": 1156,
+      "x": 712,
+      "y": 525,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 66.7% noise overlap)"
+    },
+    {
+      "raw_id": 1157,
+      "x": 351,
+      "y": 527,
+      "w": 3,
+      "h": 4,
+      "area_mm2": 0.457,
+      "reason": "systematic noise (>60% sample frequency, 37.5% noise overlap)"
+    },
+    {
+      "raw_id": 1159,
+      "x": 463,
+      "y": 526,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1162,
+      "x": 173,
+      "y": 529,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.457,
+      "reason": "systematic noise (>60% sample frequency, 37.5% noise overlap)"
+    },
+    {
+      "raw_id": 1163,
+      "x": 228,
+      "y": 529,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.514,
+      "reason": "systematic noise (>60% sample frequency, 44.4% noise overlap)"
+    },
+    {
+      "raw_id": 1165,
+      "x": 317,
+      "y": 528,
+      "w": 1,
+      "h": 2,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 1168,
+      "x": 184,
+      "y": 533,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.4,
+      "reason": "systematic noise (>60% sample frequency, 42.9% noise overlap)"
+    },
+    {
+      "raw_id": 1180,
+      "x": 148,
+      "y": 537,
+      "w": 2,
+      "h": 1,
+      "area_mm2": 0.114,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1181,
+      "x": 343,
+      "y": 537,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.171,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1185,
+      "x": 147,
+      "y": 539,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1186,
+      "x": 274,
+      "y": 539,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1187,
+      "x": 280,
+      "y": 538,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.343,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 1188,
+      "x": 299,
+      "y": 538,
+      "w": 6,
+      "h": 4,
+      "area_mm2": 0.743,
+      "reason": "systematic noise (>60% sample frequency, 53.8% noise overlap)"
+    },
+    {
+      "raw_id": 1189,
+      "x": 536,
+      "y": 539,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.286,
+      "reason": "systematic noise (>60% sample frequency, 40.0% noise overlap)"
+    },
+    {
+      "raw_id": 1192,
+      "x": 348,
+      "y": 540,
+      "w": 3,
+      "h": 3,
+      "area_mm2": 0.457,
+      "reason": "systematic noise (>60% sample frequency, 37.5% noise overlap)"
+    },
+    {
+      "raw_id": 1194,
+      "x": 189,
+      "y": 543,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1197,
+      "x": 279,
+      "y": 548,
+      "w": 1,
+      "h": 1,
+      "area_mm2": 0.057,
+      "reason": "systematic noise (>60% sample frequency, 100.0% noise overlap)"
+    },
+    {
+      "raw_id": 1198,
+      "x": 139,
+      "y": 550,
+      "w": 85,
+      "h": 6,
+      "area_mm2": 6.569,
+      "reason": "systematic noise (>60% sample frequency, 79.1% noise overlap)"
+    },
+    {
+      "raw_id": 1199,
+      "x": 301,
+      "y": 551,
+      "w": 3,
+      "h": 2,
+      "area_mm2": 0.228,
+      "reason": "systematic noise (>60% sample frequency, 50.0% noise overlap)"
+    },
+    {
+      "raw_id": 1202,
+      "x": 225,
+      "y": 554,
+      "w": 561,
+      "h": 12,
+      "area_mm2": 35.929,
+      "reason": "systematic noise (>60% sample frequency, 92.8% noise overlap)"
+    }
+  ]
+}

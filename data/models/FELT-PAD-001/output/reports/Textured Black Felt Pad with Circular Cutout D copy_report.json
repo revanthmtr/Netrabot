@@ -1,0 +1,118 @@
+{
+  "part_id": "FELT-PAD-001",
+  "file": "Textured Black Felt Pad with Circular Cutout D copy.png",
+  "verdict": "FAIL",
+  "gate_failures": [
+    "HIGHLIGHT CLIPPING: 10.8%"
+  ],
+  "global_metrics": {
+    "registration": {
+      "dx": 0.0009662219688379992,
+      "dy": -2.9308814305295527e-05,
+      "shift_px": 0.0009666663848821689,
+      "shift_mm": 0.00023103326598683836,
+      "response": 0.988359118849039,
+      "exceeded": false
+    },
+    "topology": {
+      "contour_count": 3,
+      "golden_mean": 3.0,
+      "tolerance": 6.0,
+      "deviated": false
+    },
+    "total_candidates": 2,
+    "shown": 2
+  },
+  "detector_stats": {
+    "zscore": {
+      "flagged_px": 385,
+      "pct": 0.0454
+    },
+    "ssim": {
+      "flagged_px": 13791,
+      "pct": 1.6273
+    },
+    "absdiff": {
+      "flagged_px": 1093,
+      "pct": 0.129
+    },
+    "color": {
+      "flagged_px": 1272,
+      "pct": 0.1501
+    },
+    "edge": {
+      "flagged_px": 1256,
+      "pct": 0.1482
+    },
+    "morph": {
+      "flagged_px": 1664,
+      "pct": 0.1964
+    },
+    "gradient": {
+      "flagged_px": 2001,
+      "pct": 0.2361
+    },
+    "texture": {
+      "flagged_px": 0,
+      "pct": 0.0
+    }
+  },
+  "total_candidates": 2,
+  "top_n_shown": 2,
+  "defects": [
+    {
+      "id": 1,
+      "x": 263,
+      "y": 331,
+      "w": 91,
+      "h": 507,
+      "area_px": 13843.0,
+      "area_mm2": 790.726003,
+      "centroid": [
+        307.3309976161237,
+        590.3296973199451
+      ],
+      "detectors": [
+        "zscore",
+        "ssim",
+        "absdiff",
+        "color",
+        "edge",
+        "morph",
+        "gradient"
+      ],
+      "confidence": 0.875,
+      "severity": "CRITICAL",
+      "defect_type": "SPECK / CONTAMINATION",
+      "peak_deviation": 113.0,
+      "region": "unassigned",
+      "saliency": 0.8738,
+      "rank": 1,
+      "crop_url": "crops/Textured Black Felt Pad with Circular Cutout D copy_defect_1.png"
+    },
+    {
+      "id": 2,
+      "x": 261,
+      "y": 349,
+      "w": 3,
+      "h": 3,
+      "area_px": 5.0,
+      "area_mm2": 0.285605,
+      "centroid": [
+        262.0,
+        350.2
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 0.18,
+      "region": "unassigned",
+      "saliency": 0.1285,
+      "rank": 2,
+      "crop_url": "crops/Textured Black Felt Pad with Circular Cutout D copy_defect_2.png"
+    }
+  ]
+}

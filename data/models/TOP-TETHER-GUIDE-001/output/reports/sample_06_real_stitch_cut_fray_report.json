@@ -1,0 +1,50 @@
+{
+  "part_id": "TOP-TETHER-GUIDE-001",
+  "file": "sample_06_real_stitch_cut_fray.jpg",
+  "verdict": "FAIL",
+  "gate_failures": [
+    "SIZE MISMATCH: (896, 1200) vs (1254, 1254)",
+    "POSITION OUT OF TOLERANCE: 999.0px"
+  ],
+  "global_metrics": {
+    "registration": {
+      "dx": 0.0,
+      "dy": 0.0,
+      "shift_px": 999.0,
+      "shift_mm": 238.761,
+      "response": 0.0,
+      "exceeded": true,
+      "error": "SIZE MISMATCH: (896, 1200) vs (1254, 1254)"
+    },
+    "total_candidates": 1,
+    "shown": 1
+  },
+  "detector_stats": {},
+  "total_candidates": 1,
+  "top_n_shown": 1,
+  "defects": [
+    {
+      "id": 1,
+      "x": 0,
+      "y": 0,
+      "w": 1200,
+      "h": 896,
+      "area_px": 1075200.0,
+      "area_mm2": 61416.4992,
+      "centroid": [
+        600.0,
+        448.0
+      ],
+      "detectors": [
+        "quality_gate"
+      ],
+      "confidence": 1.0,
+      "severity": "CRITICAL",
+      "defect_type": "DIMENSION_MISMATCH",
+      "peak_deviation": 255.0,
+      "region": "unassigned",
+      "saliency": 1.0,
+      "rank": 1
+    }
+  ]
+}

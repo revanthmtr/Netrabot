@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NETRABOT AOI — Inspection Intelligence Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/dashboard/style.css">
+</head>
+<body class="dark-theme">
+  <!-- ────────── Model Gallery Modal (Overlay) ────────── -->
+  <div class="modal-overlay" id="model-gallery-overlay">
+    <div class="modal-panel">
+      <div class="modal-header">
+        <h2>Model Library</h2>
+        <p class="modal-subtitle">Each model holds its own master golden images, samples, and spec. Select one to inspect against.</p>
+        <button class="modal-close-btn" id="btn-close-gallery" title="Close">&times;</button>
+      </div>
+
+      <div class="modal-toolbar">
+        <button class="btn-primary" id="btn-create-model">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          New Model
+        </button>
+      </div>
+
+      <div class="model-grid" id="model-grid">
+        <!-- dynamic model cards -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ────────── Model Detail Modal (Golden Images Manager) ────────── -->
+  <div class="modal-overlay" id="model-detail-overlay">
+    <div class="modal-panel modal-panel-wide">
+      <div class="modal-header">
+        <div>
+          <h2 id="detail-model-title">Model Details</h2>
+          <p class="modal-subtitle" id="detail-model-desc">Manage golden master images and samples</p>
+        </div>
+        <button class="modal-close-btn" id="btn-close-detail" title="Close">&times;</button>
+      </div>
+
+      <div class="detail-tabs-row">
+        <button class="detail-tab active" data-tab="golden" id="tab-golden">
+          🌟 Golden Masters (<span id="golden-count">0</span>)
+        </button>
+        <button class="detail-tab" data-tab="samples" id="tab-samples">
+          📷 Samples (<span id="sample-count">0</span>)
+        </button>
+      </div>
+
+      <!-- Golden Images Grid -->
+      <div class="detail-section" id="section-golden">
+        <div class="upload-zone" id="golden-upload-zone">
+          <div class="upload-zone-inner">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            <p>Drop golden reference images here or <label for="golden-file-input" class="upload-link">browse files</label></p>
+            <p class="upload-hint">PNG, JPG, HEIC — 20-30 images recommended per AGENTS.md rule 3</p>
+            <input type="file" id="golden-file-input" multiple accept="image/*" hidden>
+          </div>
+        </div>
+        <div class="image-thumb-grid" id="golden-thumb-grid">
+          <!-- dynamic golden image thumbnails -->
+        </div>
+      </div>
+
+      <!-- Samples Grid -->
+      <div class="detail-section hidden" id="section-samples">
+        <div class="upload-zone" id="samples-upload-zone">
+          <div class="upload-zone-inner">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            <p>Drop sample images here or <label for="samples-file-input" class="upload-link">browse files</label></p>
+            <p class="upload-hint">Images to inspect against this model's golden reference</p>
+            <input type="file" id="samples-file-input" multiple accept="image/*" hidden>
+          </div>
+        </div>
+        <div class="image-thumb-grid" id="samples-thumb-grid">
+          <!-- dynamic sample image thumbnails -->
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-secondary" id="btn-back-to-gallery">← Back to Models</button>
+        <button class="btn-primary" id="btn-activate-model">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Select & View Model
+        </button>
+        <button class="btn-secondary" id="btn-inspect-model">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m10 15 5-3-5-3v6z"/></svg>
+          Re-Run Inspection
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ────────── Top Application Bar ────────── -->
+  <header class="app-header">
+    <div class="brand-group">
+      <div class="logo-mark">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="m10 15 5-3-5-3v6z"></path>
+          <circle cx="12" cy="12" r="3" stroke="#06b6d4"></circle>
+        </svg>
+      </div>
+      <div>
+        <h1 class="brand-title">NETRABOT <span class="brand-sub">AOI INSPECT</span></h1>
+        <div class="badge-row">
+          <span class="system-badge zero-miss">Zero-Miss Engine</span>
+          <span class="system-badge stat-golden">Statistical Golden Ref</span>
+          <span class="system-badge noise-calibrated" id="calib-status-badge">Noise-Calibrated (p99.5)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <!-- Active Model Selector Pill -->
+      <button class="model-selector-btn" id="btn-open-gallery" title="Open Model Library">
+        <span class="model-thumb-mini" id="active-model-thumb">🌟</span>
+        <div class="model-selector-info">
+          <span class="model-selector-label">ACTIVE MODEL</span>
+          <span class="model-selector-name" id="active-model-name">No model selected</span>
+        </div>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+
+      <div class="spec-info-pill" id="spec-info-pill">
+        <span class="pill-label">PART ID:</span>
+        <span class="pill-val" id="spec-part-id">—</span>
+        <span class="pill-sep">•</span>
+        <span class="pill-label">RIG RES:</span>
+        <span class="pill-val" id="spec-resolution">—</span>
+      </div>
+
+      <input type="file" id="main-samples-file-input" multiple accept="image/*" hidden>
+      <button class="btn-secondary" id="btn-quick-add-samples" title="Add new sample images to inspect against active model">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        Add Samples
+      </button>
+
+      <button class="btn-primary" id="btn-reinspect" title="Re-run AOI inspection for active model">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+        Re-Run
+      </button>
+    </div>
+  </header>
+
+  <!-- ────────── Main Grid Workspace ────────── -->
+  <main class="workspace-grid">
+    <!-- Left Panel -->
+    <aside class="left-panel">
+      <div class="panel-section-header">
+        <h2>INSPECTED PARTS</h2>
+        <div style="display:flex;align-items:center;gap:0.4rem;">
+          <span class="counter-badge" id="parts-count">0 Parts</span>
+          <button id="btn-panel-add-samples" title="Upload sample images to inspect" style="background:#1e293b;border:1px solid #334155;color:#06b6d4;border-radius:4px;padding:0.15rem 0.45rem;font-size:0.75rem;font-weight:700;cursor:pointer;">+ Add</button>
+        </div>
+      </div>
+      <div class="parts-list" id="parts-list-container">
+      </div>
+
+      <div class="panel-section-header" style="margin-top: 1.5rem;">
+        <h2>QUALITY GATE & REGISTRATION</h2>
+      </div>
+      <div class="glass-card telemetry-card">
+        <div class="telemetry-row">
+          <span class="tel-label">Translation Offset</span>
+          <span class="tel-val mono" id="tel-shift">—</span>
+        </div>
+        <div class="telemetry-row">
+          <span class="tel-label">Phase Correlation</span>
+          <span class="tel-val mono" id="tel-response">—</span>
+        </div>
+        <div class="telemetry-row">
+          <span class="tel-label">Connectivity Topology</span>
+          <span class="tel-val mono" id="tel-topology">—</span>
+        </div>
+        <div class="telemetry-row">
+          <span class="tel-label">Registration Gate</span>
+          <span class="verdict-tag pass" id="tel-reg-gate">—</span>
+        </div>
+      </div>
+
+      <div class="panel-section-header" style="margin-top: 1.5rem;">
+        <h2>SPECIFIED REGIONS (ROIs)</h2>
+      </div>
+      <div class="glass-card roi-summary-card" id="roi-badges-container"></div>
+    </aside>
+
+    <!-- Center Panel -->
+    <section class="center-canvas-panel">
+      <div class="canvas-toolbar">
+        <div class="layer-selector" role="group" aria-label="Inspection Layers">
+          <button class="layer-btn active" data-layer="annotated" id="layer-annotated"><span class="icon">🏷️</span> Annotated</button>
+          <button class="layer-btn" data-layer="sample" id="layer-sample"><span class="icon">📷</span> Raw Sample</button>
+          <button class="layer-btn" data-layer="golden" id="layer-golden"><span class="icon">🌟</span> Golden Mean</button>
+          <button class="layer-btn" data-layer="diff" id="layer-diff"><span class="icon">🌡️</span> Difference Heatmap</button>
+        </div>
+        <div class="overlay-toggles">
+          <label class="toggle-checkbox"><input type="checkbox" id="chk-show-boxes" checked><span class="toggle-label">Defect Boxes</span></label>
+          <label class="toggle-checkbox"><input type="checkbox" id="chk-show-rois" checked><span class="toggle-label">ROI Boundaries</span></label>
+        </div>
+        <div class="zoom-controls">
+          <button class="zoom-btn" id="btn-zoom-out" title="Zoom Out">−</button>
+          <span class="zoom-level" id="zoom-level-text">100%</span>
+          <button class="zoom-btn" id="btn-zoom-in" title="Zoom In">+</button>
+          <button class="zoom-btn" id="btn-zoom-reset" title="Reset View">Fit</button>
+        </div>
+      </div>
+      <div class="canvas-viewport" id="canvas-viewport">
+        <div class="canvas-stage" id="canvas-stage">
+          <img id="base-image" class="inspection-image" src="" alt="AOI Target Image">
+          <canvas id="overlay-canvas"></canvas>
+        </div>
+        <div class="canvas-status-pill" id="hover-inspect-pill">Select a model from the header to begin inspection</div>
+      </div>
+      <footer class="canvas-footbar">
+        <div class="foot-item"><span class="label">Sample:</span><span class="val mono" id="foot-sample-name">—</span></div>
+        <div class="foot-item"><span class="label">Dimensions:</span><span class="val mono" id="foot-dimensions">—</span></div>
+        <div class="foot-item"><span class="label">Total Raw Candidates:</span><span class="val mono" id="foot-candidates">—</span></div>
+        <div class="foot-item"><span class="label">Operator Review:</span><span class="val highlight mono" id="foot-shown">—</span></div>
+      </footer>
+    </section>
+
+    <!-- Right Panel -->
+    <aside class="right-panel">
+      <div class="panel-section-header">
+        <h2>SALIENCY RANKING BREAKDOWN</h2>
+        <span class="info-pill" title="Composite multi-detector ranking score">Formula</span>
+      </div>
+      <div class="glass-card formula-card">
+        <div class="formula-title">Rule 5 Empirical Saliency:</div>
+        <div class="formula-equation">
+          <span class="w-chip">0.45·Agreement</span> +
+          <span class="w-chip">0.25·Area</span> +
+          <span class="w-chip">0.20·PeakDev</span> +
+          <span class="w-chip">0.10·Fill</span>
+        </div>
+        <div class="formula-detail" id="selected-defect-saliency-breakdown">Select any candidate below to view its weighted saliency contributions.</div>
+      </div>
+
+      <div class="panel-section-header" style="margin-top: 1.25rem;">
+        <h2>RANKED CANDIDATES</h2>
+        <div class="filter-pills" id="severity-filter-group">
+          <button class="filter-pill active" data-sev="ALL">ALL</button>
+          <button class="filter-pill" data-sev="CRITICAL">CRIT</button>
+          <button class="filter-pill" data-sev="MAJOR">MAJ</button>
+          <button class="filter-pill" data-sev="MINOR">MIN</button>
+        </div>
+      </div>
+      <div class="defects-scroll-list" id="defects-list-container"></div>
+
+      <div class="panel-section-header" style="margin-top: 1.5rem;">
+        <h2>9-DETECTOR ACTIVITY</h2>
+        <span class="counter-badge">UNION FUSION</span>
+      </div>
+      <div class="glass-card detector-activity-card" id="detector-activity-container"></div>
+    </aside>
+  </main>
+
+  <script src="/dashboard/app.js"></script>
+</body>
+</html>

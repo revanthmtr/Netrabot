@@ -1,0 +1,144 @@
+{
+  "part_id": "FELT-PAD-001",
+  "file": "ChatGPT Image Sep 7, 2026, 07_10_46 PM.png",
+  "verdict": "FAIL",
+  "gate_failures": [
+    "HIGHLIGHT CLIPPING: 32.5%"
+  ],
+  "global_metrics": {
+    "registration": {
+      "dx": 0.026384661358065387,
+      "dy": -0.10616598054878068,
+      "shift_px": 0.10939545594248358,
+      "shift_mm": 0.026145513970253574,
+      "response": 0.8880184001475573,
+      "exceeded": false
+    },
+    "topology": {
+      "contour_count": 3,
+      "golden_mean": 3.0,
+      "tolerance": 6.0,
+      "deviated": false
+    },
+    "total_candidates": 3,
+    "shown": 3
+  },
+  "detector_stats": {
+    "zscore": {
+      "flagged_px": 3947,
+      "pct": 0.4657
+    },
+    "ssim": {
+      "flagged_px": 797131,
+      "pct": 94.0611
+    },
+    "absdiff": {
+      "flagged_px": 257362,
+      "pct": 30.3686
+    },
+    "color": {
+      "flagged_px": 488630,
+      "pct": 57.6581
+    },
+    "edge": {
+      "flagged_px": 326166,
+      "pct": 38.4874
+    },
+    "morph": {
+      "flagged_px": 498601,
+      "pct": 58.8347
+    },
+    "gradient": {
+      "flagged_px": 575043,
+      "pct": 67.8548
+    },
+    "texture": {
+      "flagged_px": 57,
+      "pct": 0.0067
+    }
+  },
+  "total_candidates": 3,
+  "top_n_shown": 3,
+  "defects": [
+    {
+      "id": 1,
+      "x": 28,
+      "y": 73,
+      "w": 1043,
+      "h": 1145,
+      "area_px": 800072.0,
+      "area_mm2": 45700.912712,
+      "centroid": [
+        577.5392089711926,
+        641.9926319131279
+      ],
+      "detectors": [
+        "zscore",
+        "ssim",
+        "absdiff",
+        "color",
+        "edge",
+        "morph",
+        "gradient",
+        "texture"
+      ],
+      "confidence": 1.0,
+      "severity": "CRITICAL",
+      "defect_type": "SPECK / CONTAMINATION",
+      "peak_deviation": 168.0,
+      "region": "unassigned",
+      "saliency": 0.967,
+      "rank": 1,
+      "crop_url": "crops/ChatGPT Image Sep 7, 2026, 07_10_46 PM_defect_1.png"
+    },
+    {
+      "id": 2,
+      "x": 662,
+      "y": 391,
+      "w": 3,
+      "h": 5,
+      "area_px": 11.0,
+      "area_mm2": 0.628331,
+      "centroid": [
+        663.0,
+        393.54545454545456
+      ],
+      "detectors": [
+        "ssim",
+        "gradient"
+      ],
+      "confidence": 0.25,
+      "severity": "MAJOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 8.0,
+      "region": "unassigned",
+      "saliency": 0.2488,
+      "rank": 2,
+      "crop_url": "crops/ChatGPT Image Sep 7, 2026, 07_10_46 PM_defect_2.png"
+    },
+    {
+      "id": 3,
+      "x": 758,
+      "y": 470,
+      "w": 1,
+      "h": 4,
+      "area_px": 4.0,
+      "area_mm2": 0.228484,
+      "centroid": [
+        758.0,
+        471.5
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 3.0,
+      "region": "unassigned",
+      "saliency": 0.1813,
+      "rank": 3,
+      "crop_url": "crops/ChatGPT Image Sep 7, 2026, 07_10_46 PM_defect_3.png"
+    }
+  ]
+}

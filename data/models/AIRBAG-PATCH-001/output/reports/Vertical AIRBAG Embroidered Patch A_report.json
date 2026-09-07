@@ -1,0 +1,95 @@
+{
+  "part_id": "AIRBAG-PATCH-001",
+  "file": "Vertical AIRBAG Embroidered Patch A.png",
+  "verdict": "FAIL",
+  "gate_failures": [
+    "HIGHLIGHT CLIPPING: 39.2%"
+  ],
+  "global_metrics": {
+    "registration": {
+      "dx": -2.5251263537029445e-05,
+      "dy": 2.8696515983028803e-05,
+      "shift_px": 3.822455153145345e-05,
+      "shift_mm": 9.135667816017373e-06,
+      "response": 0.9995193128005485,
+      "exceeded": false
+    },
+    "topology": {
+      "contour_count": 13,
+      "golden_mean": 13.0,
+      "tolerance": 6.0,
+      "deviated": false
+    },
+    "total_candidates": 1,
+    "shown": 1
+  },
+  "detector_stats": {
+    "zscore": {
+      "flagged_px": 46,
+      "pct": 0.0058
+    },
+    "ssim": {
+      "flagged_px": 813,
+      "pct": 0.1026
+    },
+    "absdiff": {
+      "flagged_px": 300,
+      "pct": 0.0379
+    },
+    "color": {
+      "flagged_px": 362,
+      "pct": 0.0457
+    },
+    "edge": {
+      "flagged_px": 193,
+      "pct": 0.0244
+    },
+    "morph": {
+      "flagged_px": 516,
+      "pct": 0.0651
+    },
+    "gradient": {
+      "flagged_px": 414,
+      "pct": 0.0523
+    },
+    "texture": {
+      "flagged_px": 155,
+      "pct": 0.0196
+    }
+  },
+  "total_candidates": 1,
+  "top_n_shown": 1,
+  "defects": [
+    {
+      "id": 1,
+      "x": 142,
+      "y": 195,
+      "w": 28,
+      "h": 36,
+      "area_px": 813.0,
+      "area_mm2": 46.439372999999996,
+      "centroid": [
+        155.33948339483396,
+        212.4280442804428
+      ],
+      "detectors": [
+        "zscore",
+        "ssim",
+        "absdiff",
+        "color",
+        "edge",
+        "morph",
+        "gradient",
+        "texture"
+      ],
+      "confidence": 1.0,
+      "severity": "CRITICAL",
+      "defect_type": "SPECK / CONTAMINATION",
+      "peak_deviation": 93.0,
+      "region": "unassigned",
+      "saliency": 0.9761,
+      "rank": 1,
+      "crop_url": "crops/Vertical AIRBAG Embroidered Patch A_defect_1.png"
+    }
+  ]
+}
