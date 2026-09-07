@@ -32,8 +32,10 @@ except ImportError:
 
 class CalibratedEngine(InspectionEngine):
 
-    def __init__(self, golden, sensitivity=0.85, roi_map=None):
-        super().__init__(golden, sensitivity=sensitivity, roi_map=roi_map)
+    def __init__(self, golden, sensitivity=0.85, roi_map=None,
+                 min_registration_confidence=0.6):
+        super().__init__(golden, sensitivity=sensitivity, roi_map=roi_map,
+                          min_registration_confidence=min_registration_confidence)
         self.noise_profile = None
 
     # ------------------------------------------------------------------

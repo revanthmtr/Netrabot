@@ -36,7 +36,8 @@
     "threshold_margin": 1.02,
     "min_blob_px": 2,
     "review_top_n": 15,
-    "_comment": "review_top_n is what the operator sees. All candidates persist for audit."
+    "min_registration_confidence": 0.6,
+    "_comment": "review_top_n is what the operator sees. All candidates persist for audit. min_registration_confidence rejects samples the phase-correlation step could not reliably align (conservative default; a normal capture measures 0.98-0.99, a badly misaligned one dropped to 0.43 and produced 5366 false candidates)."
   },
 
   "regions": [

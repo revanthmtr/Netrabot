@@ -227,11 +227,21 @@ class InspectionEngine:
     """
 
     def __init__(self, golden: GoldenReference, sensitivity: float = 0.85,
-                 min_defect_mm2: float = 0.0, roi_map: Dict = None):
+                 min_defect_mm2: float = 0.0, roi_map: Dict = None,
+                 min_registration_confidence: float = 0.6):
         self.g = golden
         self.s = np.clip(sensitivity, 0.0, 1.0)
         self.min_defect_mm2 = min_defect_mm2
         self.roi_map = roi_map or {}
+        # Phase-correlation response below this means the sample could not
+        # be reliably aligned to the golden reference (severe exposure/
+        # lighting mismatch, camera shake, wrong part). Observed directly
+        # on a real sample: response 0.43 (vs 0.98-0.99 for a normal
+        # capture) produced 5366 false candidates from edge jitter alone,
+        # burying the one real defect. Running the 9 detectors on a
+        # misaligned frame is meaningless, so that case is refused rather
+        # than scored -- see inspect().
+        self.min_registration_confidence = min_registration_confidence
 
         # Thresholds scale inversely with sensitivity.
         # At s=1.0 these are aggressive; at s=0.0 conservative.
@@ -250,23 +260,43 @@ class InspectionEngine:
     # ---------------- Stage 1: quality gate ----------------
 
     def quality_gate(self, img: np.ndarray) -> List[str]:
-        """Reject unusable images rather than silently passing them."""
+        """
+        Reject unusable images rather than silently passing them.
+
+        Sharpness/exposure/clipping are measured over the PRODUCT region
+        only (part_mask), never the studio background. A white backdrop
+        around a black part always reads as "highlight clipped" and a
+        dark backdrop around a light part always reads as "shadow
+        clipped" regardless of the product's actual condition -- observed
+        directly: every real sample photographed against this rig's white
+        background showed 10-14% highlight clipping purely from the
+        background, even on genuinely good parts.
+        """
         fails = []
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        pm = self.g.part_mask
+        masked = pm is not None and pm.shape == gray.shape
+        region = gray[pm > 0] if masked else gray.ravel()
 
-        sharp = cv2.Laplacian(gray, cv2.CV_64F).var()
-        golden_sharp = cv2.Laplacian(self.g.golden_gray, cv2.CV_64F).var()
+        lap = cv2.Laplacian(gray, cv2.CV_64F)
+        lap_golden = cv2.Laplacian(self.g.golden_gray, cv2.CV_64F)
+        if masked:
+            sharp = float(lap[pm > 0].var())
+            golden_sharp = float(lap_golden[pm > 0].var())
+        else:
+            sharp = float(lap.var())
+            golden_sharp = float(lap_golden.var())
         if sharp < golden_sharp * 0.55:
             fails.append(f"BLUR: sharpness {sharp:.0f} vs golden {golden_sharp:.0f}")
 
-        mean_v = gray.mean()
+        mean_v = region.mean()
         if mean_v < 35:
             fails.append(f"UNDEREXPOSED: mean {mean_v:.0f}")
         if mean_v > 225:
             fails.append(f"OVEREXPOSED: mean {mean_v:.0f}")
 
-        clipped_hi = (gray >= 254).sum() / gray.size
-        clipped_lo = (gray <= 1).sum() / gray.size
+        clipped_hi = (region >= 254).sum() / region.size
+        clipped_lo = (region <= 1).sum() / region.size
         if clipped_hi > 0.10:
             fails.append(f"HIGHLIGHT CLIPPING: {clipped_hi*100:.1f}%")
         if clipped_lo > 0.15:
@@ -494,6 +524,16 @@ class InspectionEngine:
                 res.verdict = "FAIL"
                 res.gate_failures.append(
                     f"POSITION OUT OF TOLERANCE: {reg_info['shift_px']:.1f}px")
+            elif reg_info.get('response', 1.0) < self.min_registration_confidence:
+                # Alignment itself could not be trusted -- do not run the
+                # detectors on a misaligned frame, they will fire on edge
+                # jitter everywhere and bury (or misreport) the real defect.
+                res.verdict = "REVIEW"
+                res.gate_failures.append(
+                    f"REGISTRATION CONFIDENCE TOO LOW: {reg_info['response']:.3f} "
+                    f"(need >= {self.min_registration_confidence}) -- alignment "
+                    f"unreliable, image not scored for defects")
+                return res
 
         if img.shape[:2] != self.g.mean_gray.shape:
             res.verdict = "FAIL"
@@ -625,8 +665,15 @@ class InspectionEngine:
         defects.sort(key=lambda d: (-d.area_mm2, -d.confidence))
         res.defects = defects
 
-        if defects and res.verdict != "FAIL":
+        if defects and res.verdict == "PASS":
             res.verdict = "FAIL"
+        # NOTE: if verdict is already "REVIEW" (quality_gate failed --
+        # blur, bad exposure, clipping), it stays REVIEW even if defects
+        # were found. A confident "FAIL" here would misreport "verified
+        # defect" when what actually happened is "the photo itself can't
+        # be trusted, so neither can anything the detectors found on it."
+        # Observed directly: a 32.5%-highlight-clipped sample produced a
+        # single "defect" covering ~64% of the whole image.
 
         res.annotated_image = self._annotate(img, defects)
         return res
