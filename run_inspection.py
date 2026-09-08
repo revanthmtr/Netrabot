@@ -320,6 +320,15 @@ def run_consensus_inspection(
             u = cv2.bitwise_or(u, m)
         u = cv2.bitwise_and(u, u, mask=golden_ref.part_mask)
 
+        # Same per-pixel agreement signal the standard track exposes as a
+        # heatmap -- computed once here and reused when saving results
+        # below, so the consensus track's heatmap is built from the exact
+        # same data as its defect list (never a separately recomputed diff).
+        agree = np.zeros(gray.shape, dtype=np.float32)
+        for m in masks.values():
+            agree += (m > 0).astype(np.float32)
+        agree *= (golden_ref.part_mask > 0).astype(np.float32)
+
         cnt, topo_dev, topo_tol = engine._d9_topology(gray)
 
         sample_data.append({
@@ -330,6 +339,7 @@ def run_consensus_inspection(
             "masks": masks,
             "sigs": sigs,
             "union": u,
+            "agree": agree,
             "reg_info": reg_info,
             "contour_count": cnt,
             "topo_dev": topo_dev,
@@ -391,8 +401,16 @@ def run_consensus_inspection(
 
     for idx, sd in enumerate(sample_data):
         file_path = sd["file"]
-        # Full candidates before suppression (for audit log)
-        u_full = cv2.morphologyEx(sd["union"], cv2.MORPH_CLOSE, np.ones((3, 3), np.uint8))
+        # Full candidates before suppression (for audit log). Uses the
+        # SAME morphology (OPEN then CLOSE) as u_clean below, differing
+        # only in the noise-mask removal -- otherwise the two aren't a
+        # fair before/after comparison: OPEN can split one CLOSE-only
+        # blob into several once the noise pixels bridging them are
+        # removed, so a CLOSE-only baseline can undercount "raw" and let
+        # surviving_defects_count exceed it (observed directly: raw=592,
+        # surviving=756, suppressed_count computed as -164).
+        u_full = cv2.morphologyEx(sd["union"], cv2.MORPH_OPEN, np.ones((3, 3), np.uint8))
+        u_full = cv2.morphologyEx(u_full, cv2.MORPH_CLOSE, np.ones((3, 3), np.uint8))
         n_full, lbl_full, stats_full, cents_full = cv2.connectedComponentsWithStats(u_full, 8)
         raw_candidates_count = n_full - 1
 
@@ -623,6 +641,15 @@ def run_consensus_inspection(
         cv2.imwrite(str(annotated_path), res.annotated_image)
         print(f"  -> Saved annotated image to: {annotated_path}")
 
+        # Save heatmap (built from the same per-pixel agreement signal
+        # the surviving defects above were extracted from)
+        heatmap = CalibratedEngine._heatmap(
+            sd["registered"], sd["agree"], len(sd["masks"]), golden_ref.part_mask
+        )
+        heatmap_path = annotated_dir / f"{file_path.stem}_heatmap.png"
+        cv2.imwrite(str(heatmap_path), heatmap)
+        print(f"  -> Saved heatmap to: {heatmap_path}")
+
         # Generate MASTER vs SAMPLE evidence crops for each defect.
         # A box on a full-size image cannot convey a 3mm2 speck; the
         # operator needs the zoomed side-by-side to confirm or reject.
@@ -797,6 +824,15 @@ Starting inspection on {len(input_files)} part(s)...\
         if res.annotated_image is not None:
             cv2.imwrite(str(annotated_path), res.annotated_image)
             print(f"  -> Saved annotated image to: {annotated_path}")
+
+        # Save heatmap (same detector-agreement signal the defects above
+        # were extracted from -- always consistent with the boxes, unlike
+        # a separately recomputed raw pixel diff). None when the sample
+        # was refused before scoring (bad registration, size mismatch).
+        heatmap_path = annotated_dir / f"{in_file.stem}_heatmap.png"
+        if res.heatmap is not None:
+            cv2.imwrite(str(heatmap_path), res.heatmap)
+            print(f"  -> Saved heatmap to: {heatmap_path}")
 
         # Save JSON result per part
         report_json = {
