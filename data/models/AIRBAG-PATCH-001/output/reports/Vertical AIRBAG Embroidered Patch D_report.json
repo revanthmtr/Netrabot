@@ -1,17 +1,15 @@
 {
   "part_id": "AIRBAG-PATCH-001",
   "file": "Vertical AIRBAG Embroidered Patch D.png",
-  "verdict": "REVIEW",
-  "gate_failures": [
-    "HIGHLIGHT CLIPPING: 39.2%"
-  ],
+  "verdict": "PASS",
+  "gate_failures": [],
   "global_metrics": {
     "registration": {
-      "dx": 0.0,
-      "dy": 0.0,
-      "shift_px": 0.0,
-      "shift_mm": 0.0,
-      "response": 1.0,
+      "dx": 1.1368683772161603e-13,
+      "dy": 1.1368683772161603e-13,
+      "shift_px": 1.6077746776921858e-13,
+      "shift_mm": 3.842581479684324e-14,
+      "response": 1.0000000000000677,
       "exceeded": false
     },
     "topology": {

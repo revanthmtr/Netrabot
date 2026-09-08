@@ -1,0 +1,263 @@
+{
+  "part_id": "FELT-PAD-001",
+  "file": "sample.png",
+  "verdict": "FAIL",
+  "gate_failures": [
+    "HIGHLIGHT CLIPPING: 22.1%"
+  ],
+  "global_metrics": {
+    "registration": {
+      "dx": 1.872841016727989,
+      "dy": 0.6598659307337584,
+      "shift_px": 1.9856879212207181,
+      "shift_mm": 0.4745794131717516,
+      "response": 0.44485670149326323,
+      "exceeded": false
+    },
+    "topology": {
+      "contour_count": 4,
+      "golden_mean": 3.0,
+      "tolerance": 6.0,
+      "deviated": false
+    },
+    "total_candidates": 8,
+    "shown": 8
+  },
+  "detector_stats": {
+    "zscore": {
+      "flagged_px": 26290,
+      "pct": 3.1022
+    },
+    "ssim": {
+      "flagged_px": 805134,
+      "pct": 95.0054
+    },
+    "absdiff": {
+      "flagged_px": 391629,
+      "pct": 46.212
+    },
+    "color": {
+      "flagged_px": 582550,
+      "pct": 68.7406
+    },
+    "edge": {
+      "flagged_px": 372407,
+      "pct": 43.9439
+    },
+    "morph": {
+      "flagged_px": 596818,
+      "pct": 70.4242
+    },
+    "gradient": {
+      "flagged_px": 612952,
+      "pct": 72.328
+    },
+    "texture": {
+      "flagged_px": 6481,
+      "pct": 0.7648
+    }
+  },
+  "total_candidates": 8,
+  "top_n_shown": 8,
+  "defects": [
+    {
+      "id": 1,
+      "x": 28,
+      "y": 73,
+      "w": 1043,
+      "h": 1145,
+      "area_px": 813940.0,
+      "area_mm2": 46493.06674,
+      "centroid": [
+        578.5837223873996,
+        639.6499238273092
+      ],
+      "detectors": [
+        "zscore",
+        "ssim",
+        "absdiff",
+        "color",
+        "edge",
+        "morph",
+        "gradient",
+        "texture"
+      ],
+      "confidence": 1.0,
+      "severity": "CRITICAL",
+      "defect_type": "SPECK / CONTAMINATION",
+      "peak_deviation": 213.0,
+      "region": "unassigned",
+      "saliency": 0.9682,
+      "rank": 1,
+      "crop_url": "crops/sample_defect_1.png"
+    },
+    {
+      "id": 5,
+      "x": 737,
+      "y": 439,
+      "w": 9,
+      "h": 12,
+      "area_px": 57.0,
+      "area_mm2": 3.255897,
+      "centroid": [
+        742.0,
+        443.7719298245614
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "CRITICAL",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.2091,
+      "rank": 2,
+      "crop_url": "crops/sample_defect_5.png"
+    },
+    {
+      "id": 3,
+      "x": 671,
+      "y": 408,
+      "w": 4,
+      "h": 1,
+      "area_px": 4.0,
+      "area_mm2": 0.228484,
+      "centroid": [
+        672.5,
+        408.0
+      ],
+      "detectors": [
+        "zscore"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 7.0,
+      "region": "unassigned",
+      "saliency": 0.1973,
+      "rank": 3,
+      "crop_url": "crops/sample_defect_3.png"
+    },
+    {
+      "id": 4,
+      "x": 645,
+      "y": 413,
+      "w": 4,
+      "h": 2,
+      "area_px": 7.0,
+      "area_mm2": 0.399847,
+      "centroid": [
+        646.2857142857143,
+        413.42857142857144
+      ],
+      "detectors": [
+        "zscore"
+      ],
+      "confidence": 0.125,
+      "severity": "MAJOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 7.0,
+      "region": "unassigned",
+      "saliency": 0.1931,
+      "rank": 4,
+      "crop_url": "crops/sample_defect_4.png"
+    },
+    {
+      "id": 7,
+      "x": 691,
+      "y": 609,
+      "w": 12,
+      "h": 3,
+      "area_px": 24.0,
+      "area_mm2": 1.370904,
+      "centroid": [
+        696.25,
+        609.9166666666666
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MAJOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.1858,
+      "rank": 5,
+      "crop_url": "crops/sample_defect_7.png"
+    },
+    {
+      "id": 6,
+      "x": 704,
+      "y": 605,
+      "w": 2,
+      "h": 3,
+      "area_px": 5.0,
+      "area_mm2": 0.285605,
+      "centroid": [
+        704.4,
+        605.8
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.1636,
+      "rank": 6,
+      "crop_url": "crops/sample_defect_6.png"
+    },
+    {
+      "id": 2,
+      "x": 662,
+      "y": 409,
+      "w": 4,
+      "h": 2,
+      "area_px": 5.0,
+      "area_mm2": 0.285605,
+      "centroid": [
+        663.2,
+        409.2
+      ],
+      "detectors": [
+        "zscore"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 7.0,
+      "region": "unassigned",
+      "saliency": 0.1627,
+      "rank": 7,
+      "crop_url": "crops/sample_defect_2.png"
+    },
+    {
+      "id": 8,
+      "x": 688,
+      "y": 612,
+      "w": 3,
+      "h": 2,
+      "area_px": 4.0,
+      "area_mm2": 0.228484,
+      "centroid": [
+        688.75,
+        612.25
+      ],
+      "detectors": [
+        "ssim"
+      ],
+      "confidence": 0.125,
+      "severity": "MINOR",
+      "defect_type": "SURFACE_ANOMALY / SCRATCH_OR_MARK",
+      "peak_deviation": 2.0,
+      "region": "unassigned",
+      "saliency": 0.144,
+      "rank": 8,
+      "crop_url": "crops/sample_defect_8.png"
+    }
+  ]
+}

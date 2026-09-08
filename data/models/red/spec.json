@@ -1,0 +1,22 @@
+{
+  "part_id": "red",
+  "description": "AOI Inspection Profile for red",
+  "calibration": {
+    "mm_per_px": 0.239,
+    "calibrated_from": "Default calibration"
+  },
+  "detection": {
+    "sensitivity": 0.85,
+    "noise_floor_percentile": 99.5,
+    "threshold_margin": 1.02,
+    "min_blob_px": 2,
+    "review_top_n": 15,
+    "min_registration_confidence": 0.01
+  },
+  "regions": [],
+  "severity_rules": {
+    "CRITICAL": "area > 2.0mm2 OR detector_agreement > 0.6 OR color defect > 5mm2",
+    "MAJOR": "area > 0.3mm2 OR detector_agreement > 0.35",
+    "MINOR": "everything else"
+  }
+}

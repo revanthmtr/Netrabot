@@ -1,0 +1,37 @@
+{
+  "part_id": "cloth-demo",
+  "description": "Cloth / Fabric Surface Inspection Profile",
+  "calibration": {
+    "mm_per_px": 0.2390,
+    "calibrated_from": "Default calibration"
+  },
+  "golden_set": {
+    "min_samples": 1,
+    "recommended_samples": 20
+  },
+  "global_tolerances": {
+    "position_shift_mm": 5.0,
+    "rotation_deg": 2.0,
+    "dimension_pct": 5.0
+  },
+  "quality_gate": {
+    "min_sharpness_ratio": 0.35,
+    "exposure_mean_range": [20, 240],
+    "max_highlight_clip_pct": 20.0,
+    "max_shadow_clip_pct": 20.0
+  },
+  "detection": {
+    "sensitivity": 0.85,
+    "noise_floor_percentile": 99.5,
+    "threshold_margin": 1.02,
+    "min_blob_px": 2,
+    "review_top_n": 15,
+    "min_registration_confidence": 0.01
+  },
+  "regions": [],
+  "severity_rules": {
+    "CRITICAL": "area > 2.0mm2 OR detector_agreement > 0.6 OR color defect > 5mm2",
+    "MAJOR": "area > 0.3mm2 OR detector_agreement > 0.35",
+    "MINOR": "everything else"
+  }
+}

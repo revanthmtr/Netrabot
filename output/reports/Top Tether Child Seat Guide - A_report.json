@@ -1,0 +1,61 @@
+{
+  "part_id": "TOP-TETHER-GUIDE-001",
+  "file": "Top Tether Child Seat Guide - A.png",
+  "verdict": "PASS",
+  "gate_failures": [],
+  "global_metrics": {
+    "registration": {
+      "dx": 0.0,
+      "dy": 0.0,
+      "shift_px": 0.0,
+      "shift_mm": 0.0,
+      "response": 1.0,
+      "exceeded": false
+    },
+    "topology": {
+      "contour_count": 26,
+      "golden_mean": 26.0,
+      "tolerance": 6.0,
+      "deviated": false
+    },
+    "total_candidates": 0,
+    "shown": 0
+  },
+  "detector_stats": {
+    "zscore": {
+      "flagged_px": 0,
+      "pct": 0.0
+    },
+    "ssim": {
+      "flagged_px": 0,
+      "pct": 0.0
+    },
+    "absdiff": {
+      "flagged_px": 0,
+      "pct": 0.0
+    },
+    "color": {
+      "flagged_px": 0,
+      "pct": 0.0
+    },
+    "edge": {
+      "flagged_px": 0,
+      "pct": 0.0
+    },
+    "morph": {
+      "flagged_px": 0,
+      "pct": 0.0
+    },
+    "gradient": {
+      "flagged_px": 0,
+      "pct": 0.0
+    },
+    "texture": {
+      "flagged_px": 0,
+      "pct": 0.0
+    }
+  },
+  "total_candidates": 0,
+  "top_n_shown": 0,
+  "defects": []
+}

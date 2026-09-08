@@ -18,6 +18,7 @@ import sys
 import traceback
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
+from urllib.parse import unquote
 
 ROOT_DIR = Path(__file__).resolve().parent
 MODELS_DIR = ROOT_DIR / "data" / "models"
@@ -52,6 +53,12 @@ class InspectionDashboardHandler(SimpleHTTPRequestHandler):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=str(ROOT_DIR), **kwargs)
+
+    def end_headers(self):
+        self.send_header("Cache-Control", "no-cache, no-store, must-revalidate, max-age=0")
+        self.send_header("Pragma", "no-cache")
+        self.send_header("Expires", "0")
+        super().end_headers()
 
     def log_message(self, format, *args):
         # quieter logging
@@ -107,14 +114,32 @@ class InspectionDashboardHandler(SimpleHTTPRequestHandler):
             if not name:
                 return self._json_response({"error": "name cannot be empty"}, 400)
             base = ensure_model_dirs(name)
-            # Copy default spec if not existing
+            # Create a clean universal spec for the new model
             spec_path = base / "spec.json"
             if not spec_path.exists():
-                default_spec = ROOT_DIR / "specs" / "part_spec.json"
-                if default_spec.exists():
-                    shutil.copy2(default_spec, spec_path)
-                else:
-                    spec_path.write_text(json.dumps({"part_id": name}, indent=2))
+                spec_data = {
+                    "part_id": name,
+                    "description": f"AOI Inspection Profile for {name}",
+                    "calibration": {
+                        "mm_per_px": 0.2390,
+                        "calibrated_from": "Default calibration"
+                    },
+                    "detection": {
+                        "sensitivity": 0.85,
+                        "noise_floor_percentile": 99.5,
+                        "threshold_margin": 1.02,
+                        "min_blob_px": 2,
+                        "review_top_n": 15,
+                        "min_registration_confidence": 0.01
+                    },
+                    "regions": [],
+                    "severity_rules": {
+                        "CRITICAL": "area > 2.0mm2 OR detector_agreement > 0.6 OR color defect > 5mm2",
+                        "MAJOR": "area > 0.3mm2 OR detector_agreement > 0.35",
+                        "MINOR": "everything else"
+                    }
+                }
+                spec_path.write_text(json.dumps(spec_data, indent=2))
             return self._json_response({"status": "created", "model": name}, 201)
 
         # POST /api/models/<name>/upload/golden — upload golden images
@@ -139,9 +164,10 @@ class InspectionDashboardHandler(SimpleHTTPRequestHandler):
 
     # ── DELETE ───────────────────────────────────────────────────────
     def do_DELETE(self):
+        path = unquote(self.path)
         # DELETE /api/models/<name> — delete a model
-        if self.path.startswith("/api/models/") and self.path.count("/") == 3:
-            model_name = self.path.split("/")[3]
+        if path.startswith("/api/models/") and path.count("/") == 3:
+            model_name = path.split("/")[3]
             model_dir = MODELS_DIR / model_name
             if model_dir.exists():
                 shutil.rmtree(model_dir)
@@ -149,8 +175,8 @@ class InspectionDashboardHandler(SimpleHTTPRequestHandler):
             return self._json_response({"error": "model not found"}, 404)
 
         # DELETE /api/models/<name>/golden/<filename> — delete a golden image
-        if "/golden/" in self.path:
-            parts = self.path.split("/")
+        if "/golden/" in path:
+            parts = path.split("/")
             model_name = parts[3]
             filename = parts[5]
             fp = MODELS_DIR / model_name / "golden" / filename
@@ -160,8 +186,8 @@ class InspectionDashboardHandler(SimpleHTTPRequestHandler):
             return self._json_response({"error": "file not found"}, 404)
 
         # DELETE /api/models/<name>/samples/<filename> — delete a sample image
-        if "/samples/" in self.path:
-            parts = self.path.split("/")
+        if "/samples/" in path:
+            parts = path.split("/")
             model_name = parts[3]
             filename = parts[5]
             fp = MODELS_DIR / model_name / "samples" / filename
@@ -176,6 +202,9 @@ class InspectionDashboardHandler(SimpleHTTPRequestHandler):
                 ]:
                     if p.exists():
                         p.unlink()
+                if (out / "crops").exists():
+                    for crop in (out / "crops").glob(f"{stem}_defect_*.png"):
+                        crop.unlink()
                 return self._json_response({"status": "deleted"})
             return self._json_response({"error": "file not found"}, 404)
 
@@ -330,6 +359,8 @@ class InspectionDashboardHandler(SimpleHTTPRequestHandler):
         if not spec_path.exists():
             spec_path = ROOT_DIR / "specs" / "part_spec.json"
 
+        py_bin = str(ROOT_DIR / ".venv" / "bin" / "python") if (ROOT_DIR / ".venv" / "bin" / "python").exists() else sys.executable
+
         try:
             # Build golden reference image
             build_ref_script = f"""
@@ -358,7 +389,7 @@ cv2.imwrite(str(output_dir / 'golden_reference.png'), ref.golden_bgr)
 print('Built golden reference')
 """
             subprocess.run(
-                [sys.executable, "-c", build_ref_script],
+                [py_bin, "-c", build_ref_script],
                 check=True,
                 cwd=str(ROOT_DIR),
                 capture_output=True,
@@ -367,7 +398,7 @@ print('Built golden reference')
 
             # Run the inspection CLI
             cmd = [
-                sys.executable,
+                py_bin,
                 str(ROOT_DIR / "run_inspection.py"),
                 "--golden", str(golden_dir),
                 "--input", str(samples_dir),
@@ -397,11 +428,7 @@ if golden is not None:
                 sample = load_image(sf)
                 if sample is not None:
                     if sample.shape[:2] != g_gray.shape:
-                        res_m = cv2.matchTemplate(g_gray, cv2.cvtColor(sample, cv2.COLOR_BGR2GRAY), cv2.TM_CCOEFF_NORMED)
-                        _, _, _, max_loc = cv2.minMaxLoc(res_m)
-                        canvas = np.copy(golden)
-                        canvas[max_loc[1]:max_loc[1]+sample.shape[0], max_loc[0]:max_loc[0]+sample.shape[1]] = sample
-                        sample = canvas
+                        sample = cv2.resize(sample, (g_gray.shape[1], g_gray.shape[0]), interpolation=cv2.INTER_AREA)
                     s_gray = cv2.cvtColor(sample, cv2.COLOR_BGR2GRAY)
                     diff = cv2.absdiff(s_gray, g_gray)
                     norm = cv2.normalize(diff, None, 0, 255, cv2.NORM_MINMAX)
@@ -411,7 +438,7 @@ if golden is not None:
                 pass
 """
             subprocess.run(
-                [sys.executable, "-c", heatmap_script],
+                [py_bin, "-c", heatmap_script],
                 check=True,
                 cwd=str(ROOT_DIR),
                 capture_output=True,
@@ -437,18 +464,14 @@ if golden is not None:
             if s_file.exists():
                 s_img = load_image(s_file)
                 if s_img.shape[:2] != golden.shape[:2]:
-                    res_m = cv2.matchTemplate(cv2.cvtColor(golden, cv2.COLOR_BGR2GRAY), cv2.cvtColor(s_img, cv2.COLOR_BGR2GRAY), cv2.TM_CCOEFF_NORMED)
-                    _, _, _, max_loc = cv2.minMaxLoc(res_m)
-                    canvas = np.copy(golden)
-                    canvas[max_loc[1]:max_loc[1]+s_img.shape[0], max_loc[0]:max_loc[0]+s_img.shape[1]] = s_img
-                    s_img = canvas
+                    s_img = cv2.resize(s_img, (golden.shape[1], golden.shape[0]), interpolation=cv2.INTER_AREA)
                 generate_all_crops(golden, s_img, rpt.get('defects', []), '{output_dir}', rpt_path.stem.replace('_report', ''), mm_per_px=mm, max_crops=15)
                 with open(rpt_path, 'w') as f:
                     json.dump(rpt, f, indent=2)
         except Exception:
             pass
 """
-            subprocess.run([sys.executable, "-c", crop_script], cwd=str(ROOT_DIR))
+            subprocess.run([py_bin, "-c", crop_script], cwd=str(ROOT_DIR))
 
             return self._json_response({
                 "status": "success",

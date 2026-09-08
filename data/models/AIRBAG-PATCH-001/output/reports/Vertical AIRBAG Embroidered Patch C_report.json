@@ -2,16 +2,14 @@
   "part_id": "AIRBAG-PATCH-001",
   "file": "Vertical AIRBAG Embroidered Patch C.png",
   "verdict": "FAIL",
-  "gate_failures": [
-    "HIGHLIGHT CLIPPING: 39.2%"
-  ],
+  "gate_failures": [],
   "global_metrics": {
     "registration": {
-      "dx": -8.581327847423381e-05,
-      "dy": 0.004243990439249501,
-      "shift_px": 0.004244857920732291,
-      "shift_mm": 0.0010145210430550174,
-      "response": 0.9830040806531906,
+      "dx": -0.00014731581109117542,
+      "dy": 0.0005912771260909722,
+      "shift_px": 0.0006093525974637757,
+      "shift_mm": 0.00014563527079384237,
+      "response": 0.9953805056214332,
       "exceeded": false
     },
     "topology": {
@@ -29,32 +27,32 @@
       "pct": 0.0052
     },
     "ssim": {
-      "flagged_px": 1722,
-      "pct": 0.2174
+      "flagged_px": 1726,
+      "pct": 0.2179
     },
     "absdiff": {
-      "flagged_px": 150,
-      "pct": 0.0189
+      "flagged_px": 149,
+      "pct": 0.0188
     },
     "color": {
-      "flagged_px": 185,
-      "pct": 0.0234
+      "flagged_px": 184,
+      "pct": 0.0232
     },
     "edge": {
-      "flagged_px": 197,
-      "pct": 0.0249
+      "flagged_px": 194,
+      "pct": 0.0245
     },
     "morph": {
       "flagged_px": 275,
       "pct": 0.0347
     },
     "gradient": {
-      "flagged_px": 347,
-      "pct": 0.0438
+      "flagged_px": 346,
+      "pct": 0.0437
     },
     "texture": {
-      "flagged_px": 450,
-      "pct": 0.0568
+      "flagged_px": 448,
+      "pct": 0.0566
     }
   },
   "total_candidates": 1,
@@ -66,11 +64,11 @@
       "y": 782,
       "w": 72,
       "h": 60,
-      "area_px": 1870.0,
-      "area_mm2": 106.81627,
+      "area_px": 1875.0,
+      "area_mm2": 107.10187499999999,
       "centroid": [
-        293.2032085561497,
-        798.9385026737968
+        293.1813333333333,
+        798.9221333333334
       ],
       "detectors": [
         "zscore",
@@ -87,7 +85,65 @@
       "defect_type": "SPECK / CONTAMINATION",
       "peak_deviation": 251.0,
       "region": "unassigned",
-      "saliency": 0.9433,
+      "measurements": {
+        "zscore": {
+          "label": "statistical deviation (Z-score)",
+          "unit": "sigma",
+          "value": 12.999,
+          "threshold": 3.025,
+          "exceeds_by_pct": 329.7
+        },
+        "ssim": {
+          "label": "structural dissimilarity (1-SSIM)",
+          "unit": "",
+          "value": 1.591,
+          "threshold": 0.18,
+          "exceeds_by_pct": 783.7
+        },
+        "absdiff": {
+          "label": "raw intensity change",
+          "unit": "gray levels (0-255)",
+          "value": 251.0,
+          "threshold": 19.5,
+          "exceeds_by_pct": 1187.2
+        },
+        "color": {
+          "label": "perceptual color deviation (CIE Lab dE)",
+          "unit": "dE",
+          "value": 99.041,
+          "threshold": 4.775,
+          "exceeds_by_pct": 1974.2
+        },
+        "edge": {
+          "label": "edge probability deviation",
+          "unit": "",
+          "value": 1.0,
+          "threshold": 0.295,
+          "exceeds_by_pct": 239.0
+        },
+        "morph": {
+          "label": "morphological residue (speck/void)",
+          "unit": "",
+          "value": 250.0,
+          "threshold": 18.75,
+          "exceeds_by_pct": 1233.3
+        },
+        "gradient": {
+          "label": "gradient magnitude change",
+          "unit": "",
+          "value": 940.592,
+          "threshold": 29.5,
+          "exceeds_by_pct": 3088.4
+        },
+        "texture": {
+          "label": "local texture / density deviation",
+          "unit": "",
+          "value": 62.699,
+          "threshold": 12.7,
+          "exceeds_by_pct": 393.7
+        }
+      },
+      "saliency": 0.9434,
       "rank": 1,
       "crop_url": "crops/Vertical AIRBAG Embroidered Patch C_defect_1.png"
     }

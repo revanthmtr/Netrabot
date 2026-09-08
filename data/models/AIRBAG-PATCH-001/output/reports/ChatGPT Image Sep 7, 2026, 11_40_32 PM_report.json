@@ -1,0 +1,151 @@
+{
+  "part_id": "AIRBAG-PATCH-001",
+  "file": "ChatGPT Image Sep 7, 2026, 11_40_32 PM.png",
+  "verdict": "FAIL",
+  "gate_failures": [],
+  "global_metrics": {
+    "registration": {
+      "dx": -0.06299272126898359,
+      "dy": -0.07086734419885943,
+      "shift_px": 0.09481699956585567,
+      "shift_mm": 0.022661262896239504,
+      "response": 0.9789203676581383,
+      "exceeded": false
+    },
+    "topology": {
+      "contour_count": 13,
+      "golden_mean": 13.0,
+      "tolerance": 6.0,
+      "deviated": false
+    },
+    "total_candidates": 1,
+    "shown": 1
+  },
+  "detector_stats": {
+    "zscore": {
+      "flagged_px": 2906,
+      "pct": 0.3669
+    },
+    "ssim": {
+      "flagged_px": 780469,
+      "pct": 98.5378
+    },
+    "absdiff": {
+      "flagged_px": 176110,
+      "pct": 22.2347
+    },
+    "color": {
+      "flagged_px": 371593,
+      "pct": 46.9153
+    },
+    "edge": {
+      "flagged_px": 285109,
+      "pct": 35.9963
+    },
+    "morph": {
+      "flagged_px": 298637,
+      "pct": 37.7043
+    },
+    "gradient": {
+      "flagged_px": 494887,
+      "pct": 62.4818
+    },
+    "texture": {
+      "flagged_px": 2987,
+      "pct": 0.3771
+    }
+  },
+  "total_candidates": 1,
+  "top_n_shown": 1,
+  "defects": [
+    {
+      "id": 1,
+      "x": 142,
+      "y": 192,
+      "w": 963,
+      "h": 834,
+      "area_px": 792050.0,
+      "area_mm2": 45242.68805,
+      "centroid": [
+        622.8096016665614,
+        606.8659756328515
+      ],
+      "detectors": [
+        "zscore",
+        "ssim",
+        "absdiff",
+        "color",
+        "edge",
+        "morph",
+        "gradient",
+        "texture"
+      ],
+      "confidence": 1.0,
+      "severity": "CRITICAL",
+      "defect_type": "SPECK / CONTAMINATION",
+      "peak_deviation": 207.0,
+      "region": "unassigned",
+      "measurements": {
+        "zscore": {
+          "label": "statistical deviation (Z-score)",
+          "unit": "sigma",
+          "value": 11.022,
+          "threshold": 3.025,
+          "exceeds_by_pct": 264.4
+        },
+        "ssim": {
+          "label": "structural dissimilarity (1-SSIM)",
+          "unit": "",
+          "value": 1.892,
+          "threshold": 0.18,
+          "exceeds_by_pct": 951.0
+        },
+        "absdiff": {
+          "label": "raw intensity change",
+          "unit": "gray levels (0-255)",
+          "value": 207.0,
+          "threshold": 19.5,
+          "exceeds_by_pct": 961.5
+        },
+        "color": {
+          "label": "perceptual color deviation (CIE Lab dE)",
+          "unit": "dE",
+          "value": 84.132,
+          "threshold": 4.775,
+          "exceeds_by_pct": 1661.9
+        },
+        "edge": {
+          "label": "edge probability deviation",
+          "unit": "",
+          "value": 1.0,
+          "threshold": 0.295,
+          "exceeds_by_pct": 239.0
+        },
+        "morph": {
+          "label": "morphological residue (speck/void)",
+          "unit": "",
+          "value": 182.0,
+          "threshold": 18.75,
+          "exceeds_by_pct": 870.7
+        },
+        "gradient": {
+          "label": "gradient magnitude change",
+          "unit": "",
+          "value": 640.255,
+          "threshold": 29.5,
+          "exceeds_by_pct": 2070.4
+        },
+        "texture": {
+          "label": "local texture / density deviation",
+          "unit": "",
+          "value": 53.523,
+          "threshold": 12.7,
+          "exceeds_by_pct": 321.4
+        }
+      },
+      "saliency": 0.9986,
+      "rank": 1,
+      "crop_url": "crops/ChatGPT Image Sep 7, 2026, 11_40_32 PM_defect_1.png"
+    }
+  ]
+}

@@ -115,13 +115,32 @@ document.addEventListener("DOMContentLoaded", () => {
       btn.addEventListener("click", async e => {
         e.stopPropagation();
         const name = btn.dataset.model;
-        if (confirm(`Delete model "${name}" and all its images?`)) {
-          await fetch(`/api/models/${name}`, { method: "DELETE" });
-          if (activeModelName === name) { activeModelName = null; activeModelData = null; updateActiveModelUI(); }
-          refreshModelsList();
-        }
+        await deleteModel(name);
       });
     });
+  }
+
+  async function deleteModel(name) {
+    if (!name) return;
+    if (!confirm(`Are you sure you want to delete model "${name}" and all its golden images, samples, and reports?`)) return;
+    try {
+      const resp = await fetch(`/api/models/${encodeURIComponent(name)}`, { method: "DELETE" });
+      const data = await resp.json();
+      if (data.status === "deleted") {
+        showToast(`Model "${name}" deleted successfully`, "info");
+        if (activeModelName === name) {
+          activeModelName = null;
+          activeModelData = null;
+          updateActiveModelUI();
+        }
+        hideDetail();
+        await refreshModelsList();
+      } else {
+        showToast(`Failed to delete model: ${data.error || "Unknown error"}`, "error");
+      }
+    } catch (err) {
+      showToast(`Delete error: ${err.message}`, "error");
+    }
   }
 
   // ═════════════════════════════════════════════════════════════════════════
@@ -137,7 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   async function refreshModelDetail() {
-    const resp = await fetch(`/api/models/${detailModelName}`);
+    const resp = await fetch(`/api/models/${encodeURIComponent(detailModelName)}`);
     const data = await resp.json();
     $("golden-count").textContent = data.golden_images?.length || 0;
     $("sample-count").textContent = data.sample_images?.length || 0;
@@ -146,7 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
     renderThumbGrid(
       $("golden-thumb-grid"),
       data.golden_images || [],
-      name => `/data/models/${detailModelName}/golden/${name}`,
+      name => `/data/models/${encodeURIComponent(detailModelName)}/golden/${encodeURIComponent(name)}`,
       name => deleteGoldenImage(detailModelName, name)
     );
 
@@ -154,7 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
     renderThumbGrid(
       $("samples-thumb-grid"),
       data.sample_images || [],
-      name => `/data/models/${detailModelName}/samples/${name}`,
+      name => `/data/models/${encodeURIComponent(detailModelName)}/samples/${encodeURIComponent(name)}`,
       name => deleteSampleImage(detailModelName, name)
     );
   }
@@ -168,7 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="image-thumb-item" title="${name}">
         <img src="${urlFn(name)}" alt="${name}" loading="lazy">
         <div class="thumb-label">${name}</div>
-        ${deleteFn ? `<button class="thumb-delete-btn" data-name="${name}" title="Remove">✕</button>` : ""}
+        ${deleteFn ? `<button class="thumb-delete-btn" data-name="${name}" title="Remove image">✕</button>` : ""}
       </div>
     `).join("");
 
@@ -183,17 +202,40 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   async function deleteGoldenImage(modelName, fileName) {
-    await fetch(`/api/models/${modelName}/golden/${fileName}`, { method: "DELETE" });
-    refreshModelDetail();
+    if (!confirm(`Delete golden master image "${fileName}"?`)) return;
+    try {
+      const resp = await fetch(`/api/models/${encodeURIComponent(modelName)}/golden/${encodeURIComponent(fileName)}`, { method: "DELETE" });
+      const data = await resp.json();
+      if (data.status === "deleted") {
+        showToast(`Deleted golden image "${fileName}"`, "info");
+        await refreshModelDetail();
+        if (activeModelName === modelName) {
+          await activateModel(modelName);
+        }
+      } else {
+        showToast(`Failed to delete: ${data.error || "Unknown error"}`, "error");
+      }
+    } catch (e) {
+      showToast(`Delete error: ${e.message}`, "error");
+    }
   }
 
   async function deleteSampleImage(modelName, fileName) {
     if (!confirm(`Delete sample image "${fileName}"?`)) return;
-    await fetch(`/api/models/${modelName}/samples/${fileName}`, { method: "DELETE" });
-    showToast(`Deleted ${fileName}`, "info");
-    refreshModelDetail();
-    if (activeModelName === modelName) {
-      await activateModel(modelName);
+    try {
+      const resp = await fetch(`/api/models/${encodeURIComponent(modelName)}/samples/${encodeURIComponent(fileName)}`, { method: "DELETE" });
+      const data = await resp.json();
+      if (data.status === "deleted") {
+        showToast(`Deleted sample image "${fileName}"`, "info");
+        await refreshModelDetail();
+        if (activeModelName === modelName) {
+          await activateModel(modelName);
+        }
+      } else {
+        showToast(`Failed to delete: ${data.error || "Unknown error"}`, "error");
+      }
+    } catch (e) {
+      showToast(`Delete error: ${e.message}`, "error");
     }
   }
 
@@ -630,6 +672,16 @@ document.addEventListener("DOMContentLoaded", () => {
       activateBtn.addEventListener("click", async () => {
         await activateModel(detailModelName);
         hideDetail();
+      });
+    }
+
+    // Delete model from detail modal
+    const deleteCurrentBtn = $("btn-delete-current-model");
+    if (deleteCurrentBtn) {
+      deleteCurrentBtn.addEventListener("click", async () => {
+        if (detailModelName) {
+          await deleteModel(detailModelName);
+        }
       });
     }
 

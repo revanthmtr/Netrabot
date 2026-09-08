@@ -2,16 +2,14 @@
   "part_id": "AIRBAG-PATCH-001",
   "file": "Vertical AIRBAG Embroidered Patch A.png",
   "verdict": "FAIL",
-  "gate_failures": [
-    "HIGHLIGHT CLIPPING: 39.2%"
-  ],
+  "gate_failures": [],
   "global_metrics": {
     "registration": {
-      "dx": -2.5251263537029445e-05,
-      "dy": 2.8696515983028803e-05,
-      "shift_px": 3.822455153145345e-05,
-      "shift_mm": 9.135667816017373e-06,
-      "response": 0.9995193128005485,
+      "dx": -1.979034664145729e-06,
+      "dy": 4.3382086005294695e-05,
+      "shift_px": 4.342720304570254e-05,
+      "shift_mm": 1.0379101527922906e-05,
+      "response": 0.9996150692502852,
       "exceeded": false
     },
     "topology": {
@@ -87,6 +85,64 @@
       "defect_type": "SPECK / CONTAMINATION",
       "peak_deviation": 93.0,
       "region": "unassigned",
+      "measurements": {
+        "zscore": {
+          "label": "statistical deviation (Z-score)",
+          "unit": "sigma",
+          "value": 4.966,
+          "threshold": 3.025,
+          "exceeds_by_pct": 64.2
+        },
+        "ssim": {
+          "label": "structural dissimilarity (1-SSIM)",
+          "unit": "",
+          "value": 1.194,
+          "threshold": 0.18,
+          "exceeds_by_pct": 563.4
+        },
+        "absdiff": {
+          "label": "raw intensity change",
+          "unit": "gray levels (0-255)",
+          "value": 93.0,
+          "threshold": 19.5,
+          "exceeds_by_pct": 376.9
+        },
+        "color": {
+          "label": "perceptual color deviation (CIE Lab dE)",
+          "unit": "dE",
+          "value": 39.742,
+          "threshold": 4.775,
+          "exceeds_by_pct": 732.3
+        },
+        "edge": {
+          "label": "edge probability deviation",
+          "unit": "",
+          "value": 1.0,
+          "threshold": 0.295,
+          "exceeds_by_pct": 239.0
+        },
+        "morph": {
+          "label": "morphological residue (speck/void)",
+          "unit": "",
+          "value": 88.0,
+          "threshold": 18.75,
+          "exceeds_by_pct": 369.3
+        },
+        "gradient": {
+          "label": "gradient magnitude change",
+          "unit": "",
+          "value": 319.828,
+          "threshold": 29.5,
+          "exceeds_by_pct": 984.2
+        },
+        "texture": {
+          "label": "local texture / density deviation",
+          "unit": "",
+          "value": 22.6,
+          "threshold": 12.7,
+          "exceeds_by_pct": 78.0
+        }
+      },
       "saliency": 0.9761,
       "rank": 1,
       "crop_url": "crops/Vertical AIRBAG Embroidered Patch A_defect_1.png"

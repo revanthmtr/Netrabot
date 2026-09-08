@@ -105,6 +105,16 @@ class GoldenReference:
         if len(good_images) < 1:
             raise ValueError("Need at least 1 good image")
 
+        # Standardize all images to the dimensions of the primary reference image
+        target_h, target_w = good_images[0].shape[:2]
+        standardized = []
+        for im in good_images:
+            if im.shape[:2] != (target_h, target_w):
+                standardized.append(cv2.resize(im, (target_w, target_h), interpolation=cv2.INTER_AREA))
+            else:
+                standardized.append(im)
+        good_images = standardized
+
         n = len(good_images)
         self.n_samples = n
 
@@ -158,6 +168,16 @@ class GoldenReference:
         """
         if len(images) < 1:
             raise ValueError("Need at least 1 image to build median reference")
+
+        # Standardize all images to the dimensions of the primary reference image
+        target_h, target_w = images[0].shape[:2]
+        standardized = []
+        for im in images:
+            if im.shape[:2] != (target_h, target_w):
+                standardized.append(cv2.resize(im, (target_w, target_h), interpolation=cv2.INTER_AREA))
+            else:
+                standardized.append(im)
+        images = standardized
 
         n = len(images)
         self.n_samples = n
@@ -303,7 +323,7 @@ class InspectionEngine:
             fails.append(f"SHADOW CLIPPING: {clipped_lo*100:.1f}%")
 
         if img.shape[:2] != self.g.mean_gray.shape:
-            # Check if sub-crop that aligns to golden reference
+            # Check if sub-crop that aligns to golden reference or auto-standardize
             g_h, g_w = self.g.mean_gray.shape
             h, w = img.shape[:2]
             is_subcrop = False
@@ -314,7 +334,9 @@ class InspectionEngine:
                 if max_v >= 0.70:
                     is_subcrop = True
             if not is_subcrop:
-                fails.append(f"SIZE MISMATCH: {img.shape[:2]} vs {self.g.mean_gray.shape}")
+                img_std = cv2.resize(img, (g_w, g_h), interpolation=cv2.INTER_AREA)
+                gray = cv2.cvtColor(img_std, cv2.COLOR_BGR2GRAY)
+                region = gray[pm > 0] if (pm is not None and pm.shape == gray.shape) else gray.ravel()
 
         return fails
 
@@ -331,6 +353,7 @@ class InspectionEngine:
         if img.shape[:2] != self.g.mean_gray.shape:
             g_h, g_w = self.g.mean_gray.shape
             h, w = img.shape[:2]
+            is_subcrop = False
             if h <= g_h and w <= g_w:
                 gray_sub = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
                 res_match = cv2.matchTemplate(self.g.golden_gray, gray_sub, cv2.TM_CCOEFF_NORMED)
@@ -340,6 +363,9 @@ class InspectionEngine:
                     canvas = np.copy(self.g.golden_bgr)
                     canvas[my:my+h, mx:mx+w] = img
                     img = canvas
+                    is_subcrop = True
+            if not is_subcrop:
+                img = cv2.resize(img, (g_w, g_h), interpolation=cv2.INTER_AREA)
 
         if img.shape[:2] != self.g.mean_gray.shape:
             info = {
@@ -403,11 +429,24 @@ class InspectionEngine:
         large wins catch smears/fades."""
         combined = np.zeros(gray.shape, dtype=np.uint8)
         peak = np.zeros(gray.shape, dtype=np.float32)
-        for win in (3, 7, 15, 31):
-            try:
-                _, smap = ssim(gref, gray, win_size=win, full=True)
-            except ValueError:
-                continue
+        I1 = gray.astype(np.float32)
+        I2 = gref.astype(np.float32)
+        C1 = (0.01 * 255) ** 2
+        C2 = (0.03 * 255) ** 2
+
+        for win in (7, 15, 31):
+            ksize = (win, win)
+            sigma = 1.5
+            mu1 = cv2.GaussianBlur(I1, ksize, sigma)
+            mu2 = cv2.GaussianBlur(I2, ksize, sigma)
+            mu1_sq = mu1 * mu1
+            mu2_sq = mu2 * mu2
+            mu1_mu2 = mu1 * mu2
+            sigma1_sq = cv2.GaussianBlur(I1 * I1, ksize, sigma) - mu1_sq
+            sigma2_sq = cv2.GaussianBlur(I2 * I2, ksize, sigma) - mu2_sq
+            sigma12 = cv2.GaussianBlur(I1 * I2, ksize, sigma) - mu1_mu2
+            smap = ((2 * mu1_mu2 + C1) * (2 * sigma12 + C2)) / ((mu1_sq + mu2_sq + C1) * (sigma1_sq + sigma2_sq + C2) + 1e-7)
+
             dev = (1.0 - smap).astype(np.float32)
             peak = np.maximum(peak, dev)
             combined |= (dev > self.T['ssim']).astype(np.uint8) * 255
@@ -517,12 +556,40 @@ class InspectionEngine:
         """Single most-exceeding metric, formatted for a one-line summary."""
         if not measurements:
             return None
-        k, m = max(measurements.items(),
-                   key=lambda kv: kv[1].get('exceeds_by_pct') or 0.0)
+
+        def _get_sort_key(kv):
+            m = kv[1]
+            if not isinstance(m, dict):
+                return 0.0
+            if m.get('exceeds_by_pct') is not None:
+                try:
+                    return float(m['exceeds_by_pct'])
+                except (ValueError, TypeError):
+                    pass
+            if m.get('delta') is not None:
+                try:
+                    return float(m['delta'])
+                except (ValueError, TypeError):
+                    pass
+            return 0.0
+
+        k, m = max(measurements.items(), key=_get_sort_key)
+        if not isinstance(m, dict):
+            return str(m)
+
         unit = f" {m['unit']}" if m.get('unit') else ""
-        return (f"{m['label']}: {m['value']}{unit} "
-                f"(tolerance {m['threshold']}{unit}, "
-                f"+{m['exceeds_by_pct']}%)")
+        val = m.get('value', 'N/A')
+        thr = m.get('threshold', 'N/A')
+        label = m.get('label', k)
+
+        if m.get('exceeds_by_pct') is not None:
+            pct_info = f", +{m['exceeds_by_pct']}%"
+        elif m.get('delta') is not None:
+            pct_info = f", delta: +{m['delta']}"
+        else:
+            pct_info = ""
+
+        return f"{label}: {val}{unit} (tolerance {thr}{unit}{pct_info})"
 
     # ---------------- Stage 4: fusion + blob extraction ----------------
 

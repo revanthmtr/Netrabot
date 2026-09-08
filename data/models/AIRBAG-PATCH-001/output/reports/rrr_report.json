@@ -1,0 +1,151 @@
+{
+  "part_id": "AIRBAG-PATCH-001",
+  "file": "rrr.png",
+  "verdict": "FAIL",
+  "gate_failures": [],
+  "global_metrics": {
+    "registration": {
+      "dx": 0.8482896914690627,
+      "dy": 0.054871083282250765,
+      "shift_px": 0.8500624897225176,
+      "shift_mm": 0.20316493504368172,
+      "response": 0.8803840177319944,
+      "exceeded": false
+    },
+    "topology": {
+      "contour_count": 13,
+      "golden_mean": 13.0,
+      "tolerance": 6.0,
+      "deviated": false
+    },
+    "total_candidates": 1,
+    "shown": 1
+  },
+  "detector_stats": {
+    "zscore": {
+      "flagged_px": 6369,
+      "pct": 0.8041
+    },
+    "ssim": {
+      "flagged_px": 784726,
+      "pct": 99.0753
+    },
+    "absdiff": {
+      "flagged_px": 226904,
+      "pct": 28.6477
+    },
+    "color": {
+      "flagged_px": 409853,
+      "pct": 51.7458
+    },
+    "edge": {
+      "flagged_px": 309718,
+      "pct": 39.1033
+    },
+    "morph": {
+      "flagged_px": 368189,
+      "pct": 46.4856
+    },
+    "gradient": {
+      "flagged_px": 521303,
+      "pct": 65.8169
+    },
+    "texture": {
+      "flagged_px": 6753,
+      "pct": 0.8526
+    }
+  },
+  "total_candidates": 1,
+  "top_n_shown": 1,
+  "defects": [
+    {
+      "id": 1,
+      "x": 142,
+      "y": 192,
+      "w": 963,
+      "h": 834,
+      "area_px": 792050.0,
+      "area_mm2": 45242.68805,
+      "centroid": [
+        622.8096016665614,
+        606.8659756328515
+      ],
+      "detectors": [
+        "zscore",
+        "ssim",
+        "absdiff",
+        "color",
+        "edge",
+        "morph",
+        "gradient",
+        "texture"
+      ],
+      "confidence": 1.0,
+      "severity": "CRITICAL",
+      "defect_type": "SPECK / CONTAMINATION",
+      "peak_deviation": 224.0,
+      "region": "unassigned",
+      "measurements": {
+        "zscore": {
+          "label": "statistical deviation (Z-score)",
+          "unit": "sigma",
+          "value": 6.347,
+          "threshold": 3.025,
+          "exceeds_by_pct": 109.8
+        },
+        "ssim": {
+          "label": "structural dissimilarity (1-SSIM)",
+          "unit": "",
+          "value": 1.887,
+          "threshold": 0.18,
+          "exceeds_by_pct": 948.5
+        },
+        "absdiff": {
+          "label": "raw intensity change",
+          "unit": "gray levels (0-255)",
+          "value": 224.0,
+          "threshold": 19.5,
+          "exceeds_by_pct": 1048.7
+        },
+        "color": {
+          "label": "perceptual color deviation (CIE Lab dE)",
+          "unit": "dE",
+          "value": 90.039,
+          "threshold": 4.775,
+          "exceeds_by_pct": 1785.6
+        },
+        "edge": {
+          "label": "edge probability deviation",
+          "unit": "",
+          "value": 1.0,
+          "threshold": 0.295,
+          "exceeds_by_pct": 239.0
+        },
+        "morph": {
+          "label": "morphological residue (speck/void)",
+          "unit": "",
+          "value": 210.0,
+          "threshold": 18.75,
+          "exceeds_by_pct": 1020.0
+        },
+        "gradient": {
+          "label": "gradient magnitude change",
+          "unit": "",
+          "value": 902.167,
+          "threshold": 29.5,
+          "exceeds_by_pct": 2958.2
+        },
+        "texture": {
+          "label": "local texture / density deviation",
+          "unit": "",
+          "value": 55.701,
+          "threshold": 12.7,
+          "exceeds_by_pct": 338.6
+        }
+      },
+      "saliency": 0.9986,
+      "rank": 1,
+      "crop_url": "crops/rrr_defect_1.png"
+    }
+  ]
+}

@@ -8,9 +8,10 @@ import cv2
 import numpy as np
 
 
-def load_image(path: Union[str, Path]) -> np.ndarray:
+def load_image(path: Union[str, Path], max_dim: int = 1600) -> np.ndarray:
     """
     Load an image from disk, transparently handling .HEIC, .heic, .png, .jpg, etc.
+    Optionally scales down images exceeding max_dim for fast real-time inspection.
 
     Args:
         path: Path to the image file.
@@ -41,16 +42,24 @@ def load_image(path: Union[str, Path]) -> np.ndarray:
 
         rgb = np.array(image)
         if len(rgb.shape) == 2:
-            return cv2.cvtColor(rgb, cv2.COLOR_GRAY2BGR)
+            img = cv2.cvtColor(rgb, cv2.COLOR_GRAY2BGR)
         elif rgb.shape[2] == 4:
-            return cv2.cvtColor(rgb, cv2.COLOR_RGBA2BGR)
+            img = cv2.cvtColor(rgb, cv2.COLOR_RGBA2BGR)
         else:
-            return cv2.cvtColor(rgb, cv2.COLOR_RGB2BGR)
+            img = cv2.cvtColor(rgb, cv2.COLOR_RGB2BGR)
     else:
         img = cv2.imread(str(path_obj), cv2.IMREAD_COLOR)
         if img is None:
             raise ValueError(f"Failed to read image from {path} with cv2.imread")
-        return img
+
+    if max_dim is not None and max_dim > 0:
+        h, w = img.shape[:2]
+        if max(h, w) > max_dim:
+            scale = max_dim / float(max(h, w))
+            new_w, new_h = int(round(w * scale)), int(round(h * scale))
+            img = cv2.resize(img, (new_w, new_h), interpolation=cv2.INTER_AREA)
+
+    return img
 
 
 def build_part_mask(img: np.ndarray) -> np.ndarray:
