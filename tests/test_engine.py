@@ -306,6 +306,203 @@ class TestAOIEngine(unittest.TestCase):
             f"background composition should not trigger clipping: {fails}",
         )
 
+    def _textured_jittered_variants(self, n, shift_px=1.2, noise_std=18, seed=42):
+        """N synthetic "photos of the same good part": fine per-pixel
+        texture (so blur is measurable, unlike this fixture's flat color
+        blocks) plus small random sub-pixel translation (unavoidable
+        shot-to-shot placement jitter) and light sensor noise."""
+        rng = np.random.default_rng(seed)
+        texture = rng.normal(0, noise_std, (self.h, self.w, 1))
+        textured_base = np.clip(
+            self.base_img.astype(np.float32) + texture, 0, 255
+        ).astype(np.uint8)
+        variants = [textured_base]
+        for _ in range(n - 1):
+            noise = rng.normal(0, 3.0, self.base_img.shape)
+            variant = np.clip(textured_base.astype(np.float32) + noise, 0, 255).astype(np.uint8)
+            M = np.float32([
+                [1, 0, rng.uniform(-shift_px, shift_px)],
+                [0, 1, rng.uniform(-shift_px, shift_px)],
+            ])
+            variant = cv2.warpAffine(
+                variant, M, (self.w, self.h), borderMode=cv2.BORDER_REPLICATE
+            )
+            variants.append(variant)
+        return variants
+
+    def test_multi_golden_build_keeps_template_sharp(self):
+        """
+        build() must not blur its comparison template when given multiple
+        golden photos. Averaging pixel VALUES across N independently
+        resampled (aligned) images measurably destroys fine texture even
+        with near-perfect sub-pixel alignment, because each image needs
+        its own bilinear resample at a different fractional offset before
+        stacking. Reproduced on real data: 10 golden photos of the same
+        felt-pad texture, alignment residual <0.01px, still dropped
+        Laplacian sharpness 1169 -> 503 (57% loss) averaged, enough to
+        flood a genuinely good part with 3114 false "defects" (vs. 1 real
+        defect with a single golden image). Fixed by using the sharp
+        anchor image directly as the template; cross-sample statistics
+        (std/edge_prob/contour count) still use the full aligned stack.
+        """
+        variants = self._textured_jittered_variants(n=8)
+
+        single_gray = cv2.cvtColor(variants[0], cv2.COLOR_BGR2GRAY)
+        single_sharpness = cv2.Laplacian(single_gray, cv2.CV_64F).var()
+
+        mask = build_part_mask(variants[0])
+        ref = GoldenReference(mm_per_px=0.25)
+        ref.build(variants, part_mask=mask)
+        multi_sharpness = cv2.Laplacian(ref.golden_gray, cv2.CV_64F).var()
+
+        self.assertGreater(
+            multi_sharpness, single_sharpness * 0.9,
+            f"multi-golden template blurred: single={single_sharpness:.0f} "
+            f"multi={multi_sharpness:.0f}",
+        )
+
+    def test_multi_golden_build_does_not_flood_good_part_with_false_defects(self):
+        """
+        End-to-end version of the above, as a measured before/after
+        comparison (this fixture's flat color blocks are far less
+        textured than the real felt-pad photo this was found on, so an
+        absolute candidate-count threshold isn't meaningful here -- the
+        real, measured win was 3114 -> 1 candidates on real data; this
+        asserts the same direction and a substantial magnitude on
+        synthetic data instead of guessing an absolute number).
+        """
+        variants = self._textured_jittered_variants(n=8)
+        mask = build_part_mask(variants[0])
+
+        # Pre-fix behavior: raw unaligned per-pixel mean/std, exactly what
+        # build() used to do before this change.
+        grays = np.stack([cv2.cvtColor(im, cv2.COLOR_BGR2GRAY).astype(np.float32) for im in variants])
+        bgrs = np.stack([im.astype(np.float32) for im in variants])
+        from skimage.color import rgb2lab
+        labs = np.stack([rgb2lab(cv2.cvtColor(im, cv2.COLOR_BGR2RGB) / 255.0) for im in variants])
+        ref_naive = GoldenReference(mm_per_px=0.25)
+        ref_naive.n_samples = len(variants)
+        ref_naive.mean_gray = grays.mean(axis=0)
+        ref_naive.mean_bgr = bgrs.mean(axis=0)
+        ref_naive.mean_lab = labs.mean(axis=0)
+        ref_naive.std_gray = grays.std(axis=0)
+        ref_naive.std_bgr = bgrs.std(axis=0)
+        edges = np.stack([cv2.Canny(cv2.cvtColor(im, cv2.COLOR_BGR2GRAY), 50, 150)
+                          for im in variants]).astype(np.float32) / 255.0
+        ref_naive.edge_prob = edges.mean(axis=0)
+        counts = []
+        for im in variants:
+            g = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
+            _, th = cv2.threshold(g, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+            cnts, _ = cv2.findContours(th, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
+            counts.append(len([c for c in cnts if cv2.contourArea(c) > 20]))
+        ref_naive.mean_contour_count = float(np.mean(counts))
+        ref_naive.std_contour_count = float(np.std(counts))
+        ref_naive.part_mask = mask
+        engine_naive = CalibratedEngine(ref_naive, sensitivity=0.85)
+        engine_naive.calibrate_noise_floor(variants, percentile=99.5)
+
+        # Current (fixed) build()
+        ref_fixed = GoldenReference(mm_per_px=0.25)
+        ref_fixed.build(variants, part_mask=mask)
+        engine_fixed = CalibratedEngine(ref_fixed, sensitivity=0.85)
+        engine_fixed.calibrate_noise_floor(variants, percentile=99.5)
+
+        # A good part: another independent noisy-but-undefective capture
+        rng = np.random.default_rng(99)
+        good_sample = np.clip(
+            variants[0].astype(np.float32) + rng.normal(0, 3.0, variants[0].shape),
+            0, 255,
+        ).astype(np.uint8)
+
+        n_naive = len(engine_naive.inspect(good_sample).defects)
+        n_fixed = len(engine_fixed.inspect(good_sample).defects)
+        self.assertLess(
+            n_fixed, n_naive * 0.5,
+            f"expected a substantial reduction in false candidates on a "
+            f"good part: naive(pre-fix)={n_naive} fixed={n_fixed}",
+        )
+
+    def test_heatmap_localizes_at_the_real_defect(self):
+        """
+        End-to-end: a real defect must both appear in the defect list AND
+        make the heatmap visibly hotter over that specific region than
+        elsewhere on the part -- proving they're built from the same
+        signal (previously a SEPARATE, disconnected raw grayscale
+        absdiff, unregistered/unmasked, rescaled per-image with
+        cv2.NORM_MINMAX, which could show heat with no matching defect
+        box or vice versa).
+
+        Compares mean heatmap-vs-original pixel difference in the known
+        defect's own bounding box against a same-size box in a plain,
+        untextured part of the image (the light gray body, not the
+        orange bar -- alpha-blending shifts a bright/saturated pixel's
+        raw RGB value by more than a dark/muted one for the SAME
+        underlying heat level, which would confound a comparison against
+        a saturated region).
+        """
+        variants = self._textured_jittered_variants(n=3)
+        mask = build_part_mask(variants[0])
+        ref = GoldenReference(mm_per_px=0.25)
+        ref.build(variants, part_mask=mask)
+        engine = CalibratedEngine(ref, sensitivity=0.85)
+        engine.calibrate_noise_floor(variants, percentile=99.5)
+
+        defect_img = variants[0].copy()
+        dcx, dcy = 200, 70
+        cv2.circle(defect_img, (dcx, dcy), 8, (0, 0, 0), -1)
+
+        res = engine.inspect(defect_img)
+        self.assertIsNotNone(res.heatmap)
+        self.assertEqual(res.heatmap.shape, defect_img.shape)
+
+        # The defect must actually be found, at roughly the drawn location
+        self.assertGreater(len(res.defects), 0)
+        top = max(res.defects, key=lambda d: d.area_px)
+        self.assertLess(abs((top.x + top.w / 2) - dcx), 15)
+        self.assertLess(abs((top.y + top.h / 2) - dcy), 15)
+
+        diff = np.abs(res.heatmap.astype(np.int32) - defect_img.astype(np.int32)).sum(axis=2)
+        defect_region = diff[dcy - 10:dcy + 10, dcx - 10:dcx + 10].mean()
+        # Plain light-gray body area, far from the defect, the orange
+        # bar, and any part edge.
+        clean_region = diff[180:200, 400:420].mean()
+        self.assertGreater(
+            defect_region, clean_region + 15,
+            f"heatmap not visibly hotter at the real defect: "
+            f"defect_region={defect_region:.1f} clean_region={clean_region:.1f}",
+        )
+
+    def test_heatmap_contract_colorizes_only_where_agreement_is_high(self):
+        """
+        Direct unit test of _heatmap()'s contract, independent of the
+        full detection pipeline: given a per-pixel agreement map, the
+        output must be visibly altered from the input specifically where
+        agreement is high, and left untouched (exactly equal to the
+        input) where agreement is ~0 -- regardless of the underlying
+        image's own color (tested here against both a saturated/bright
+        region and a flat one, since alpha-blending's raw pixel-value
+        shift for the same heat level depends on the base color, which
+        is exactly what makes reverse-engineering "hotness" from the
+        blended output alone unreliable -- see the end-to-end test above).
+        """
+        img = self.base_img.copy()
+        mask = build_part_mask(img)
+        agree = np.zeros((self.h, self.w), dtype=np.float32)
+        agree[60:80, 190:210] = 8.0  # inside the orange bar: full 8/8 agreement
+        agree[150:170, 250:270] = 8.0  # inside the plain gray body
+
+        heatmap = CalibratedEngine._heatmap(img, agree, 8, mask)
+        self.assertEqual(heatmap.shape, img.shape)
+
+        hot_orange = np.abs(heatmap[60:80, 190:210].astype(int) - img[60:80, 190:210].astype(int)).mean()
+        hot_gray = np.abs(heatmap[150:170, 250:270].astype(int) - img[150:170, 250:270].astype(int)).mean()
+        cold = np.abs(heatmap[210:230, 400:420].astype(int) - img[210:230, 400:420].astype(int)).mean()
+
+        self.assertGreater(hot_orange, cold + 10)
+        self.assertGreater(hot_gray, cold + 10)
+        self.assertEqual(cold, 0.0)
+
 
 if __name__ == "__main__":
     unittest.main()
